@@ -1,0 +1,42 @@
+.wrap{
+	width:1000px;
+	margin:0 auto;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+*{
+	margin:0;
+	padding:0;
+}
+ul,li{
+	list-style: none;
+}
+a{
+	color:#000;
+	text-decoration: none;
+}
+.clearfix:after{
+	content:'';
+	display:block;
+	width:0;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+body{
+	font-family: tahoma,arial,'Microsoft YaHei','\5b8b\4f53',sans-serif;
+}
+input{
+	outline-style: none;
+	border:none;
+}
+button{
+	border:none;
+}
+i{
+	font-style: normal;
+}

@@ -1,0 +1,331 @@
+// .header{
+// 	height: 36px;
+// 	line-height: 36px;
+// 	.fr{
+// 		ul{
+// 			margin:0;
+// 			padding:0;
+// 			li{
+// 				float: left;
+// 			}
+// 		}
+// 	}
+// }
+body{
+	background-color: #f4f4f4;
+}
+.nav{
+	width:100%;
+	height: 72px;
+	background-color: #1889d3;
+	margin-bottom: 10px; 
+	.wrap{
+		.logo{
+			width:147px;
+			height: 50px;
+			background-image: url('../imgs/logo.png');
+			background-repeat: no-repeat;
+			background-size: 147px 50px;
+			background-position: center;
+			margin-top: 11px;
+		}
+	ul{
+		li{
+			float:left;
+			width: 92px;
+			height: 72px;
+			line-height: 72px;
+			a{
+				display: inline-block;
+				width: 100%;
+				height: 100%;
+				text-align: center;
+				font-size: 16px;
+				color:#f9f9f9;
+				&.active{
+					color:#fff;
+					background-color: #459fdb;
+				}
+			}
+		}
+	}
+	}
+}
+.main{
+	.subnav{
+		width: 100%;
+		height:46px;
+		line-height: 46px;
+		text-align: center;
+		border:1px solid #cfdae2;
+		box-sizing: border-box;
+		margin-bottom: 10px;
+		background-color: #fff;
+		.fl{
+			height: 100%;
+			div{
+				display: inline-block;
+				width: 140px;
+				height: 100%;
+				a{
+					display: inline-block;
+					width: 100%;
+					height: 100%;
+					color:#000;
+					border-right:1px dashed #cfdae2;
+					box-sizing: border-box;
+					&.active{
+						color:#1e88d2;
+						border-bottom: 2px solid #1889d3;
+					}
+				}
+			}
+		}
+		.fr{
+			height: 100%;
+			margin-right:32px;
+			div{
+				height: 26px;
+				margin-top:10px;
+				border:1px solid #f4f4f4;
+				box-sizing: border-box;
+				.txt{
+					width:138px;
+					height: 100%;
+					vertical-align: top;
+					box-sizing: border-box;
+					border-right:none;
+				}
+				.search{
+					height: 100%;
+					width:54px;
+					vertical-align: top;
+					background-color: #f4f4f4;
+				}
+
+			}
+					}
+	}
+	.content{
+		.fl{
+			width:200px;
+			margin-right: 20px;
+			.personalCenter{
+				width: 100%;
+				height: 188px;
+				background-color: #fff;
+				.header{
+					width:100%;
+					padding-left: 15px;
+					height: 30px;
+					line-height: 30px;
+					font-size: 14px;
+					color:#323232;
+					background-color: #ddd;
+					margin-bottom: 13px;
+					box-sizing: border-box;
+				}
+				.content{
+					margin-left:10px;
+					.msg{
+						margin-bottom: 12px;
+						.portrait{
+							width: 50px;
+							height: 50px;
+							border-radius: 50%;
+							margin-right: 10px;
+							overflow:hidden;
+							img{
+								width: 100%;
+								height: 100%;
+							}
+						}
+						.fl.right{
+							width:130px;
+							padding-top:5px;
+							div{
+								width: 130px;
+								height: 20px;
+								font-size: 12px;
+								line-height: 20px;
+							}
+						}
+					}
+					.personalBtn,.applyBtn{
+						display: inline-block;
+						width: 88px;
+						height: 28px;
+						text-align: center;
+						position: relative;
+						a{
+							display: inline-block;
+							width: 100%;
+							height: 100%;
+							font-size: 12px;
+							line-height: 26px;
+							color:#666;
+							padding-left:20px;
+							text-align: center;
+							border:1px solid #d1d1d1;
+							background-color: #fafafa;
+							box-sizing: border-box;
+							&:before{
+								content: '';
+								position: absolute;
+								top:50%;
+								left:10px;
+								margin-top:-7px;
+								margin-right:7px;
+								display: inline-block;
+								width:14px;
+								height: 14px;
+								visibility: visible;
+								background-size: 14px 14px;
+								background-repeat: no-repeat;
+								background-image: url(../imgs/gerenzhongxin.png);
+							}
+						}
+					}
+					.applyBtn{
+						margin-left: 7px;
+						a:before{
+							background-image: url(../imgs/apply.png);
+						}
+					}
+					.recharge{
+						width: 183px;
+						height:28px;
+						line-height: 26px;
+						box-sizing: border-box;
+						border:1px solid #d1d1d1;
+						background-color: #fafafa;
+						text-align: center;
+						margin-top:10px;
+						a{
+							width: 100%;
+							height: 100%;
+							display: inline-block;
+							color:#666;
+							font-size: 12px;
+							line-height: 26px;
+						}
+					}
+				}
+			}
+			.recommend{
+				margin-top:10px;
+				width: 100%;
+				height: 500px;
+				background-color: #fff;
+				.title{
+					width: 100%;
+					height: 30px;
+					line-height: 30px;
+					background-color: #ddd;
+					font-size: 14px;
+					color:#323232;
+					padding-left:15px;
+					box-sizing: border-box;
+
+				}
+				.billboard{
+					li{
+						position: relative;
+						margin:0 8px;
+						background-repeat: no-repeat;
+						background-position: right bottom;
+						border-bottom:1px solid #f4f4f4;
+						height: 77px;
+						&.lastLi{
+							border-bottom: none;
+						}
+						&:after{
+							content:'';
+							width: 40px;
+							height: 77px;
+							display: block;
+							position: absolute;
+							visibility: visible;
+							background-repeat: no-repeat;
+							background-repeat: right bottom;
+							top:11px;
+							right:-8px;
+							opacity: 0.3;
+							z-index: 10;
+						}
+						a{
+							display: inline-block;
+							width: 100%;
+							height: 100%;
+							.portrait{
+								display: inline-block;
+								width: 50px;
+								height: 50px;
+								margin:9px 20px 17px 12px;
+								position: relative;
+								img{
+									width: 100%;
+									height: 100%;
+									border-radius: 50%;
+								}
+								.numb{
+									position: absolute;
+									bottom:-3px;
+									left:-7px;
+									width: 68px;
+									height: 16px;
+									background-image: url('../imgs/NO2.png')
+								}
+								.number{
+									position: absolute;
+									display: block;
+									width:20px;
+									height: 20px;
+									border-radius:50%;
+									border:1px solid #fff;
+									background-color: #62c0f3;
+									box-sizing: border-box;
+									color:#fff;
+									text-align: center;
+									line-height: 18px;
+									font-size: 14px;
+									top:35px;
+									left:0;
+								}
+							}
+							.fl.message{
+								width: 100px;
+								margin-top:23px;
+								span{
+									font-size: 12px;
+									width:100%;
+									display: inline-block;
+									color:#323232;
+									height: 20px;
+									line-height: 20px;
+									i{
+										font-size:14px;
+										color:#ec4844;
+									}
+								}
+							}
+						}
+					}
+					li.firstLi:after{
+						background-image: url(../imgs/jiangbei-1.png);
+					}
+					li.secondLi:after{
+						background-image: url(../imgs/jiangbei-2.png);
+					}
+					li.thridLi:after{
+						background-image: url(../imgs/jiangbei--3.png);
+					}
+				}
+			}
+		}
+		.fr{
+			width: 780px;
+			
+		}
+	}
+}
