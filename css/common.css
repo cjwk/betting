@@ -40,3 +40,9 @@ button{
 i{
 	font-style: normal;
 }
+.pa{
+	position:absolute;
+}
+.pr{
+	position: relative;
+}
