@@ -36,6 +36,7 @@ input{
 }
 button{
 	border:none;
+	background-color: #fff;
 }
 i{
 	font-style: normal;

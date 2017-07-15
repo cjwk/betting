@@ -16,6 +16,7 @@ body{
 			background-size: 147px 50px;
 			background-position: center;
 			margin-top: 11px;
+			margin-right: 20px;
 		}
 	ul{
 		li{
@@ -75,7 +76,7 @@ body{
 			div{
 				height: 26px;
 				margin-top:10px;
-				border:1px solid #f4f4f4;
+				border:1px solid #cfdae2;
 				box-sizing: border-box;
 				.txt{
 					width:138px;
@@ -107,11 +108,64 @@ body{
 				width: 100%;
 				height: 188px;
 				background-color: #fff;
+				&.logout{
+					.content{
+						margin-top: 15px;
+					}
+					.account,.password{
+					width: 182px;
+					height: 28px;
+					line-height: 26px;
+					border:1px solid #d1d1d1;
+					margin-bottom: 8px;
+					padding-left: 10px;
+					box-sizing: border-box;
+					font-size: 12px;
+					&:focus{
+						border-color: #1889d3;
+						background-color: #e7edf2;
+					}
+					}
+					.verify{
+						background-color: #fff;
+						height: 12px;
+						color:#323232;
+						font-size: 12px;
+						width: 83px;
+						margin-right: 13px;
+						cursor:pointer;
+						color:#666;
+					}
+					.logging,.register{
+						display: inline-block;
+						margin-top:13px;
+						width: 88px;
+						height: 28px;
+						font-size: 12px;
+						line-height: 28px;
+						background-color: #fafafa;
+						border:1px solid #d1d1d1;
+						color:#666;
+						&:active{
+							background-color: #1889d3;
+							color:#fff;
+							border-color: #1889d3;
+						}
+					}
+					// .register{
+					// 	display: inline-block;
+					// 	// margin-top:20px;
+					// 	width: 88px;
+					// 	height: 28px;
+					// 	font-size: 12px;
+					// 	line-height: 28px;
+					// }
+				}
 				.header{
 					width:100%;
 					padding-left: 15px;
-					height: 30px;
-					line-height: 30px;
+					height: 36px;
+					line-height: 36px;
 					font-size: 14px;
 					color:#323232;
 					background-color: #ddd;
@@ -162,6 +216,11 @@ body{
 							border:1px solid #d1d1d1;
 							background-color: #fafafa;
 							box-sizing: border-box;
+							&:active{
+								background-color: #1889d3;
+								color:#fff;
+								border-color: #1889d3;
+							}
 							&:before{
 								content: '';
 								position: absolute;
@@ -190,7 +249,6 @@ body{
 						height:28px;
 						line-height: 26px;
 						box-sizing: border-box;
-						border:1px solid #d1d1d1;
 						background-color: #fafafa;
 						text-align: center;
 						margin-top:10px;
@@ -198,9 +256,15 @@ body{
 							width: 100%;
 							height: 100%;
 							display: inline-block;
+							border:1px solid #d1d1d1;
 							color:#666;
 							font-size: 12px;
 							line-height: 26px;
+							&:active{
+								background-color: #1889d3;
+								color:#fff;
+								border-color: #1889d3;
+							}
 						}
 					}
 				}
@@ -208,12 +272,12 @@ body{
 			.recommend{
 				margin-top:10px;
 				width: 100%;
-				height: 500px;
+				// height: 500px;
 				background-color: #fff;
 				.title{
 					width: 100%;
-					height: 30px;
-					line-height: 30px;
+					height: 36px;
+					line-height: 36px;
 					background-color: #ddd;
 					font-size: 14px;
 					color:#323232;
@@ -229,9 +293,9 @@ body{
 						background-position: right bottom;
 						border-bottom:1px solid #f4f4f4;
 						height: 77px;
-						&.lastLi{
-							border-bottom: none;
-						}
+						// &:last-child{
+						// 	border-bottom: none;
+						// }
 						&:after{
 							content:'';
 							width: 40px;
@@ -243,7 +307,7 @@ body{
 							background-repeat: right bottom;
 							top:11px;
 							right:-8px;
-							opacity: 0.3;
+							// opacity: 0.3;
 							z-index: 10;
 						}
 						a{
@@ -329,61 +393,88 @@ body{
 			width: 780px;
 			>.titleBar{
 				width:100%;
-				height: 30px;
-				line-height: 30px;
+				height: 36px;
+				line-height: 36px;
 				background-color: #ddd;
 				font-size: 12px;
 				color:#323232;
 				.gameplay{
-					width:98px;
-					height: 22px;
-					line-height: 22px;
-					background-color: #ededed;
+					width:128px;
+					height: 100%;
+					line-height: 36px;
+					// background-color: #ededed;
 					text-align: center;
 					margin-left: 25px;
-					margin-top:4px;
+					// margin-top:7px;
 					margin-right: 70px;
 					>a{
 						display: inline-block;
 						height: 100%;
 						width: 100%;
 						font-size: 12px;
-						&:after{
-						content:'';
-						width: 12px;
-						height: 8px;
-						visibility: visible;
-						background-size: 12px 8px;
-						background-image: url(../imgs/down.png);
-						background-repeat: no-repeat;
+					// 	&:after{
+					// 	content:'';
+					// 	width: 12px;
+					// 	height: 8px;
+					// 	visibility: visible;
+					// 	background-size: 12px 8px;
+					// 	background-image: url(../imgs/down.png);
+					// 	background-repeat: no-repeat;
+					// 	display: inline-block;
+					// 	margin-left: 12px;
+					// }
+					.pth{
 						display: inline-block;
-						margin-left: 12px;
+						width: 100px;
+						text-align: center;
+					}
+					.icon-down{
+						display: inline-block;
+						width: 12px;
+						height: 6px;
+						background-image: url(../imgs/down.png);
 					}
 					}
 					.moreGameplay{
-						width: 98px;
+						width: 128px;
 						text-align: center;
-						background-color: rgba(0,0,0,.5);
+						background-color: #fff;
 						z-index: 999;
 						height: 0;
 						overflow: hidden;
+						margin-top:-36px;
+						box-shadow: 1px 1px 3px rgba(0,0,0,.3),
+						-1px 1px 3px rgba(0,0,0,.3),
+						0px 0px 0px #fff,
+						1px 1px 3px rgba(0,0,0,.3);
 						&.active{
 							height: auto;
 						}
 						li{
 							width: 100%;
-							height: 22px;
+							height: 36px;
 							&:hover{
 								a{
-									background-color: rgba(0,0,0,.7);
+									background-color: #1889d3;
+
 								}
 							}
 							a{
 								display: inline-block;
 								width: 100%;
 								height: 100%;
+								color:#323232;
+								line-height: 36px;
 								&.active{
-									background-color: rgba(0,0,0,.7);
+									background-color: #1889d3;
+								}
+								.icon-up{
+									display: inline-block;
+									width: 12px;
+									height: 6px;
+									background-image: url(../imgs/up.png);
+									background-size: 12px 6px;
+									background-repeat: no-repeat;
 								}
 							}
 							
@@ -396,6 +487,7 @@ body{
 					label{
 						width: 40px;
 						margin-right: 20px;
+						cursor: pointer;
 					}
 					input{
 						vertical-align: text-bottom;
@@ -417,24 +509,39 @@ body{
 			>.recItems{
 				background-color: #fff;
 				padding-bottom: 20px;
-				ul{
+				>ul{
 					margin-left: 17px;
 					margin-right: 20px;
 					padding-top:20px;
 					li{
 					width: 743px;
-					height: 98px;
-					border:1px solid #f5f5f5;
-					margin-bottom: 20px;
+					// height: 98px;
+					// border:1px solid #f5f5f5;
+					margin-bottom: 16px;
+					ul.moreRec{
+						width:100%;
+						padding-top:30px;
+						// overflow-y: hidden;
+						display: none;
+						margin-top:4px;
+					}
 					&.item-son{
 						height: 0;
 					}
+					>.item-wrap{
+						height: 98px;
+						border:1px solid #f5f5f5;
+						// box-sizing: border-box;
+					}
 					.getMore{
 						display: none;
-						height: 20px;
+						height: 1px;
 						border-top:1px dashed #999;
 						width:100%;
-						bottom: -31px;
+						margin-top:16px;
+						// margin-bottom:13px;
+
+						// bottom: -31px;
 						p{
 							margin:0 auto;
 							margin-top: -10px;
@@ -491,7 +598,7 @@ body{
 					&.active{
 						.itemRight{
 						background-image: url(../imgs/bg.png) !important;
-						background-size: 569px 98px;
+						background-size: 567px 98px;
 						background-repeat: no-repeat;
 						.titleMsg:before{
 							background-color: #dcdcdc !important;
@@ -553,7 +660,7 @@ body{
 
 					}
 					.itemRight{
-						width: 569px;
+						width: 567px;
 						height: 100%;
 						background-color: #f4f4f4;
 						>.message{
@@ -624,7 +731,9 @@ body{
 							.releasstime{
 								font-size: 10px;
 								-webkit-transform: scale(0.75);  
-    							-o-transform: scale(1); 
+    							-o-transform: scale(1);
+    							-moz-transform: scale(1);
+  								-ms-transfome:scale(1);
 								color:#787878;
 								margin-top:5px;
 							}
@@ -683,11 +792,11 @@ body{
 						}
 					}
 					.icon-result{
-						width: 84px;
-						height: 84px;
+						width: 88px;
+						height: 88px;
 						position: absolute;
-						top:7px;
-						right:138px;
+						// top:7px;
+						right:130px;
 						&.success{
 							background-image: url(../imgs/zhong.png);
 						}
@@ -705,6 +814,12 @@ body{
 				li{
 					.itemLeft,.itemRight{
 						opacity: 0.5
+					}
+					button{
+						background-color: #1889d3!important;
+					}
+					.price{
+						color:#999 !important;
 					}
 				}
 			}

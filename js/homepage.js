@@ -31,15 +31,21 @@ $(function () {
 			textVal=$(this).text();
 			$(this).text('收起专家其余推荐');
 			$('.item-son').css({
-				'height':'98px'
+				'display':'block'
 			})
 		}else{
 			$(this).text(textVal);
 			$('.item-son').css({
-				'height':'0'
+				'display':'none'
 			})
 		}
 		$(this).toggleClass('active');
+	})
+
+
+	//推荐专家最后一个li不显示下边框
+	$('.recommend li:last-child').css({
+		'border-bottom':'none'
 	})
 
 })
