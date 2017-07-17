@@ -81,6 +81,7 @@ body {
   box-sizing: border-box;
   border-right: none;
   padding-left: 10px;
+  font-size: 12px;
 }
 .main .subnav .fr div .search {
   height: 100%;
@@ -264,9 +265,8 @@ body {
   color: #fff;
   border-color: #1889d3;
 }
-.main .content > .fl .personalCenter .content .personalBtn a:before,
-.main .content > .fl .personalCenter .content .applyBtn a:before {
-  content: '';
+.main .content > .fl .personalCenter .content .personalBtn a .icon-p,
+.main .content > .fl .personalCenter .content .applyBtn a .icon-p {
   position: absolute;
   top: 50%;
   left: 10px;
@@ -275,7 +275,6 @@ body {
   display: inline-block;
   width: 14px;
   height: 14px;
-  visibility: visible;
   background-size: 14px 14px;
   background-repeat: no-repeat;
   background-image: url(../img/gerenzhongxin.png);
@@ -283,7 +282,17 @@ body {
 .main .content > .fl .personalCenter .content .applyBtn {
   margin-left: 7px;
 }
-.main .content > .fl .personalCenter .content .applyBtn a:before {
+.main .content > .fl .personalCenter .content .applyBtn .icon-a {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  margin-top: -7px;
+  margin-right: 7px;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
   background-image: url(../img/apply.png);
 }
 .main .content > .fl .personalCenter .content .recharge {
@@ -464,6 +473,8 @@ body {
   overflow: hidden;
   margin-top: -37px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3), -1px 1px 3px rgba(0, 0, 0, 0.3), 0px 0px 0px #fff, 1px 1px 3px rgba(0, 0, 0, 0.3);
+  border: 1px solid #ddd\9;
+  border-top: none\9;
 }
 .main .content > .fr > .titleBar .gameplay .moreGameplay.active {
   height: auto;
@@ -475,6 +486,7 @@ body {
 }
 .main .content > .fr > .titleBar .gameplay .moreGameplay li:hover a {
   background-color: #1889d3;
+  color: #fff;
 }
 .main .content > .fr > .titleBar .gameplay .moreGameplay li a {
   display: inline-block;
@@ -486,6 +498,7 @@ body {
 }
 .main .content > .fr > .titleBar .gameplay .moreGameplay li a.active {
   background-color: #1889d3;
+  color: #fff;
 }
 .main .content > .fr > .titleBar .gameplay .moreGameplay li a .methods {
   display: inline-block;

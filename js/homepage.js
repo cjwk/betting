@@ -68,4 +68,13 @@ $(function () {
 			}
 		},1000)
 	})
+
+
+//付款状态取消
+	$('.msgbox-tips .cancel').on('click',function () {
+		$('.mask').css({
+			'display':'none'
+		})
+	})
+
 })

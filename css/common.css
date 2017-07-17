@@ -47,3 +47,6 @@ i{
 .pr{
 	position: relative;
 }
+.pf{
+	position: fixed;
+}

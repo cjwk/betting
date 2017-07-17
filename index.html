@@ -57,7 +57,7 @@
 								<div class='balance'>账户余额:<span>60000</span>球币</div>
 							</div>
 						</div>
-						<span class="personalBtn"><a href="javascript:void(0);">个人中心</a></span><span class="applyBtn"><a href="javascript:void(0);">申请专家</a></span>
+						<span class="personalBtn"><a href="javascript:void(0);"><i class='icon-p'></i>个人中心</a></span><span class="applyBtn pr"><a href="javascript:void(0);"><i class='icon-n'></i>实名认证<i class='tips-name pa'>实名认证——申请专家<i class ='icon-tri'></i></i></a></span>
 						<div class='recharge'><a href="javascript:void(0);">充值</a></div>
 					</div>
 				</div>
@@ -73,15 +73,33 @@
 								<div class='balance'>账户余额:<span>60000</span>球币</div>
 							</div>
 						</div>
-						<span class="personalBtn"><a href="javascript:void(0);">个人中心</a></span><span class="applyBtn"><a href="javascript:void(0);">发布推介</a></span>
+						<span class="personalBtn"><a href="javascript:void(0);"><i class='icon-p'></i>个人中心</a></span><span class="applyBtn"><a href="javascript:void(0);"><i class='icon-pub'></i>发布推介</a></span>
 						<div class='recharge'><a href="javascript:void(0);">充值</a><a href="javascript:void(0); " class='withdraw'>提现</a></div>
+					</div>
+				</div>
+				<div class="personalCenter logged">
+					<div class="header">个人中心</div>
+					<div class="content">
+						<div class="msg clearfix">
+							<div class="portrait fl">
+								<img src="" alt="用户头像">
+							</div>
+							<div class="fl right">
+								<div class="name">XXXX</div>
+								<div class='balance'>账户余额:<span>60000</span>球币</div>
+							</div>
+						</div>
+						<span class="personalBtn"><a href="javascript:void(0);"><i class='icon-p'></i>个人中心</a></span><span class="applyBtn"><a href="javascript:void(0);"><i class='icon-pub'></i>申请专家<i class='tips-name pa'>申请专家——发布推介<i class ='icon-tri'></i></i></a></span>
+						<div class='recharge'><a href="javascript:void(0);">充值</a></div>
 					</div>
 				</div>
 				<div class="personalCenter logout">
 					<div class="header">个人中心</div>
-					<div class="content">
-						<input type="text" placeholder="账号" class='account'>
-						<input type="text" name="password" id="pw" placeholder="密码" class='password'>
+					<div class="content pr">
+						<span class="msg-err pa"><i class='icon-tips'></i>账号或密码错误<i class='icon-close'></i>
+						<i class='icon-tri pa'></i></span>
+						<input type="text" placeholder="请输入账号" class='account'>
+						<input type="text" name="password" id="pw" placeholder="请输入密码" class='password'>
 						<div class='clearfix'>
 							<input type="button" value="手机验证码登录" class='verify fr'>
 						</div>
@@ -92,8 +110,8 @@
 				<div class="personalCenter phlogin logout">
 					<div class="header">个人中心</div>
 					<div class="content">
-						<input type="text" placeholder="手机号码" class='account'>
-						<input type="text" name="authCode" id="ac" placeholder="" class='ac'><span class='countdown'>获取验证码</span>
+						<input type="text" placeholder="请输入手机号码" class='account'>
+						<input type="text" name="authCode" id="ac" placeholder="请输入验证码" class='ac'><span class='countdown'>获取验证码</span>
 						<div class='clearfix'>
 							<input type="button" value="账号登录" class='verify fr'>
 						</div>
@@ -611,6 +629,28 @@
 					</ul>
 				</div>
 				
+			</div>
+		</div>
+	</div>
+	<div class="mask pf">
+		<div class="msgbox-tips">
+			<div class="title">温馨提示</div>
+			<div class="content">
+				<p class='count'>您将花费<span>8</span>球币购买该专家的比赛推荐</p>
+				<p class='return'><i class='tui'></i>此单支持不中就退</p>
+				<span class='confirm'>确定</span>
+				<span class='cancel'>取消</span>
+			</div>
+			<div class="content-money">
+				<p class='count'><i class='icon-tips'></i>余额不足请充值</p>
+				<p class='return'>您也可以直接扫码支付</p>
+				<span class='wx'><i class='icon-wx'></i>微信支付<i class='chose'></i></span>
+				<span class='zfb'><i class='icon-zfb'></i>支付宝支付<i class='chose'></i></span>
+				<p class='price'>$2.00</p>
+				<div class="code">
+					
+				</div>
+				<p class='tipsword'>请使用手机支付宝扫描</p>
 			</div>
 		</div>
 	</div>
