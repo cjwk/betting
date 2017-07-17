@@ -17,8 +17,7 @@ $(function () {
 		$('.moreGameplay').removeClass('active');
 	});
 	$('.moreGameplay a').on('click', function() {
-		console.log($(this).text());
-		$('.gameplay>a').text($(this).text());
+		$('.gameplay>a>.pth').text($(this).text());
 	}).on('click', function () {
 		$('.moreGameplay').removeClass('active');
 		$('.moreGameplay a.active').removeClass('active');
@@ -30,12 +29,13 @@ $(function () {
 		if($(this).hasClass('active')){
 			textVal=$(this).text();
 			$(this).text('收起专家其余推荐');
-			$('.item-son').css({
+			console.log($(this).parent().parent().children('.item-son'));
+			$(this).parent().parent().children('.item-son').css({
 				'display':'block'
 			})
 		}else{
 			$(this).text(textVal);
-			$('.item-son').css({
+			$(this).parent().parent().children('.item-son').css({
 				'display':'none'
 			})
 		}
@@ -48,4 +48,24 @@ $(function () {
 		'border-bottom':'none'
 	})
 
+	//验证码倒计时
+	$('.personalCenter.phlogin .content .countdown').on('click', function () {
+		if($(this).hasClass('active')){
+			return;
+		}
+		$(this).addClass('active');
+		var _this =$(this);
+		var t =4;
+		_this.text('重新获取('+ (t+1) +')');
+		// var t =5;
+		var timeId = setInterval(function () {
+			_this.text('重新获取('+ t-- +')');
+			t=t--;
+			if (t==-1){
+				_this.removeClass('active');
+				clearInterval(timeId);
+				_this.text('重新获取')
+			}
+		},1000)
+	})
 })
