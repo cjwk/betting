@@ -703,10 +703,9 @@ body{
 					margin-bottom: 16px;
 					ul.moreRec{
 						width:100%;
-						padding-top:30px;
+						padding-top:16px;
 						// overflow-y: hidden;
 						display: none;
-						margin-top:4px;
 					}
 					&.item-son{
 						height: 0;
@@ -846,7 +845,7 @@ body{
 
 								}
 								.rating{
-									margin-left: -12px;
+									margin-left: -9px;
 								}
 							}
 						}
@@ -993,7 +992,7 @@ body{
 						width: 88px;
 						height: 88px;
 						position: absolute;
-						// top:7px;
+						top:7px;
 						right:130px;
 						&.success{
 							background-image: url(../img/zhong.png);
@@ -1015,7 +1014,7 @@ body{
 						filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);
 					}
 					button{
-						background-color: #1889d3!important;
+						background-color: #1889f9!important;
 					}
 					.price{
 						color:#999 !important;
@@ -1033,16 +1032,21 @@ body{
 	top:0;
 	left: 0;
 	z-index: 200 ;
-	.msgbox-tips{
+	.msgbox-tips,.msgbox-pay{
 		width: 478px;
-		height: 274px;
 		position:fixed;
-		// position: absolute;
 		top:50%;
-		margin-top:-137px;
+		// margin-top:-137px\9;
 		left: 50%;
-		margin-left: -239px;
-		border-radius: 2px;
+		// margin-left: -239px\9;
+		transform:translate(-50%,-50%);
+		-webkit-trasnform:translate(-50%,-50%);
+		-moz-transform:translate(-50%,-50%);
+		-ms-transform:translate(-50%,-50%);
+		-o-transfrom:translate(-50%,-50%);
+		border-radius: 4px;
+		z-index: 300;
+		overflow: hidden;
 		.title{
 			height: 48px;
 			width: 468px;
@@ -1052,6 +1056,17 @@ body{
 			color:#323232;
 			font-size: 18px;
 			background-color: #ddd;
+			.close{
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				background-image: url(../img/bigclose.png);
+				background-size: 16px 16px;
+				float: right;
+				margin-right: 20px;
+				margin-top:16px;
+				cursor: pointer;
+			}
 		}
 		.content{
 			background-color: #fff;
@@ -1097,6 +1112,14 @@ body{
 				margin-left: 80px;
 			}
 		}
+		
+	}
+	.msgbox-pay{
+		// margin-top:-307px;
+		overflow: hidden;
+		transform:translate(-50%,-50%);
+		display: block;
+		z-index:400;
 		.content-money{
 			width: 100%;
 			background-color: #fff;
@@ -1104,11 +1127,26 @@ body{
 			.count{
 				font-size: 18px;
 				color:#323232;
-				height: 18px;
-				line-height: 18px;
+				height: 20px;
+				line-height: 20px;
 				padding-top:50px;
 				padding-bottom: 30px;
 				text-align: center;
+				position: relative;
+				.icon-tips{
+					display: inline-block;
+					width: 30px;
+					height: 30px;
+					background-image: url(../img/big.png);
+					background-size: 30px 30px;
+					position: absolute;
+					top:44px;
+					left: 140px;
+				}
+				a{
+					text-decoration: underline;
+					color: #1889d3;
+				}
 			}
 			.return{
 				font-size: 24px;
@@ -1119,17 +1157,60 @@ body{
 			}
 			.zfb,.wx{
 				display: inline-block;
-				width: 122px;
+				// width: 122px;
 				height: 38px;
 				line-height: 38px;
-				border:1px solid #1889d3;
+				// border:1px solid #1e88d2;
+				border:1px solid #ddd;
 				border-radius:2px;
-				margin-left: 90px;
-				text-align: center;
+				margin-left: 73px;
+				// text-align: center;
+				padding-left: 46px;
+				padding-right: 26px;
 				margin-bottom: 40px;
+				position: relative;
+				cursor: pointer;
+				&.active{
+					border-color: #1e88d2;
+					.choose{
+						visibility: visible;
+					}
+				}
+				.icon-wx{
+					display: inline-block;
+					width: 26px;
+					height: 26px;
+					background-image: url(../img/wei--icon.png);
+					position: absolute;
+					margin-right: 10px;
+					top:50%;
+					margin-top: -13px;
+					left:12px;
+				}
+				.choose{
+					display: inline-block;
+					width: 26px;
+					height: 23px;
+					background-image: url(../img/gou.png);
+					position: absolute;
+					right: 0;
+					bottom: 0;
+					visibility: hidden;
+				}
 			}
 			.zfb{
 				margin-left: 50px;
+				padding-right: 10px;
+				.icon-zfb{
+					display: inline-block;
+					width: 26px;
+					height: 26px;
+					background-image: url(../img/zhi--icon.png);
+					position: absolute;
+					top:50%;
+					margin-top:-13px;
+					left:12px;
+				}
 			}
 			.price{
 				text-align: center;
@@ -1147,10 +1228,14 @@ body{
 				margin-left: 120px;
 			}
 			.tipsword{
+				display: none;
 				font-size: 14px;
 				color:#323232;
 				text-align: center;
 				padding-bottom: 35px;
+				&.active{
+					display: block;
+				}
 			}
 		}
 	}

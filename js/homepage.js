@@ -18,14 +18,13 @@ $(function () {
 	});
 	$('.moreGameplay a').on('click', function() {
 		$('.gameplay>a>.pth').text($(this).text());
-	}).on('click', function () {
 		$('.moreGameplay').removeClass('active');
 		$('.moreGameplay a.active').removeClass('active');
 		$(this).addClass('active');
 	})
 	//专家更多推荐切换
 	var textVal='';
-	$('.getMore>p').on('click',function(){
+	$(document.body).on('click','.getMore>p',function(){
 		if($(this).hasClass('active')){
 			textVal=$(this).text();
 			$(this).text('收起专家其余推荐');
@@ -76,5 +75,54 @@ $(function () {
 			'display':'none'
 		})
 	})
+//付款确定按钮
+	$('.msgbox-tips .confirm').on('click',function () {
+		$('.mask').css({
+			'display':'none'
+		})
+		//调用后台逻辑
 
+
+
+	})
+	//付款关闭按钮
+	$('.mask .close').on('click',function () {
+		$('.mask').css({
+			'display':'none'
+		})
+	})
+
+	// 支付方式选择
+	$('.mask .chooseBtn').on('click',function () {
+		$('.mask .chooseBtn.active').removeClass('active');
+		$(this).addClass('active');
+		$('.tipsword').removeClass('active');
+		if($(this).hasClass('wx')){
+			$('.msgbox-pay .wx-tip').addClass('active');
+		}else{
+			$('.msgbox-pay .zfb-tip').addClass('active');
+		}
+	})
+
+	//滚动加载逻辑
+	var loading = false;
+	$(window).on('scroll',function() {
+		var offsetTop= $('.main>.content').offset().top;
+		var scrollTop= $(this).scrollTop();
+		var height=$('.main>.content').height();
+		var winHeight=$(window).height();
+		var bottomHeight=(offsetTop+height)-(scrollTop+winHeight)
+		console.log(bottomHeight)
+		if(bottomHeight<30 && !loading){
+			loading = true;
+			console.log('再加载一次')
+			$('.recItems>ul').append("<li class='clearfix active haveMore pr'><div class='clearfix item-wrap'></div></li>")
+			loading =false;
+		}
+	})
+
+	//最后一个li样式
+	$('.moreRec.item-son li:last-child').css({
+		'margin-bottom':'0'
+	});
 })
