@@ -10,12 +10,14 @@
 	<script src="https://cdn.bootcss.com/less.js/2.5.2/less.min.js"></script>
 </head>
 <body>
-	<div class="header wrap clearfix">
+	<div class="layout">
+		<div class="container">
+			<div class="header wrap clearfix">
 	</div>
 	<div class="nav">
-		<div class="wrap clearfix">
+		<div class="wrap clearfix pr">
 			<div class="logo fl"></div>
-			<ul class='clearfix fl'>
+			<ul class='clearfix pa'>
 				<li><a href="javascript:void(0);" class='active'>今日情报</a></li>
 				<li><a href="javascript:void(0);">竞彩足球</a></li>
 				<li><a href="javascript:void(0);">竞彩篮球</a></li>
@@ -24,6 +26,8 @@
 				<li><a href="javascript:void(0);">完场统计</a></li>
 				<li><a href="javascript:void(0);">专家推介</a></li>
 				<li><a href="javascript:void(0);">水位统计</a></li>
+				<li><a href="javascript:void(0);">联赛资料联赛</a></li>
+				<li><a href="javascript:void(0);">联赛资料联赛</a></li>
 				<li><a href="javascript:void(0);">联赛资料</a></li>
 			</ul>
 		</div>
@@ -103,20 +107,22 @@
 						<div class='clearfix'>
 							<input type="button" value="手机验证码登录" class='verify fr'>
 						</div>
-						<input type="button" value="登录" class='logging '>
-						<input type="button" value="注册" class='register '>
+						<input type="button" value="登录" class='logging-page '>
+						<input type="button" value="注册" class='register-page '>
 					</div>
 				</div>
 				<div class="personalCenter phlogin logout">
 					<div class="header">个人中心</div>
-					<div class="content">
+					<div class="content pr">
+					<span class="msg-err pa"><i class='icon-tips'></i>手机号码格式不正确<i class='icon-close'></i>
+						<i class='icon-tri pa'></i></span>
 						<input type="text" placeholder="请输入手机号码" class='account'>
 						<input type="text" name="authCode" id="ac" placeholder="请输入验证码" class='ac'><span class='countdown'>获取验证码</span>
 						<div class='clearfix'>
 							<input type="button" value="账号登录" class='verify fr'>
 						</div>
-						<input type="button" value="登录" class='logging '>
-						<input type="button" value="注册" class='register '>
+						<input type="button" value="登录" class='logging-page '>
+						<input type="button" value="注册" class='register-page '>
 					</div>
 				</div>
 				<div class="recommend">
@@ -228,7 +234,7 @@
 				</div>
 				<div class="recItems">
 					<ul>
-						<li class='clearfix haveMore pr'>
+						<li class='clearfix haveMore previous pr'>
 							<div class='clearfix item-wrap'>
 								<div class="itemLeft fl pr">
 									<i class='rating pa'>周盈利率 <span>-180.7%</span></i>
@@ -259,7 +265,11 @@
 										<span class='releasstime fr'>发布于06-07 16:36</span>
 										<div class='clearfix'>
 											<div class="recTit fl">巴西杯大小球必杀</div>
-											<div class="buyBtn fr">
+											<div class="buyBtn purchased active fr">
+												<button>查看详情</button>
+												<div class="count">已有30人购买</div>
+											</div>
+											<div class="buyBtn ">
 												<button>购买</button>
 												<div class="count">已有30人购买</div>
 											</div>
@@ -268,7 +278,7 @@
 										<div class="refund pa">不中就退</div>
 									</div>
 								</div>
-
+								<div class="icon-result "></div>
 							</div>
 							
 							<ul class='moreRec item-son clearfix active'>
@@ -303,7 +313,11 @@
 												<span class='releasstime fr'>发布于06-07 16:36</span>
 												<div class='clearfix'>
 													<div class="recTit fl">巴西杯大小球必杀</div>
-													<div class="buyBtn fr">
+													<div class="buyBtn purchased  fr">
+														<button>查看详情</button>
+														<div class="count">已有30人购买</div>
+													</div>
+													<div class="buyBtn active fr">
 														<button>购买</button>
 														<div class="count">已有30人购买</div>
 													</div>
@@ -498,7 +512,7 @@
 						</li>
 				
 					</ul>
-					<!-- <ul class='previous'>
+					<ul class='previous'>
 						<li class='clearfix active haveMore pr'>
 							<div class='clearfix item-wrap'>
 								<div class="itemLeft fl pr">
@@ -582,7 +596,7 @@
 										<div class="refund pa">不中就退</div>
 									</div>
 								</div>
-								<div class="icon-result failed"></div>
+								<div class="icon-result "></div>
 							</div>
 						
 						</li>
@@ -629,12 +643,13 @@
 							</div>
 
 						</li>
-					</ul> -->
+					</ul>
 				</div>
 				
 			</div>
 		</div>
 	</div>
+
 	<div class="mask pf">
 		<div class="msgbox-tips">
 			<div class="title">温馨提示<span class="close"></span></div>
@@ -661,17 +676,33 @@
 				<p class='tipsword wx-tip active'>请使用微信扫描</p>
 			</div>
 		</div>
-		<!-- <div class="msgbox-phno">
+		<div class="msgbox-phno">
 			<div class="title">温馨提示<span class="close"></span></div>
 			<div class="content">
-				<p class='count'>您将花费<span>8</span>球币购买该专家的比赛推荐</p>
-				<p class='return'><i class='tui'></i>此单支持不中就退</p>
+				<p class='tips-word'>输入手机号，即可免登陆购买</p>
+				<input type="text" name="" id="" class='phno' placeholder="请输入手机号">
+				<input type="text" name="" id="" class='verifycode' placeholder="请输入验证码"><span class='verify-word'>发送验证码</span>
 				<span class='confirm'>确定</span>
-				<span class='cancel'>取消</span>
+				<span class='count-login'><a href="javascript:void(0);">账号登录</a></span>
+				<span class='count-reg'><a href="javascript:void(0);">立即注册</a></span>
 			</div>
 			
-		</div> -->
+		</div>
+		<div class="msgbox-counter">
+			<div class="title">温馨提示<span class="close"></span></div>
+			<div class="content">
+				<input type="text" name="" id="" class='phno' placeholder="请输入账号">
+				<input type="text" name="" id="" class='verifycode' placeholder="请输入密码">
+				<span class='confirm'>登录</span>
+				<span class='count-login'><a href="javascript:void(0);">免登录</a></span>
+				<span class='count-reg'><a href="javascript:void(0);">立即注册</a></span>
+			</div>
+		</div>
 	</div>
+		</div>
+	</div>
+	<!-- <div class="mar_t15"></div> -->
+	
 	<script src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
 	<script src="js/common.js"></script>
 	<script src='js/homepage.js'></script>

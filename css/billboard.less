@@ -20,6 +20,12 @@
 			}
 		}
 	}
+	.bill-content{
+		display: none;
+		&.active{
+			display: block;
+		}
+	}
 	.bill-select{
 		height: 36px;
 		line-height: 36px;
@@ -34,6 +40,7 @@
 			&.active{
 				ul{
 					display: block;
+					z-index: 100;
 				}
 			}
 			.icon-down{
@@ -142,6 +149,40 @@
 				display: inline-block;
 				width: 140px;
 				height:100%;
+				position: relative;
+				.icon-hat{
+					width:38px;
+					height: 33px;
+					display: inline-block;
+					background-size: 38px 33px;
+					position: absolute;
+					top:6px;
+					left: 32px;
+				}
+				.icon-bill{
+					display: inline-block;
+					width:68px;
+					height: 18px;
+					background-size: 68px 18px;
+					background-image: url(../img/NO1.png);
+					position: absolute;
+					bottom:28px;
+					left: 36px;
+				}
+				.icon-no{
+					display: inline-block;
+					width:22px;
+					height: 22px;
+					border-radius:50%;
+					background-color: #1889d3;
+					position: absolute;
+					bottom: 30px;
+					left: 40px;
+					text-align: center;
+					line-height: 22px;
+					color:#fff;
+				}
+
 				img{
 					display: block;
 					width: 60px;
@@ -168,7 +209,83 @@
 			.item-intr{
 				width: 224px;
 				padding:0 33px;
+				font-size: 14px;
 				height: 100%;
+				position: relative;
+				>div{
+					width: 224px;
+					height: 100%;
+					>p{
+						width: 224px;
+						position: absolute;
+						top:50%;
+						transform:translateY(-50%);
+						-webkit-transform:translateY(-50%);
+						-moz-transform:translateY(-50%);
+						-ms-transform:translateY(-50%);
+						-o-transform:translateY(-50%);
+						overflow: hidden;
+					text-overflow:ellipsis;
+					display: -webkit-box;
+					-webkit-line-clamp:3;
+					-webkit-box-orient:vertical;
+					}
+					
+				}
+				
+			}
+			.recIndex{
+				display: inline-block;
+				width: 130px;
+				height: 114px;
+				line-height: 114px;
+				font-size: 14px;
+				color:#323232;
+				text-align: center;
+			}
+			.win{
+				display: inline-block;
+				width: 150px;
+				height: 114px;
+				line-height: 114px;
+				font-size: 14px;
+				color:#323232;
+				text-align: center;
+			}
+			.changelast{
+				display: inline-block;
+				width: 100px;
+				height: 114px;
+				line-height: 114px;
+				background-size: 10px 22px;
+				background-position: center;
+				background-repeat: no-repeat;
+				&.up{
+					background-image: url(../img/shang.png);
+				}
+				&.down{
+					background-image: url(../img/xia.png);
+				}
+				
+
+			}
+			.attention{
+				width: 164px;
+				height: 100%;
+				// line-height: 114px;
+				text-align: center;
+				a{
+					display: inline-block;
+					width: 94px;
+					height: 32px;
+					background-color: #1889d3;
+					color:#fff;
+					text-align: center;
+					line-height: 32px;
+					font-size: 14px;
+					border-radius:4px;
+					margin-top:40px;
+				}
 			}
 		}
 	}

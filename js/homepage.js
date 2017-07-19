@@ -1,22 +1,22 @@
 $(function () {
 
-	$('.subnav .fl a').on('click',function(){
+	$(document.body).on('click','.subnav .fl a',function(){
 		$('.subnav .fl a.active').removeClass('active');
 		$(this).addClass('active');
 	})
 	// 导航栏样式切换
-	$('.nav a').on('click', function () {
+	$(document.body).on('click', '.nav a',function () {
 		$('.nav .active').removeClass('active');
 		$(this).addClass('active');
 	});
 	// 控制显示下拉菜单
-	$('.gameplay').on('mouseenter',function () {
+	$(document.body).on('mouseenter','.gameplay',function () {
 		$('.moreGameplay').addClass('active');
 	});
-	$('.gameplay').on('mouseleave',function () {
+	$(document.body).on('mouseleave','.gameplay',function () {
 		$('.moreGameplay').removeClass('active');
 	});
-	$('.moreGameplay a').on('click', function() {
+	$(document.body).on('click', '.moreGameplay a',function() {
 		$('.gameplay>a>.pth').text($(this).text());
 		$('.moreGameplay').removeClass('active');
 		$('.moreGameplay a.active').removeClass('active');
@@ -48,7 +48,27 @@ $(function () {
 	})
 
 	//验证码倒计时
-	$('.personalCenter.phlogin .content .countdown').on('click', function () {
+	$(document.body).on('click', '.personalCenter.phlogin .content .countdown',function () {
+		if($(this).hasClass('active')){
+			return;
+		}
+		$(this).addClass('active');
+		var _this =$(this);
+		var t =4;
+		_this.text('重新获取('+ (t+1) +')');
+		// var t =5;
+		var timeId = setInterval(function () {
+			_this.text('重新获取('+ t-- +')');
+			t=t--;
+			if (t==-1){
+				_this.removeClass('active');
+				clearInterval(timeId);
+				_this.text('重新获取')
+			}
+		},1000)
+	})
+
+	$(document.body).on('click', '.msgbox-phno .verify-word',function () {
 		if($(this).hasClass('active')){
 			return;
 		}
@@ -70,13 +90,13 @@ $(function () {
 
 
 //付款状态取消
-	$('.msgbox-tips .cancel').on('click',function () {
+	$(document.body).on('click','.msgbox-tips .cancel',function () {
 		$('.mask').css({
 			'display':'none'
 		})
 	})
 //付款确定按钮
-	$('.msgbox-tips .confirm').on('click',function () {
+	$(document.body).on('click','.msgbox-tips .confirm',function () {
 		$('.mask').css({
 			'display':'none'
 		})
@@ -86,14 +106,14 @@ $(function () {
 
 	})
 	//付款关闭按钮
-	$('.mask .close').on('click',function () {
+	$(document.body).on('click','.mask .close',function () {
 		$('.mask').css({
 			'display':'none'
 		})
 	})
 
 	// 支付方式选择
-	$('.mask .chooseBtn').on('click',function () {
+	$(document.body).on('click','.mask .chooseBtn',function () {
 		$('.mask .chooseBtn.active').removeClass('active');
 		$(this).addClass('active');
 		$('.tipsword').removeClass('active');
@@ -105,21 +125,21 @@ $(function () {
 	})
 
 	//滚动加载逻辑
-	var loading = false;
-	$(window).on('scroll',function() {
-		var offsetTop= $('.main>.content').offset().top;
-		var scrollTop= $(this).scrollTop();
-		var height=$('.main>.content').height();
-		var winHeight=$(window).height();
-		var bottomHeight=(offsetTop+height)-(scrollTop+winHeight)
-		console.log(bottomHeight)
-		if(bottomHeight<30 && !loading){
-			loading = true;
-			console.log('再加载一次')
-			$('.recItems>ul').append("<li class='clearfix active haveMore pr'><div class='clearfix item-wrap'></div></li>")
-			loading =false;
-		}
-	})
+	// var loading = false;
+	// $(window).on('scroll',function() {
+	// 	var offsetTop= $('.main>.content').offset().top;
+	// 	var scrollTop= $(this).scrollTop();
+	// 	var height=$('.main>.content').height();
+	// 	var winHeight=$(window).height();
+	// 	var bottomHeight=(offsetTop+height)-(scrollTop+winHeight)
+	// 	console.log(bottomHeight)
+	// 	if(bottomHeight<30 && !loading){
+	// 		loading = true;
+	// 		console.log('再加载一次')
+	// 		$('.recItems>ul').append("<li class='clearfix active haveMore pr'><div class='clearfix item-wrap'></div></li>")
+	// 		loading =false;
+	// 	}
+	// })
 
 	//最后一个li样式
 	$('.moreRec.item-son li:last-child').css({

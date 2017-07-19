@@ -17,15 +17,19 @@ body {
   margin-top: 11px;
   margin-right: 20px;
 }
+.nav .wrap ul {
+  top: 0;
+  left: 167px;
+  width: 120%;
+}
 .nav .wrap ul li {
   float: left;
-  width: 92px;
   height: 72px;
   line-height: 72px;
 }
 .nav .wrap ul li a {
   display: inline-block;
-  width: 100%;
+  padding: 0 10px;
   height: 100%;
   text-align: center;
   font-size: 16px;
@@ -114,16 +118,12 @@ body {
   border: 1px solid #ddd;
   padding: 0 10px;
   border-radius: 2px;
-  opacity: 0;
+  opacity: 1;
   filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
   transition: opacity .5s linear;
   -webkit-transition: opacity .5s linear;
   -moz-transitin: opacity .5s linear;
   -ms-transition: opacity .5s linear;
-}
-.main .content > .fl .personalCenter .msg-err:hover {
-  opacity: 1;
-  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=1);
 }
 .main .content > .fl .personalCenter .msg-err .icon-tips {
   display: inline-block;
@@ -234,8 +234,8 @@ body {
   cursor: pointer;
   color: #666;
 }
-.main .content > .fl .personalCenter.logout .logging,
-.main .content > .fl .personalCenter.logout .register {
+.main .content > .fl .personalCenter.logout .logging-page,
+.main .content > .fl .personalCenter.logout .register-page {
   display: inline-block;
   margin-top: 13px;
   width: 88px;
@@ -247,13 +247,13 @@ body {
   color: #666;
   border-radius: 2px;
 }
-.main .content > .fl .personalCenter.logout .logging:hover,
-.main .content > .fl .personalCenter.logout .register:hover {
+.main .content > .fl .personalCenter.logout .logging-page:hover,
+.main .content > .fl .personalCenter.logout .register-page:hover {
   background-color: #e7edf2;
   border-color: #1889d3;
 }
-.main .content > .fl .personalCenter.logout .logging:active,
-.main .content > .fl .personalCenter.logout .register:active {
+.main .content > .fl .personalCenter.logout .logging-page:active,
+.main .content > .fl .personalCenter.logout .register-page:active {
   background-color: #1889d3;
   color: #fff;
   border-color: #1889d3;
@@ -734,6 +734,17 @@ body {
 .main .content > .fr > .recItems > ul li.haveMore .getMore {
   display: block;
 }
+.main .content > .fr > .recItems > ul li.previous .itemLeft,
+.main .content > .fr > .recItems > ul li.previous .itemRight {
+  opacity: 0.8;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+}
+.main .content > .fr > .recItems > ul li.previous button {
+  background-color: #1889f9!important;
+}
+.main .content > .fr > .recItems > ul li.previous .price {
+  color: #999 !important;
+}
 .main .content > .fr > .recItems > ul li.active .itemRight {
   background-image: url(../img/bg.png) !important;
   background-size: 567px 98px;
@@ -752,7 +763,7 @@ body {
 }
 .main .content > .fr > .recItems > ul li .itemLeft i {
   display: inline-block;
-  width: 107px;
+  width: 117px;
   height: 28px;
   line-height: 20px;
   background-image: url(../img/rate.png);
@@ -764,7 +775,7 @@ body {
   box-sizing: border-box;
 }
 .main .content > .fr > .recItems > ul li .itemLeft i span {
-  font-size: 12px;
+  font-size: 14px;
 }
 .main .content > .fr > .recItems > ul li .itemLeft > .msg {
   margin-top: 28px;
@@ -799,7 +810,7 @@ body {
   line-height: 18px;
 }
 .main .content > .fr > .recItems > ul li .itemLeft > .msg .right .rating {
-  margin-left: -12px;
+  margin-left: -9px;
 }
 .main .content > .fr > .recItems > ul li .itemRight {
   width: 567px;
@@ -900,12 +911,19 @@ body {
 .main .content > .fr > .recItems > ul li .itemRight > .message > div .buyBtn {
   margin-right: 20px;
   width: 92px;
+  display: none;
+}
+.main .content > .fr > .recItems > ul li .itemRight > .message > div .buyBtn.active {
+  display: block;
+}
+.main .content > .fr > .recItems > ul li .itemRight > .message > div .buyBtn.purchased button {
+  background-color: #1889d3;
 }
 .main .content > .fr > .recItems > ul li .itemRight > .message > div .buyBtn button {
   width: 92px;
   height: 32px;
   background-color: #ff7043;
-  color: #fff;
+  color: #f9f9f9;
   border-radius: 2px;
   cursor: pointer;
 }
@@ -940,6 +958,7 @@ body {
   position: absolute;
   top: 7px;
   right: 130px;
+  z-index: 10;
 }
 .main .content > .fr > .recItems > ul li .icon-result.success {
   background-image: url(../img/zhong.png);
@@ -956,7 +975,7 @@ body {
 .main .content > .fr > .recItems .previous li .itemLeft,
 .main .content > .fr > .recItems .previous li .itemRight {
   opacity: 0.9;
-  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);
 }
 .main .content > .fr > .recItems .previous li button {
   background-color: #1889f9!important;
@@ -972,8 +991,14 @@ body {
   left: 0;
   z-index: 200 ;
 }
+.mask.active .msgbox-tips,
+.mask.active .msgbox-pay,
+.mask.active .msgbox-phno {
+  display: block;
+}
 .mask .msgbox-tips,
-.mask .msgbox-pay {
+.mask .msgbox-pay,
+.mask .msgbox-phno {
   width: 478px;
   position: fixed;
   top: 50%;
@@ -984,11 +1009,13 @@ body {
   -ms-transform: translate(-50%, -50%);
   -o-transfrom: translate(-50%, -50%);
   border-radius: 4px;
-  z-index: 300;
+  z-index: 500;
+  display: none;
   overflow: hidden;
 }
 .mask .msgbox-tips .title,
-.mask .msgbox-pay .title {
+.mask .msgbox-pay .title,
+.mask .msgbox-phno .title {
   height: 48px;
   width: 468px;
   line-height: 48px;
@@ -999,7 +1026,8 @@ body {
   background-color: #ddd;
 }
 .mask .msgbox-tips .title .close,
-.mask .msgbox-pay .title .close {
+.mask .msgbox-pay .title .close,
+.mask .msgbox-phno .title .close {
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -1011,11 +1039,13 @@ body {
   cursor: pointer;
 }
 .mask .msgbox-tips .content,
-.mask .msgbox-pay .content {
+.mask .msgbox-pay .content,
+.mask .msgbox-phno .content {
   background-color: #fff;
 }
 .mask .msgbox-tips .content .count,
-.mask .msgbox-pay .content .count {
+.mask .msgbox-pay .content .count,
+.mask .msgbox-phno .content .count {
   height: 24px;
   line-height: 24px;
   font-size: 24px;
@@ -1024,7 +1054,8 @@ body {
   color: #323232;
 }
 .mask .msgbox-tips .content .return,
-.mask .msgbox-pay .content .return {
+.mask .msgbox-pay .content .return,
+.mask .msgbox-phno .content .return {
   corlor: #ff3f54;
   font-size: 16px;
   padding-top: 20px;
@@ -1032,7 +1063,8 @@ body {
   text-align: center;
 }
 .mask .msgbox-tips .content .return .tui,
-.mask .msgbox-pay .content .return .tui {
+.mask .msgbox-pay .content .return .tui,
+.mask .msgbox-phno .content .return .tui {
   display: inline-block;
   width: 16px;
   height: 18px;
@@ -1043,8 +1075,10 @@ body {
 }
 .mask .msgbox-tips .content .confirm,
 .mask .msgbox-pay .content .confirm,
+.mask .msgbox-phno .content .confirm,
 .mask .msgbox-tips .content .cancel,
-.mask .msgbox-pay .content .cancel {
+.mask .msgbox-pay .content .cancel,
+.mask .msgbox-phno .content .cancel {
   display: inline-block;
   width: 100px;
   height: 40px;
@@ -1059,13 +1093,13 @@ body {
   border-radius: 2px;
 }
 .mask .msgbox-tips .content .cancel,
-.mask .msgbox-pay .content .cancel {
+.mask .msgbox-pay .content .cancel,
+.mask .msgbox-phno .content .cancel {
   margin-left: 80px;
 }
 .mask .msgbox-pay {
   overflow: hidden;
   transform: translate(-50%, -50%);
-  display: block;
   z-index: 400;
 }
 .mask .msgbox-pay .content-money {
@@ -1186,4 +1220,34 @@ body {
 }
 .mask .msgbox-pay .content-money .tipsword.active {
   display: block;
+}
+.mask .msgbox-phno .content {
+  text-align: center;
+}
+.mask .msgbox-phno .content .tips-word {
+  font-size: 24px;
+  text-align: center;
+  height: 80px;
+  line-height: 80px;
+  color: #323232;
+}
+.mask .msgbox-phno .content .phno,
+.mask .msgbox-phno .content .verifycode {
+  height: 46px;
+  line-height: 46px;
+  font-size: 16px;
+  padding-left: 16px;
+  width: 364px;
+  background-color: #f4f4f4;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.mask .msgbox-phno .content .verifycode {
+  width: 224px;
+}
+.mask .msgbox-phno .content .verify-word {
+  display: inline-block;
+  width: 140px;
+  height: 46px;
+  line-height: 46px;
 }

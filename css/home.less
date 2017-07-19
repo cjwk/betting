@@ -2,6 +2,19 @@
 body{
 	background-color: #f4f4f4;
 }
+html,body{
+	height: 100%;
+}
+.layout{
+	min-height: 100%;
+}
+.container{
+	padding-bottom: 120px;
+}
+.mar_t15{
+	height: 120px;
+	margin-top: -120px;
+}
 .nav{
 	width:100%;
 	height: 72px;
@@ -19,14 +32,16 @@ body{
 			margin-right: 20px;
 		}
 	ul{
+		top:0;
+		left: 167px;
+		width:120%;
 		li{
 			float:left;
-			width: 92px;
 			height: 72px;
 			line-height: 72px;
 			a{
 				display: inline-block;
-				width: 100%;
+				padding:0 10px;
 				height: 100%;
 				// height: 71px\9;
 				text-align: center;
@@ -122,16 +137,16 @@ body{
 					border:1px solid #ddd;
 					padding:0 10px;
 					border-radius: 2px;
-					opacity:0;
+					opacity:1;
 					filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
 					transition: opacity .5s linear;
 					-webkit-transition: opacity .5s linear;
 					-moz-transitin: opacity .5s linear;
 					-ms-transition:opacity .5s linear;
-					&:hover{
-						opacity: 1;
-						filter:progid:DXImageTransform.Microsoft.Alpha(opacity=1);
-					}
+					// &:hover{
+					// 	opacity: 1;
+					// 	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=1);
+					// }
 					.icon-tips{
 						display: inline-block;
 						width: 14px;
@@ -254,7 +269,7 @@ body{
 							// background-color: #1889d3;
 						}
 					}
-					.logging,.register{
+					.logging-page,.register-page{
 						display: inline-block;
 						margin-top:13px;
 						width: 88px;
@@ -777,6 +792,18 @@ body{
 							display: block;
 						}
 					}
+					&.previous{
+						.itemLeft,.itemRight{
+						opacity: 0.8;
+						filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+					}
+					button{
+						background-color: #1889f9!important;
+					}
+					.price{
+						color:#999 !important;
+					}
+					}
 					&.active{
 						.itemRight{
 						background-image: url(../img/bg.png) !important;
@@ -797,7 +824,7 @@ body{
 						background-color: #fff;
 						i{
 							display: inline-block;
-							width:107px;
+							width:117px;
 							height: 28px;
 							line-height: 20px;
 							background-image: url(../img/rate.png);
@@ -808,7 +835,7 @@ body{
 							padding-left: 3px;
 							box-sizing: border-box;
 							span{
-								font-size: 12px;
+								font-size: 14px;
 							}
 						}
 						>.msg{
@@ -950,12 +977,20 @@ body{
 								.buyBtn{
 									margin-right: 20px;
 									width: 92px;
-						
+									display: none;
+									&.active{
+										display: block;
+									}
+									&.purchased{
+										button{
+											background-color: #1889d3;
+										}
+									}
 									button{
 										width: 92px;
 									height: 32px;
 									background-color: #ff7043;
-									color:#fff;
+									color:#f9f9f9;
 									border-radius: 2px;
 									cursor:pointer;
 									}
@@ -994,6 +1029,7 @@ body{
 						position: absolute;
 						top:7px;
 						right:130px;
+						z-index: 10;
 						&.success{
 							background-image: url(../img/zhong.png);
 						}
@@ -1011,7 +1047,7 @@ body{
 				li{
 					.itemLeft,.itemRight{
 						opacity: 0.9;
-						filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+						filter:progid:DXImageTransform.Microsoft.Alpha(opacity=90);
 					}
 					button{
 						background-color: #1889f9!important;
@@ -1032,7 +1068,12 @@ body{
 	top:0;
 	left: 0;
 	z-index: 200 ;
-	.msgbox-tips,.msgbox-pay{
+	display: none;
+	&.active{
+		display: block;
+
+	}
+	.msgbox-tips,.msgbox-pay,.msgbox-phno,.msgbox-counter{
 		width: 478px;
 		position:fixed;
 		top:50%;
@@ -1045,7 +1086,7 @@ body{
 		-ms-transform:translate(-50%,-50%);
 		-o-transfrom:translate(-50%,-50%);
 		border-radius: 4px;
-		z-index: 300;
+		z-index: 500;
 		overflow: hidden;
 		.title{
 			height: 48px;
@@ -1106,7 +1147,7 @@ body{
 				margin-bottom: 30px;
 				margin-left: 100px;
 				cursor:pointer;
-				border-radius: 2px;
+				border-radius: 4px;
 			}
 			.cancel{
 				margin-left: 80px;
@@ -1118,7 +1159,7 @@ body{
 		// margin-top:-307px;
 		overflow: hidden;
 		transform:translate(-50%,-50%);
-		display: block;
+		// display: block;
 		z-index:400;
 		.content-money{
 			width: 100%;
@@ -1162,7 +1203,7 @@ body{
 				line-height: 38px;
 				// border:1px solid #1e88d2;
 				border:1px solid #ddd;
-				border-radius:2px;
+				border-radius:4px;
 				margin-left: 73px;
 				// text-align: center;
 				padding-left: 46px;
@@ -1238,5 +1279,91 @@ body{
 				}
 			}
 		}
+	}
+	.msgbox-phno,.msgbox-counter{
+		.content{
+			text-align: center;
+			.tips-word{
+				font-size: 24px;
+				text-align: center;
+				height: 80px;
+				line-height: 80px;
+				color:#323232;
+			}
+			.phno,.verifycode{
+				height: 44px;
+				line-height: 44px;
+				font-size: 16px;
+				padding-left: 16px;
+				width:362px;
+				background-color: #f4f4f4;
+				border-radius: 4px;
+				margin-bottom: 20px;
+				border:1px solid #d1d1d1;
+			}
+			.verifycode{
+				width: 224px;
+				border-top-left-radius: 4px;
+				border-bottom-left-radius: 4px;
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+				border-right: none;
+			}
+			.verify-word{
+				display: inline-block;
+				width: 139px;
+				height: 44px;
+				line-height: 44px;
+				background-color: #ddd;
+				color:#323232;
+				cursor:pointer;
+				border-top-right-radius: 4px;
+				border-bottom-right-radius: 4px;
+				border:1px solid #d1d1d1;
+				border-left: none;
+			}
+			.confirm{
+				width:380px;
+				height: 48px;
+				line-height: 48px;
+				text-align: center;
+				margin-left: 0;
+				border-radius: 4px;
+				font-size: 20px;
+				letter-spacing: 8px;
+				margin-bottom: 0;
+			}
+			.count-login,.count-reg{
+				display: inline-block;
+				width:96px;
+				height: 32px;
+				line-height: 32px;
+				margin-bottom: 56px;
+				a{
+					display: inline-block;
+					width: 100%;
+					height: 100%;
+					color:#797979;
+					text-align: center;
+					font-size: 16px;
+				}
+			}
+			.count-login{
+				margin-right: 188px;
+			}
+		}
+	}
+	.msgbox-counter{
+	.content{
+		.phno{
+			margin-top:40px;
+		}
+		.verifycode{
+			width:362px;
+			margin-bottom: 40px;
+			border-radius: 4px;
+			border-right:1px solid #d1d1d1;
+		}
+	}
 	}
 }
