@@ -1,0 +1,542 @@
+.content .case-pre {
+  width: 200px;
+  background-color: #fff;
+}
+.content .case-pre .header {
+  width: 185px;
+  height: 36px;
+  background-color: #1fa0ff;
+  font-size: 16px;
+  color: #fff;
+  padding-left: 15px;
+  line-height: 36px;
+}
+.content .case-pre .msg {
+  width: 100%;
+  text-align: center;
+}
+.content .case-pre .msg img {
+  border-radius: 50%;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.content .case-pre .msg .per-name {
+  display: inline-block;
+  width: 146px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 16px;
+  color: #323232;
+  line-height: 16px;
+  padding-top: 12px;
+  padding-bottom: 14px;
+}
+.content .case-pre .msg .per-intr {
+  width: 146px;
+  margin-left: 27px;
+  margin-bottom: 26px;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: left;
+  overflow: hidden;
+  color: #666;
+}
+.content .case-pre .msg .per-intr i,
+.content .case-pre .msg .per-intr a {
+  color: #999;
+  font-size: 12px;
+}
+.content .case-pre .grid {
+  text-align: center;
+  width: 100%;
+  height: 130px;
+  border-top: 1px solid #f0f0f0;
+  border-bottom-right-radius: 1px solid #f0f0f0;
+}
+.content .case-pre .grid .fl p {
+  font-size: 20px;
+  padding-top: 12px;
+  padding-bottom: 4px;
+  height: 18px;
+  line-height: 18px;
+}
+.content .case-pre .grid .fl span {
+  font-size: 12px;
+  padding-bottom: 12px;
+  height: 12px;
+  line-height: 12px;
+  color: #666;
+}
+.content .case-pre .grid .case-no {
+  width: 99px;
+  border-right: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  height: 64px;
+}
+.content .case-pre .grid .care-no {
+  width: 100px;
+  border-bottom: 1px solid #f0f0f0;
+  height: 64px;
+}
+.content .case-pre .grid .rate-no {
+  width: 99px;
+  border-right: 1px solid #f0f0f0;
+  height: 65px;
+}
+.content .case-pre .grid .rate-no p {
+  color: #e53935;
+}
+.content .case-pre .grid .max-no {
+  width: 100px;
+  height: 65px;
+}
+.content .case-pre .grid .max-no p {
+  color: #e53935;
+}
+.content .fr .content {
+  width: 780px;
+  background-color: #fff;
+  padding-bottom: 30px;
+}
+.content .fr .content.selling .detail-content .fr.purchase {
+  display: block;
+}
+.content .fr .content.failed .detail-content .icon-result {
+  display: block;
+  background-image: url(../img/fail104.png);
+}
+.content .fr .content.failed .detail-content p.detail-msg .detail-start {
+  color: #c53336;
+  border-color: #ddd;
+}
+.content .fr .content.success .detail-content .icon-result {
+  display: block;
+  background-image: url(../img/zhong104.png);
+}
+.content .fr .content.success .detail-content p.detail-msg .detail-start {
+  color: #c53336;
+  border-color: #ddd;
+}
+.content .fr .content.zou .detail-content .icon-result {
+  display: block;
+  background-image: url(../img/zou104.png);
+}
+.content .fr .content.zou .detail-content p.detail-msg .detail-start {
+  color: #c53336;
+  border-color: #ddd;
+}
+.content .fr .content .detail-header {
+  width: 765px;
+  padding-left: 15px;
+  font-size: 16px;
+  height: 36px;
+  line-height: 36px;
+  color: #fff;
+  background-color: #1fa0ff;
+}
+.content .fr .content .detail-title h3 {
+  font-size: 28px;
+  color: #323232;
+  padding-left: 30px;
+  height: 28px;
+  line-height: 28px;
+  font-weight: 600;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.content .fr .content .detail-content {
+  margin: 0 30px;
+  color: #fff;
+}
+.content .fr .content .detail-content .detail-msg {
+  background-color: #f1f8fd;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  color: #323232;
+}
+.content .fr .content .detail-content .detail-msg span {
+  display: inline-block;
+}
+.content .fr .content .detail-content .detail-msg .detail-start {
+  height: 22px;
+  line-height: 22px;
+  margin: 0 10px;
+  padding: 0 7px;
+  border: 1px solid #1fa0ff;
+  border-radius: 12px;
+  background-color: #E4F0F9 ;
+}
+.content .fr .content .detail-content .detail-msg .detail-type {
+  padding-right: 14px;
+  height: 14px;
+  line-height: 14px;
+  border-right: 1px solid #999;
+}
+.content .fr .content .detail-content .detail-msg .detail-lian {
+  padding-left: 14px;
+  padding-right: 10px;
+}
+.content .fr .content .detail-content .detail-msg .detail-date {
+  padding-left: 14px;
+  padding-right: 14px;
+}
+.content .fr .content .detail-content .teamMsg {
+  padding: 0px 144px 0;
+}
+.content .fr .content .detail-content .teamMsg .homeTeam,
+.content .fr .content .detail-content .teamMsg .visitTeam {
+  width: 100px;
+}
+.content .fr .content .detail-content .teamMsg .homeTeam .homeTeam-wrap,
+.content .fr .content .detail-content .teamMsg .visitTeam .homeTeam-wrap,
+.content .fr .content .detail-content .teamMsg .homeTeam .visitTeam-wrap,
+.content .fr .content .detail-content .teamMsg .visitTeam .visitTeam-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 20px;
+}
+.content .fr .content .detail-content .teamMsg .homeTeam img,
+.content .fr .content .detail-content .teamMsg .visitTeam img {
+  width: 100%;
+  height: 100%;
+}
+.content .fr .content .detail-content .teamMsg .homeTeam .teamName,
+.content .fr .content .detail-content .teamMsg .visitTeam .teamName {
+  font-size: 18px;
+  color: #323232;
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  height: 54px;
+  line-height: 54px;
+  margin-left: -50px;
+}
+.content .fr .content .detail-content .teamMsg .vs {
+  width: 230px;
+  text-align: center;
+  font-size: 48px;
+  height: 100px;
+  line-height: 50px;
+  color: #B2D3EA;
+  font-weight: 700;
+}
+.content .fr .content .detail-content .teamMsg .vs i {
+  display: block;
+  font-size: 16px;
+  color: #444;
+  line-height: 30px;
+}
+.content .fr .content .detail-content .teamRate {
+  padding: 0 120px;
+}
+.content .fr .content .detail-content .teamRate .homeWin,
+.content .fr .content .detail-content .teamRate .teamMth,
+.content .fr .content .detail-content .teamRate .visitWin {
+  width: 158px;
+  height: 60px;
+  text-align: center;
+  font-size: 18px;
+  background-color: #f5f5f5;
+  border-right: 2px solid #fff;
+  position: relative;
+  color: #323232;
+}
+.content .fr .content .detail-content .teamRate .homeWin.selling,
+.content .fr .content .detail-content .teamRate .teamMth.selling,
+.content .fr .content .detail-content .teamRate .visitWin.selling {
+  color: #fff;
+  background-color: #1fa0ff;
+  border-radius: 4px;
+}
+.content .fr .content .detail-content .teamRate .homeWin.selling .icon-rec,
+.content .fr .content .detail-content .teamRate .teamMth.selling .icon-rec,
+.content .fr .content .detail-content .teamRate .visitWin.selling .icon-rec {
+  background-image: url(../img/jian1.png);
+}
+.content .fr .content .detail-content .teamRate .homeWin.win,
+.content .fr .content .detail-content .teamRate .teamMth.win,
+.content .fr .content .detail-content .teamRate .visitWin.win {
+  color: #fff;
+  background-color: #1fa0ff;
+  border-radius: 4px;
+}
+.content .fr .content .detail-content .teamRate .homeWin.win .icon-rec,
+.content .fr .content .detail-content .teamRate .teamMth.win .icon-rec,
+.content .fr .content .detail-content .teamRate .visitWin.win .icon-rec {
+  background-image: url(../img/gouzhong.png);
+}
+.content .fr .content .detail-content .teamRate .homeWin.failed,
+.content .fr .content .detail-content .teamRate .teamMth.failed,
+.content .fr .content .detail-content .teamRate .visitWin.failed {
+  color: #323232 ;
+  background-color: #999;
+  border-radius: 4px;
+}
+.content .fr .content .detail-content .teamRate .homeWin.failed .icon-rec,
+.content .fr .content .detail-content .teamRate .teamMth.failed .icon-rec,
+.content .fr .content .detail-content .teamRate .visitWin.failed .icon-rec {
+  background-image: url(../img/jian2.png);
+}
+.content .fr .content .detail-content .teamRate .homeWin.zou,
+.content .fr .content .detail-content .teamRate .teamMth.zou,
+.content .fr .content .detail-content .teamRate .visitWin.zou {
+  color: #fff;
+  background-color: #9CD980;
+  border-radius: 4px;
+}
+.content .fr .content .detail-content .teamRate .homeWin.zou .icon-rec,
+.content .fr .content .detail-content .teamRate .teamMth.zou .icon-rec,
+.content .fr .content .detail-content .teamRate .visitWin.zou .icon-rec {
+  background-image: url(../img/jian3.png);
+}
+.content .fr .content .detail-content .teamRate .homeWin i,
+.content .fr .content .detail-content .teamRate .teamMth i,
+.content .fr .content .detail-content .teamRate .visitWin i {
+  display: inline-block;
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+  width: 38px;
+  height: 34px;
+  background-size: 38px 34px;
+}
+.content .fr .content .detail-content .teamRate .homeWin p,
+.content .fr .content .detail-content .teamRate .teamMth p,
+.content .fr .content .detail-content .teamRate .visitWin p {
+  padding-top: 8px;
+  padding-bottom: 5px;
+}
+.content .fr .content .detail-content .teamRate .homeWin {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.content .fr .content .detail-content .teamRate .visitWin {
+  border-right: none !important;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.content .fr .content .detail-content .wording {
+  padding: 4px 80px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #323232;
+}
+.content .fr .content .detail-content .wording p {
+  margin-bottom: 6px;
+  line-height: 28px;
+}
+.content .fr .content .detail-content .wording p span.fistSpan {
+  display: inline-block;
+  width: 75px;
+  vertical-align: top;
+}
+.content .fr .content .detail-content .wording p span.lastSpan {
+  display: inline-block;
+  width: 479px;
+}
+.content .fr .content .detail-content .wording p .price {
+  color: #FF7043;
+  padding-left: 2px;
+}
+.content .fr .content .detail-content .wording p .buyBtn {
+  display: inline-block;
+  width: 108px;
+  height: 38px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 38px;
+  background-color: #FF7043;
+  line-height: 38px;
+  text-align: center;
+}
+.content .fr .content .detail-content .fr.purchase {
+  display: none;
+  color: #323232;
+  font-size: 18px;
+  position: relative;
+  padding-top: 48px;
+}
+.content .fr .content .detail-content .fr.purchase .price {
+  color: #FF7043;
+}
+.content .fr .content .detail-content .fr.purchase .buyBtn {
+  display: inline-block;
+  width: 116px;
+  height: 38px;
+  margin-left: 28px;
+  margin-right: 23px;
+  margin-bottom: 38px;
+  background-color: #F57b04;
+  line-height: 38px;
+  text-align: center;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.content .fr .content .detail-content .fr.purchase .purchaseNum {
+  display: inline-block;
+  position: absolute;
+  left: 233px;
+  bottom: 18px;
+  font-size: 14px;
+  color: #666;
+}
+.content .fr .content .detail-content .icon-result {
+  display: inline-block;
+  width: 104px;
+  height: 104px;
+  background-size: 104px 104px;
+  display: none;
+  float: right;
+  margin-bottom: 30px;
+  margin-right: 40px;
+}
+.content .fr .content .sellMsg {
+  margin: 0 30px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+}
+.content .fr .content .sellMsg .sellHeader {
+  width: 100%;
+  height: 48px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 48px;
+  background-color: #F1F8FD;
+  color: #323232;
+}
+.content .fr .content .sellMsg table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.content .fr .content .sellMsg table th {
+  color: #323232;
+  font-weight: normal;
+  border-top: 1px solid #ddd;
+}
+.content .fr .content .sellMsg table td {
+  width: 239px;
+  text-align: center;
+  color: #323232;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-top: 1px solid #ddd;
+}
+.content .fr .content .sellMsg table tr {
+  height: 42px;
+  line-height: 42px;
+}
+.portrait .portrait-wrap {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto;
+  border: 2px solid #1fa0ff;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+.portrait .portrait-wrap img {
+  width: 100%;
+  height: 100%;
+  margin-top: 0 !important;
+}
+.content.jcdg .detail-content .team-left {
+  width: 100px;
+  color: #323232;
+  font-size: 24px;
+  margin-left: 65px;
+  height: auto;
+}
+.content.jcdg .detail-content .team-left p {
+  width: 80px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  margin: 0px 10px;
+  background-color: #f5f5f5;
+}
+.content.jcdg .detail-content .team-left p.rangnum {
+  color: #1fa0ff;
+  border-radius: 4px;
+}
+.content.jcdg .detail-content .team-left p.rang {
+  height: 100px;
+  line-height: 100px;
+  padding-bottom: 14px;
+  background-color: #fff;
+}
+.content.jcdg .detail-content .team-right {
+  width: 480px;
+}
+.content.jcdg .detail-content .team-right .teamMsg {
+  padding: 0;
+  padding-left: 25px;
+}
+.content.jcdg .detail-content .team-right .teamRate {
+  padding: 0;
+}
+.detail-msg-wrap {
+  padding-top: 20px;
+}
+.detail-msg-wrap .team-left {
+  height: 0;
+}
+.detail-item {
+  border: 1px solid #ddd;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+}
+.wording .paybef {
+  width: 100%;
+  text-align: center;
+  height: 20px;
+  font-size: 20px;
+  line-height: 20px;
+  position: relative;
+  margin-top: 20px;
+}
+.wording .paybef i {
+  display: inline-block;
+  width: 252px;
+  height: 1px;
+  border-top: 1px solid #ddd;
+  position: absolute;
+  top: 70%;
+  left: -80px;
+}
+.wording .paybef i.border-right {
+  left: 385px;
+}
+.content .fr .content .detail-content .teamMsg .vs {
+  font-weight: 700;
+}
+.content .fr .content .detail-content .teamMsg .homeTeam .homeTeam-wrap,
+.content .fr .content .detail-content .teamMsg .visitTeam .homeTeam-wrap,
+.content .fr .content .detail-content .teamMsg .homeTeam .visitTeam-wrap,
+.content .fr .content .detail-content .teamMsg .visitTeam .visitTeam-wrap {
+  border-radius: 0;
+}
+.content .fr .content {
+  width: 790px;
+}
+.content .fr .content .detail-header {
+  width: 775px;
+}
+.content.jcdg .detail-content .team-left p.rang {
+  line-height: 70px;
+}
+.content .fr .content .detail-content .wording {
+  padding: 4px 20px;
+}
+.wording .paybef i {
+  left: -20px;
+}
+.wording .paybef i.border-right {
+  left: 455px;
+}

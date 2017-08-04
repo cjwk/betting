@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="../css/dcalendar.picker.css">
 	<style>
 	*{
 		margin:0;
@@ -19,7 +20,6 @@
 		}
 		.layout{
 			min-height: 100%;
-			/*padding-bottom: 100px;*/
 		}
 		.container{
 			padding-bottom: 100px;
@@ -28,6 +28,7 @@
 	</style>
 </head>
 <body>
+<input id='mydatepicker' type='text'/>     
 <div class="layout">
 	<ul class='container'>
 		<li>22334</li>
@@ -36,5 +37,12 @@
 </div>
 	
 	<div class='footer'>fottffff</div>
+	<script src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+	<script src="../js/dcalendar.picker.js"></script>
+	<script>
+		$('#mydatepicker').dcalendarpicker({
+			lang:'ch'
+		}); 
+	</script>
 </body>
 </html>

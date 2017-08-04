@@ -1,0 +1,46 @@
+.msgbox-tips {
+  width: 478px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-trasnform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transfrom: translate(-50%, -50%);
+  border-radius: 4px;
+  z-index: 500;
+  overflow: hidden;
+}
+.msgbox-tips .title {
+  height: 48px;
+  width: 468px;
+  line-height: 48px;
+  padding-left: 10px;
+  font-size: 24px;
+  font-size: 18px;
+  background-color: #1fa0ff;
+  color: #fff;
+}
+.msgbox-tips .title .close {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/bigclose.png);
+  background-size: 16px 16px;
+  float: right;
+  margin-right: 20px;
+  margin-top: 16px;
+  cursor: pointer;
+}
+.msgbox-tips .content {
+  background-color: #fff;
+}
+.msgbox-tips .content .count {
+  height: 24px;
+  line-height: 24px;
+  font-size: 24px;
+  text-align: center;
+  padding-top: 50px;
+  color: #323232;
+}

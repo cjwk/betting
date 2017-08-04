@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>竞彩推荐</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<!-- <link rel="stylesheet/less" href="../css/home.less"> -->
+	<!-- <link rel="stylesheet/less" href="../css/preCent.less"> -->
+	<link rel="stylesheet" href="../css/home.css">
+	<link rel="stylesheet" href="../css/preCent.css">
+	<link rel="stylesheet" href="../css/jquery.datetimepicker.css">
+
+
+	<!-- <script src="https://cdn.bootcss.com/less.js/2.5.2/less.min.js"></script> -->
+	
+</head>
+<body>
+	<div class="layout">
+		<div class="container">
+			<div class="header wrap clearfix">
+	</div>
+	<div class="nav">
+		<div class="wrap clearfix pr">
+			<div class="logo fl"></div>
+			<ul class='clearfix pa'>
+				<li><a href="javascript:void(0);" class='active'>今日情报</a></li>
+				<li><a href="javascript:void(0);">竞彩足球</a></li>
+				<li><a href="javascript:void(0);">竞彩篮球</a></li>
+				<li><a href="javascript:void(0);">角球比分</a></li>
+				<li><a href="javascript:void(0);">足球指数</a></li>
+				<li><a href="javascript:void(0);">完场统计</a></li>
+				<li><a href="javascript:void(0);">专家推介</a></li>
+				<li><a href="javascript:void(0);">水位统计</a></li>
+				<li><a href="javascript:void(0);">联赛资料联赛</a></li>
+				<li><a href="javascript:void(0);">联赛资料联赛</a></li>
+				<li><a href="javascript:void(0);">联赛资料</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="main wrap">
+		<div class="subnav clearfix">
+			<div class="fl">
+				<div class="recommend-title">
+					<a href="javascript:void(0);" class='active'>推荐市场</a>
+				</div><div class="billboard">
+					<a href="javascript:void(0);" >排行榜</a>
+				</div>
+			</div>
+			<div class="fr">
+				<div>
+					<input type="text" placeholder="请输入专家昵称" class='txt'><button class='search'></button>
+				</div>	
+			</div>
+		</div>
+		<div class="content">
+		<!-- 这是专家的个人主页头部 -->
+			<div class="header">
+				<div class="fl header-left clearfix">
+					<div class="pre-portrait fl">
+						<img src="../img/co.jpg" alt="">
+					</div>
+					<div class="per-msg fl">
+						<p class='name'>用户昵称用户昵称用户昵称用户昵称</p>
+						
+						<p class='count'>账户余额：<span>200</span>球币</p>
+					</div>
+					<div class="pre-btn fr">
+						<div class="pre-in">充值</div>
+						<div class="pre-out">提现</div>
+					</div>
+				</div>
+				<div class="fl pre-gamemsg ">
+					<ul class='clearfix'>
+						<li>
+							<p class='title'>本周推荐</p>
+							<p class='result'><span>32</span>场</p>
+						</li>
+						<li>
+							<p class='title'>本周推荐</p>
+							<p class='result'><span>32</span>场</p>
+						</li>
+						<li>
+							<p class='title'>本周推荐</p>
+							<p class='result'><span>32</span>场</p>
+						</li>
+						<li>
+							<p class='title'>本周推荐</p>
+							<p class='result'><span>32</span>场</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- 这个普通用户的个人主页头部 -->
+			<div class="header-p">
+				<div class="p-portrait">
+					<img src="../img/co.jpg" alt="">
+				</div>
+				<p class='name'>昵称昵称昵称昵称称昵称昵称称昵称昵称称昵称昵称</p>
+				<p class='count'>账户余额：<span>200</span>球币</p>
+				<div class="p-btn">
+					<span class='recharge'>充值</span>
+					<span class='confirm pr'>实名认证<i class='pa'>实名认证——申请专家<i class='pa'></i></i></span>
+				</div>
+			</div>
+			<div class="tab-wrap clearfix">
+				<div class="fl tab-column">
+					<ul>
+						<li class='active  '><i></i>我的推荐</li>
+						<li><i></i>购买记录</li>
+						<li><i></i>交易记录</li>
+						<li><i></i>我的关注</li>
+						<li><i></i>我的帮助</li>
+					</ul>
+				</div>
+				<div class="fl tab-content">
+				<div class="showItem active ">
+					
+
+				<!-- 我的推荐 -->
+					<div class="tab-title">
+						<span class='active'>当前推荐</span>
+						<span>历史推荐</span>
+					</div>
+					<div class="tab-select">
+					<form action="">
+						<label for='all' class='active'><span class='inputradio'><input type="radio" name="tabselect" id="all"></span>全部</label>
+						<label for='yp'><span class='inputradio'><input type="radio" name="tabselect" id="yp"></span>亚盘</label>
+						<label for='dxq'><span class='inputradio'><input type="radio" name="tabselect" id="dxq"></span>大小球</label>
+						<label for='jcdg'><span class='inputradio'><input type="radio" name="tabselect" id="jcdg"></span>竞彩单关</label>
+						<label for='bcyp'><span class='inputradio'><input type="radio" name="tabselect" id="bcyp"></span>半场亚盘</label>
+						<label for='bcdxq'><span class='inputradio'><input type="radio" name="tabselect" id="bcdxq"></span>半场大小球</label>
+					</form>
+					</div>
+					<div class="tab-rec">
+					<div class="except">
+						<img src="../img/except.png" alt="">
+						<div>
+							<p>暂无推介</p>
+							
+						</div>
+					</div>
+						<ul class='active'>
+							<li class='pr clearfix c2'>
+								<div class="item-wrap">
+									<div class="itemRight fr">
+													<div class="message clearfix pr">
+														<div class="mgs-left fl">
+															<i class='icon_ball'>一</i>
+															<p class='titleMsg'>
+																<span class='first fl'>竞彩单关</span><em class='fl'><i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦地地道道的地鹅道的地鹅道的地鹅</span><span class='forth'>06-28 18:30</span>
+															</i>
+															<i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦地地道道的地鹅道的地鹅道的地鹅</span><span class='forth'>06-28 18:30</span>
+															</i>
+														</em>
+
+													</p>
+													<div class="recTit ">巴西杯大1</div>
+													<div class="tui clearfix">
+														<div class="refund fl"><i></i>不中就退</div>
+														<span class='releasstime fl'>发布于两小时前</span>
+														<div class="price fl">55球币</div>
+													</div>
+												</div>
+												<div class="msg-right pa">
+													<div class="buyBtn ">
+														<button class='detail'>查看详情</button>
+														<div class="count">已有30人购买</div>
+													</div>
+												</div>
+												<div class="result pa failed">
+
+												</div>
+												<div class="result-mask pa"></div>
+
+											</div>
+										</div>
+								</div>
+							</li>
+							
+						</ul>
+						
+						<ul class=''>
+							<li class='pr clearfix'>
+								<div class="item-wrap">
+									<div class="itemRight fr">
+													<div class="message clearfix pr">
+														<div class="mgs-left fl">
+															<i class='icon_ball'>一</i>
+															<p class='titleMsg'>
+																<span class='first fl'>竞彩单关</span><em class='fl'><i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦地地道道的地鹅道的地鹅道的地鹅</span><span class='forth'>06-28 18:30</span>
+															</i>
+														</em>
+
+													</p>
+													<div class="recTit ">巴西杯大1</div>
+													<div class="tui clearfix">
+														<div class="refund fl"><i></i>不中就退</div>
+														<span class='releasstime fl'>发布于两小时前</span>
+														<div class="price fl">55球币</div>
+													</div>
+												</div>
+												<div class="msg-right pa">
+													<div class="buyBtn ">
+														<button class='detail'>查看详情</button>
+														<div class="count">已有30人购买</div>
+													</div>
+												</div>
+												<div class="result pa failed">
+
+												</div>
+												<div class="result-mask pa"></div>
+
+
+											</div>
+										</div>
+								</div>
+							</li>
+							<li class='pr clearfix c3'>
+								<div class="item-wrap">
+									<div class="itemRight fr">
+													<div class="message clearfix pr">
+														<div class="mgs-left fl">
+															<i class='icon_ball'>一</i>
+															<p class='titleMsg'>
+																<span class='first fl'>竞彩单关</span><em class='fl'><i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦地地道道的地鹅道的地鹅道的地鹅</span><span class='forth'>06-28 18:30</span>
+															</i>
+															<i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦地地道道的地鹅道的地鹅道的地鹅</span><span class='forth'>06-28 18:30</span>
+															</i>
+															<i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦地地道道的地鹅道的地鹅道的地鹅</span><span class='forth'>06-28 18:30</span>
+															</i>
+														</em>
+
+													</p>
+													<div class="recTit ">巴西杯大1</div>
+													<div class="tui clearfix">
+														<div class="refund fl"><i></i>不中就退</div>
+														<span class='releasstime fl'>发布于两小时前</span>
+														<div class="price fl">55球币</div>
+													</div>
+												</div>
+												<div class="msg-right pa">
+													<div class="buyBtn ">
+														<button class='detail'>查看详情</button>
+														<div class="count">已有30人购买</div>
+													</div>
+												</div>
+												<div class="result pa zhong">
+
+												</div>
+												<div class="result-mask pa"></div>
+
+											</div>
+										</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+				
+
+
+				<div class="showItem">
+					<!-- //购买记录 -->
+					<div class="tab-title">
+						<span class='active'>购买记录</span>
+					</div>
+					<div class="tab-select">
+					<form action="">
+						<label for='allcase'><span class='inputradio'><input type="radio" name="tabcase" id="allcase"></span>全部</label>
+						<label for='successcase'><span class='inputradio'><input type="radio" name="tabcase" id="successcase"></span>命中方案</label>
+						<label for='failcase'><span class='inputradio'><input type="radio" name="tabcase" id="failcase"></span>未命中方案</label>
+						
+					</form>
+					</div>
+					<div class="tab-rec caseitems">
+						<ul class='active'>
+							<li class='clearfix active  pr '>
+											<div class='clearfix item-wrap'>
+												<div class="itemLeft fl pr">
+													<i class='rating pa'>周盈利率 <span>100.7%</span></i>
+
+													<div class="msg clearfix">
+														<div class="portrait ">
+															<img src="./img/co.jpg" alt="用户头像">
+														</div>
+														<div class=" right">
+															<p class="name">昵称昵称昵称昵称昵称昵称昵称</p>
+															<p class='weekrating'>近7天 <span>4中2</span></p>
+															<p class='rating'>周命中率 <span>100.9%</span></p>
+														</div>
+													</div>
+
+												</div>
+												<div class="itemRight fr">
+													<div class="message clearfix pr">
+														<div class="mgs-left fl">
+															<i class='icon_ball'>一</i>
+															<p class='titleMsg'>
+																<span class='first fl'>竞彩单关</span><em class='fl'><i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦地地道道的地鹅道的地鹅道的地鹅</span><span class='forth'>06-28 18:30</span>
+															</i>
+														</em>
+
+													</p>
+													<div class="recTit ">巴西杯西杯西杯西杯西杯西杯西杯西杯西杯西杯西杯西杯西杯大1</div>
+													<div class="tui clearfix">
+														<div class="refund fl"><i></i>不中就退</div>
+														<span class='releasstime fl'>发布于两小时前</span>
+														<div class="price fl">55球币</div>
+													</div>
+												</div>
+												<div class="msg-right pa">
+													<div class="buyBtn ">
+														<button class='detail'>查看详情</button>
+														<div class="count">已有30人购买</div>
+													</div>
+												</div>
+												<div class="result pa failed">
+
+												</div>
+												
+												<div class="result-mask pa"></div>
+
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class='clearfix active  pr c2'>
+											<div class='clearfix item-wrap'>
+												<div class="itemLeft fl pr">
+													<i class='rating pa'>周盈利率 <span>100.7%</span></i>
+
+													<div class="msg clearfix">
+														<div class="portrait ">
+															<img src="./img/co.jpg" alt="用户头像">
+														</div>
+														<div class=" right">
+															<p class="name">昵称昵称昵称昵称昵称昵称昵称</p>
+															<p class='weekrating'>近7天 <span>4中2</span></p>
+															<p class='rating'>周命中率 <span>100.9%</span></p>
+														</div>
+													</div>
+
+												</div>
+												<div class="itemRight fr">
+													<div class="message clearfix pr">
+														<div class="mgs-left fl">
+															<i class='icon_ball'>一</i>
+															<p class='titleMsg'>
+																<span class='first fl'>竞彩单关</span><em class='fl'><i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦地地道道的地鹅道的地鹅道的地鹅</span><span class='forth'>06-28 18:30</span>
+															</i>
+															<i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦地地道道的地鹅道的地鹅道的地鹅</span><span class='forth'>06-28 18:30</span>
+															</i>
+														</em>
+
+													</p>
+													<div class="recTit ">巴西杯大1</div>
+													<div class="tui clearfix">
+														<div class="refund fl"><i></i>不中就退</div>
+														<span class='releasstime fl'>发布于两小时前</span>
+														<div class="price fl">55球币</div>
+													</div>
+												</div>
+												<div class="msg-right pa">
+													<div class="buyBtn ">
+														<button class='detail'>查看详情</button>
+														<div class="count">已有30人购买</div>
+													</div>
+												</div>
+												<div class="result pa failed">
+
+												</div>
+												<div class="result-mask pa"></div>
+
+											</div>
+										</div>
+									</div>
+								</li>			
+								<li class='clearfix active  pr c3'>
+											<div class='clearfix item-wrap'>
+												<div class="itemLeft fl pr">
+													<i class='rating pa'>周盈利率 <span>100.7%</span></i>
+
+													<div class="msg clearfix">
+														<div class="portrait ">
+															<img src="./img/co.jpg" alt="用户头像">
+														</div>
+														<div class=" right">
+															<p class="name">昵称昵称昵称昵称昵称昵称昵称</p>
+															<p class='weekrating'>近7天 <span>4中2</span></p>
+															<p class='rating'>周命中率 <span>100.9%</span></p>
+														</div>
+													</div>
+
+												</div>
+												<div class="itemRight fr">
+													<div class="message clearfix pr">
+														<div class="mgs-left fl">
+															<i class='icon_ball'>一</i>
+															<p class='titleMsg'>
+																<span class='first fl'>竞彩单关</span><em class='fl'><i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦地地道道的地鹅道的地鹅道的地鹅</span><span class='forth'>06-28 18:30</span>
+															</i><i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦地地道道的地鹅道的地鹅道的地鹅</span><span class='forth'>06-28 18:30</span>
+															</i><i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦地地道道的地鹅道的地鹅道的地鹅</span><span class='forth'>06-28 18:30</span>
+															</i>
+														</em>
+
+													</p>
+													<div class="recTit ">巴西杯大1</div>
+													<div class="tui clearfix">
+														<div class="refund fl"><i></i>不中就退</div>
+														<span class='releasstime fl'>发布于两小时前</span>
+														<div class="price fl">55球币</div>
+													</div>
+												</div>
+												<div class="msg-right pa">
+													<div class="buyBtn ">
+														<button class='detail'>查看详情</button>
+														<div class="count">已有30人购买</div>
+													</div>
+												</div>
+												<div class="result pa failed">
+
+												</div>
+												<div class="result-mask pa"></div>
+
+											</div>
+										</div>
+									</div>
+								</li>						
+						</ul>
+					</div>
+				</div>
+
+					
+				<div class="showItem">
+					<!-- 交易记录 -->
+					<div class="date">
+					<span class='pr'>
+					<i class='pa'></i>
+						<input type="text" id="datetimepicker" placeholder="选择日期">
+					</span>
+						
+						&nbsp;至&nbsp;
+						<span class='pr'>
+						<i class='pa'></i>
+							<input type="text" id="datetimepicker2" placeholder="选择日期">
+						</span>
+						
+						<div class='date-search' id='datetimepicker'>搜索</div>
+					</div>
+					<table class='purse'>
+						<tr>
+							<th width='160px'>订单时间</th>
+							<th width='300px'>订单号</th>
+							<th width='130px'>订单类型</th>
+							<th width='120px'>订单状态</th>
+							<th width='120px'>订单价格</th>
+						</tr>
+						<tr>
+							<td >123</td>
+							<td >123</td>
+							<td >123</td>
+							<td width ='110px'>123</td>
+							<td width ='110px' class='price'>￥2.00</td>
+						</tr>
+						<tr>
+							<td >123</td>
+							<td>123</td>
+							<td >123</td>
+							<td >123</td>
+							<td  class='price'>￥2.00</td>
+						</tr>
+						<tr>
+							<td >123</td>
+							<td >123</td>
+							<td >123</td>
+							<td >123</td>
+							<td  class='price'>￥2.00</td>
+						</tr>	
+					</table>
+				</div>
+					
+				
+
+
+				<div class="showItem ">
+					<!-- 我的关注 -->
+				<div class="tab-title">
+						<span class='active'>我的关注</span>
+						<span class=' fans'>我的粉丝</span>
+					</div>
+					<ul class='guan active'>
+						<li>
+							<div class="portrait fl">
+								<img src="../img/co.jpg" alt="">
+							</div>
+							<div class="msg fl">
+								<p>这是名称名称名称名名称名名称名名称名称</p>
+								<p class='msg-date'>近7天<span class='total'>61</span>中<span class='succ'>30</span></p>
+							</div>
+							<div class="intr fl">
+								<p>这是简介简简介简简介简简介简简介简简介简简介简简介简简介简简介简简介简简介</p>
+							</div>
+							<div>
+								<div class="cancel fr">取消关注</div>
+							</div>
+						</li>
+						<li>
+							<div class="portrait fl">
+								<img src="../img/co.jpg" alt="">
+							</div>
+							<div class="msg fl">
+								<p>这是名称名称名称名名称名名称名名称名称</p>
+								<p class='msg-date'>近7天<span>61</span>中<span>30</span></p>
+							</div>
+							<div class="intr fl">
+								<p>这是简介简简介简简介简简介简简介简简介简简介简简介简简介简简介简简介简简介</p>
+							</div>
+							<div>
+								<div class="cancel fr">取消关注</div>
+							</div>
+						</li>
+					</ul>
+					<ul class=' guan'>
+						<li>
+							<div class="portrait fl">
+								<img src="../img/co.jpg" alt="">
+							</div>
+							<div class="msg fl">
+								<p>这是名称名称名称名名称名名称名名称名称</p>
+								<p class='msg-date'>近7天<span class='total'>61</span>中<span class='succ'>30</span></p>
+							</div>
+							<div class="intr fl">
+								<p>这是简介简简介简简介简简介简简介简简介简简介简简介简简介简简介简简介简简介</p>
+							</div>
+							<div>
+								<div class="cancel att fr">关注</div>
+							</div>
+						</li>
+						<li>
+							<div class="portrait fl">
+								<img src="../img/co.jpg" alt="">
+							</div>
+							<div class="msg fl">
+								<p>这是名称名称名称名名称名名称名名称名称</p>
+								<p class='msg-date'>近7天<span>61</span>中<span>30</span></p>
+							</div>
+							<div class="intr fl">
+								<p>这是简介简简介简简介简简介简简介简简介简简介简简介简简介简简介简简介简简介</p>
+							</div>
+							<div>
+								<div class="cancel att fr">关注</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				
+
+				<div class="showItem help ">
+					<ul class='active ul-wrap'>
+						<li>
+						<p>一、如何申请成为专家？<span class='icon fr'></span></p>
+							<ul class=''>
+								<li>1、注册并登录账户；</li>
+								<li>2、若未实名认证，则先到个人中心进行实名认证；</li>
+								<li>3、实名认证后方可进行专家认证；</li>
+								<li>4、阅读认证付费说明，点击申请；</li>
+								<li>5、填写申请相关信息后提交；</li>
+								<li>6、等待网站人员审核，审核周期1-3个工作日；</li>
+							</ul>
+						</li>
+						<li>
+						<p>二、如何发起推荐？<span class='icon  fr'></span></p>
+							<ul class=''>
+								<li>1、登录竞彩推介页面后，点击“发布推介”。</li>
+								<li>2、进选择发布推介的类型和玩法。</li>
+								<li>3、填写相关信息后提交。</li>
+								<li>4、发布成功。</li>
+								<li>注：抄袭他人或其他网站的推荐理由，经程序检索确	推荐将不予审核通过。</li>
+							</ul>
+						</li>
+						<li>
+						<p>三、如何购买专家推荐？<span class='icon  fr'></span></p>
+							<ul class=''>
+								<li>1、 登录账户，找到推介；</li>
+								<li>2、点击要查看的推介，进入推介详情页；</li>
+								<li>3、支付相应的金额（免费推荐无需支付金额）；</li>
+								<li>4、查看比赛分析和推荐结果；</li>
+								<li>5、已完场的推荐可免费查看。</li>
+							</ul>
+						</li>
+						<li>
+						<p>四、专家推荐发起规则：<span class='icon  fr'></span></p>
+							<ul class=''>
+								<li>1、专家可发起竞彩单关、亚盘和大小球推荐；</li>
+								<li>2、每场比赛发起推荐的截止时间是赛前5分钟；</li>
+								<li>3、发起竞彩单关玩法时，每场比赛可选择1-2个结果，赔率不得低于1.5，双选赔率不得低于2.00；</li>
+								<li>4、发起亚盘或者大小球玩法时，每场比赛只允许推荐1项，且赔率不得低于1.5；</li>
+								<li>5、每位专家每天最多发起推荐场次：
+									<ul class='item-son active'>
+										<li>白银专家：每天最多发起10场推荐；</li>
+										<li>黄金专家：每天最多发起15场推荐；</li>
+										<li>白金专家：每天最多发起20场推荐；</li>
+										<li>钻石专家：每天最多发起25场推荐；</li>
+									</ul>
+								</li>
+								<li>6、足球亚盘、大小球赢一半算命中，走盘不予计算，输一半算未命中。</li>
+							</ul>
+						</li>
+						<li>
+						<p>五、专家升级规则<span class='icon  fr'></span></p>
+							<ul class=''>
+								<li>1、白银专家：一比分竞彩推荐的专家目前分为四个级别，分别是白银专家、黄金专家、白金专家和钻石专家，只要申请通过即可成为白银专家。</li>
+										<li>2、黄金专家：白银专家一周发单量大于或等于15场，且命中率在55%或以上的，即可晋升为黄金专家；</li>
+										<li>3、白金专家：黄金专家一周发单量大于或等于20场，且命中率在60%或以上的，即可晋升为白金专家；</li>
+										<li>4、钻石专家：白金专家一周发单量大于或等于25场，且命中率在65%或以上的，即可晋升为钻石专家；</li>
+							</ul>
+						</li>
+						<li>
+						<p>六、专家降级规则<span class='icon  fr'></span></p>
+							<ul class=''>
+								<li>1、钻石专家降级规则：钻石专家一周内发单低于3场，且命中率低于50%，则降为白金专家；</li>
+										<li>2、白金专家降级规则：白金专家一周内发单低于3场，且命中率低于50%，则降为黄金专家；</li>
+										<li>3、黄金家降级规则：黄金专家一周内发单低于3场，且命中率低于50%，则降为白银专家；</li>
+							</ul>
+						</li>
+						<li>
+						<p>七、不同等级的专家，推荐收费标准不同<span class='icon  fr'></span></p>
+							<ul class=''>
+								<li>1、白银专家：每单推荐收费0~8球币；</li>
+								<li>2、黄金专家：每单推荐收费0~28球币；</li>
+								<li>3、白金专家：每单推荐收费0~48球币；</li>
+								<li>4、钻石专家：每单推荐收费0~68球币；</li>
+							</ul>
+						</li>
+						<li>
+						<p>八、如何提款？<span class='icon  fr'></span></p>
+							<ul class=''>
+								<li>认证专家赚取的收益均可进行提款，流程如下：</li>
+								<li>1、登录账户，进入“个人中心”；</li>
+								<li>2、点击“提款”；</li>
+								<li>3、填写提款所需信息后提交；</li>
+								<li>4、等待网站财务人员审核；</li>
+								<li>5、审核通过后将通过系统处理到第三方支付平台再汇的账户，请1-3个工作日后查询您的银行帐户。</li>
+							</ul>
+						</li>
+						<li>
+						<p>九、提款有哪些注意事项？<span class='icon  fr'></span></p>
+							<ul class=''>
+								<li>1、收益可全部提现；</li>
+								<li>2、充值金额不可提款；</li>
+								<li>3、只支持储蓄卡，不支持信用卡和存折提款；</li>
+								<li>4、单笔提现最低100元、最高500万；</li>
+								<li>5、同一身份信息下所有账户每天累计提款最多3次。</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+					
+				</div>
+
+			</div>
+			
+
+		</div>
+	</div>
+
+	
+	</div>
+	</div>
+	
+	<script src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+	<script src="../js/jquery.datetimepicker.full.js"></script>
+	
+	<script src="../js/common.js"></script>
+	<script src='../js/homepage.js'></script>
+	<script src='../js/per-pre.js'></script>
+	
+</body>
+</html>

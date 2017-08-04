@@ -4,11 +4,11 @@
 		width:200px;
 		background-color: #fff;
 		.header{
-			width:100%;
+			width:185px;
 			height: 36px;
-			background-color: #ddd;
+			background-color: #1fa0ff;
 			font-size: 16px;
-			color:#323232;
+			color:#fff;
 			padding-left: 15px;
 			line-height: 36px;
 		}
@@ -16,8 +16,6 @@
 			width:100%;
 			text-align: center;
 			img{
-				width:66px;
-				height: 66px;
 				border-radius: 50%;
 				margin-top:20px;
 				overflow: hidden;
@@ -28,15 +26,553 @@
 				overflow: hidden;
 				text-overflow:ellipsis;
 				white-space: nowrap;
-				font-size: 14px;
+				font-size: 16px;
 				color:#323232;
-				line-height: 28px;
+				line-height: 16px;
+				padding-top:12px;
+				padding-bottom: 14px;
 			}
 			.per-intr{
 				width:146px;
-				display: inline-block;
-				
+				margin-left: 27px;
+				margin-bottom: 26px;
+				font-size:12px;
+				line-height: 16px;
+				text-align: left;
+				// display: -webkit-box;
+				// -webkit-box-orient: vertical;
+				// -webkit-line-clamp: 2;
+				overflow: hidden;
+				color:#666;
+				i,a{
+					color:#999;
+					font-size:12px;
+				}
+			}
+		}
+		.grid{
+			text-align: center;
+			width: 100%;
+			height: 130px;
+			border-top:1px solid #f0f0f0;
+			border-bottom-right-radius: 1px solid #f0f0f0;
+			.fl{
+				p{
+					font-size: 20px;
+					padding-top:12px;
+					padding-bottom: 4px;
+					height:18px;
+					line-height: 18px;
+				}
+				span{
+					font-size: 12px;
+					padding-bottom: 12px;
+					height: 12px;
+					line-height: 12px;
+					color:#666;
+				}
+			}
+			.case-no{
+				width:  99px;
+				border-right: 1px solid #f0f0f0;
+				border-bottom: 1px solid #f0f0f0;
+				height: 64px;
+			}
+			.care-no{
+				width: 100px;
+				border-bottom: 1px solid #f0f0f0;
+				height: 64px;
+			} 
+			.rate-no{
+				width: 99px;
+				border-right: 1px solid #f0f0f0;
+				height: 65px;
+				p{
+					color:rgb(229,57,53);
+				}
+			}
+			.max-no{
+				width: 100px;
+				height: 65px;
+				p{
+					color:rgb(229,57,53);
+				}
 			}
 		}
 	}
+	.fr{
+		.content{
+			width: 780px;
+			background-color: #fff;
+			padding-bottom: 30px;
+			&.selling{
+				.detail-content{
+					.fr.purchase{
+						display: block;
+					}
+
+				}
+			}
+			&.failed{
+				.detail-content{
+					.icon-result{
+						display: block;
+						background-image: url(../img/fail104.png);
+					}
+					p.detail-msg{
+						.detail-start{
+							color:#c53336;
+							border-color:#ddd;
+						}
+					}
+				}
+			}
+			&.success{
+				.detail-content{
+					.icon-result{
+						display: block;
+						background-image: url(../img/zhong104.png);
+					}
+					p.detail-msg{
+						.detail-start{
+							color:#c53336;
+							border-color:#ddd;
+						}
+					}
+				}
+			}
+			&.zou{
+				.detail-content{
+					.icon-result{
+						display: block;
+						background-image: url(../img/zou104.png);
+					}
+					p.detail-msg{
+						.detail-start{
+							color:#c53336;
+							border-color:#ddd;
+						}
+					}
+				}
+			}
+			.detail-header{
+				width: 765px;
+				padding-left: 15px;  
+				font-size: 16px;
+				height: 36px;
+				line-height: 36px;
+				color:#fff;
+				background-color: #1fa0ff;
+			}
+			.detail-title{
+				h3{
+					font-size: 28px;
+					color: #323232; 
+					padding-left: 30px; 
+					height: 28px;
+					line-height: 28px;
+					font-weight: 600;
+					padding-top:20px;
+					padding-bottom: 20px;
+				}
+			}
+			.detail-content{
+				margin:0 30px;
+				// border:1px solid #ddd;
+				color:#fff;
+				.detail-msg{
+					background-color: #f1f8fd;
+					height: 36px;
+					line-height: 36px;
+					font-size: 14px;
+					color:#323232;
+					span{
+						display: inline-block;
+					}
+					.detail-start{
+						height: 22px;
+						line-height: 22px;
+						margin:0 10px;
+						padding :0 7px;
+						border:1px solid #1fa0ff; 
+						border-radius:12px;
+						background-color: #E4F0F9 ;
+					}
+					.detail-type{
+						padding-right: 14px;
+						height: 14px;
+						line-height: 14px;
+						border-right: 1px solid #999;
+					}
+					.detail-lian{
+						padding-left: 14px;
+						padding-right:10px;
+					}
+					.detail-date{
+						padding-left: 14px;
+						padding-right:14px;
+					}
+				}
+				.teamMsg{
+					padding:0px 144px 0;
+					.homeTeam,.visitTeam{
+						width:100px;
+						.homeTeam-wrap,.visitTeam-wrap{
+							width: 60px;
+							height: 60px;
+							border-radius: 50%;
+							overflow: hidden;
+							margin-left: 20px;
+						}
+						img{
+							width: 100%;
+							height: 100%;
+						}
+						.teamName{
+							font-size: 18px;
+							color:#323232;
+							width: 200px;
+							overflow: hidden;
+							text-overflow:ellipsis;
+							white-space: nowrap;
+							text-align: center;
+							height: 54px;
+							line-height: 54px;
+							margin-left: -50px;
+						}
+					}
+					.vs{
+						width: 230px;
+						text-align: center;
+						font-size: 48px;
+						height: 100px;
+						line-height: 50px;
+						color:#B2D3EA;
+						font-weight: 700;
+						i{
+							display: block;
+							font-size: 16px;
+							color:#444;
+							line-height: 30px;
+						}
+					}
+				}
+				.teamRate{
+					padding:0 120px; 
+					.homeWin,.teamMth,.visitWin{
+						width:158px;
+						height: 60px;
+						text-align: center;
+						font-size: 18px;
+						background-color: #f5f5f5;
+						border-right: 2px solid #fff;
+						position: relative;
+						color:#323232;
+						&.selling{
+							color:#fff; 
+							background-color: #1fa0ff;   
+							border-radius: 4px;
+							.icon-rec{
+								background-image: url(../img/jian1.png);
+							}          
+						}
+						&.win{
+							color:#fff; 
+							background-color: #1fa0ff;  
+							border-radius: 4px; 
+							.icon-rec{
+								background-image: url(../img/gouzhong.png);
+							}  
+						}
+						&.failed{
+							color:#323232 ; 
+							background-color: #999; 
+							border-radius: 4px;  
+							.icon-rec{
+								background-image: url(../img/jian2.png);
+							}  
+						}
+						&.zou{
+							color:#fff; 
+							background-color: #9CD980;  
+							border-radius: 4px; 
+							.icon-rec{
+								background-image: url(../img/jian3.png);
+							}  
+						}
+						i{
+							display: inline-block;
+							position: absolute;
+							right: 1px;
+							bottom:1px;
+							width: 38px;
+							height: 34px;
+							background-size: 38px 34px;
+						}
+						p{
+							 padding-top:8px;
+							 padding-bottom: 5px;
+
+						}
+
+					}
+					.homeWin{
+						border-top-left-radius: 4px;
+						border-bottom-left-radius: 4px;
+					}
+					.visitWin{
+						border-right: none !important;
+						border-top-right-radius: 4px;
+						border-bottom-right-radius: 4px;
+					}
+				}
+				.wording{
+					padding:4px 80px; 
+					font-size: 16px;
+					letter-spacing: 1px;
+					color:#323232;
+					
+					p{
+						margin-bottom: 6px;
+						line-height: 28px;
+						span.fistSpan{
+							display: inline-block;
+							width: 75px;
+							vertical-align: top;
+						}
+						span.lastSpan{
+							display: inline-block;
+							width:479px;
+							// padding-left: 80px;
+						}
+						.price{
+							color:#FF7043;
+							padding-left: 2px;
+						}
+						.buyBtn{
+							display: inline-block;
+							width: 108px;
+							height: 38px;
+							margin-left: 30px;
+							margin-right: 30px;
+							margin-bottom: 38px;
+							background-color: #FF7043;
+							line-height: 38px;
+							text-align: center;
+						}
+					}
+				}
+				.fr.purchase{
+					display: none;
+					color:#323232;
+					font-size:18px;
+					position: relative;
+					padding-top:48px;
+					.price{
+							color:#FF7043;
+						}
+						.buyBtn{
+							display: inline-block;
+							width: 116px;
+							height: 38px;
+							margin-left: 28px;
+							margin-right: 23px;
+							margin-bottom: 38px;
+							background-color: #F57b04;
+							line-height: 38px;
+							text-align: center;
+							color:#fff;
+							border-radius: 4px;
+							cursor:pointer;
+						}
+						.purchaseNum{
+							display: inline-block;
+							position: absolute;
+							left: 233px;
+							bottom: 18px;
+							font-size: 14px;
+							color:#666;
+
+						}
+				}
+				.icon-result{
+					display: inline-block;
+					width: 104px;
+					height: 104px;
+					background-size: 104px 104px;
+					display: none;
+					float: right;
+					margin-bottom: 30px;
+					margin-right: 40px;
+					// visibility: hidden;
+				}
+			}
+			.sellMsg{
+				margin:0 30px;
+				margin-top: 20px;
+				border:1px solid #ddd;
+				.sellHeader{
+					width: 100%;
+					height: 48px;
+					text-align: center;
+					font-size: 16px;
+					line-height: 48px;
+					background-color: #F1F8FD;
+					color:#323232;
+				}
+				table{
+					width: 100%;
+					border-collapse: collapse;
+					th{
+						color:#323232;
+						font-weight: normal;
+						border-top:1px solid #ddd;
+					}
+					td{
+						width: 239px;
+						text-align: center;
+						color:#323232;
+						overflow: hidden;
+						text-overflow:ellipsis;
+						white-space: nowrap;
+						border-top:1px solid #ddd;
+					}
+					tr{
+						height: 42px;
+						line-height: 42px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.portrait{
+	.portrait-wrap{
+		width: 72px;
+		height: 72px;
+		margin:0 auto;
+		border:2px solid #1fa0ff;
+		border-radius: 50%;
+		margin-top:20px;
+		img{
+			width: 100%;
+			height: 100%;
+			margin-top:0 !important;
+		}
+	}
+}
+
+
+.content.jcdg{
+	.detail-content{
+		.team-left{
+			width: 100px;
+			color:#323232;
+			font-size: 24px;
+			margin-left: 65px;
+			height: auto;
+			p{
+				width: 80px;
+				height: 60px;
+				text-align: center;
+				line-height: 60px;
+				margin:0px 10px;
+				background-color: #f5f5f5;
+			}
+			p.rangnum{
+				color:#1fa0ff;
+				border-radius: 4px;
+			}
+			p.rang{
+				height: 100px;
+				line-height: 100px;
+				padding-bottom: 14px;
+				background-color: #fff;
+			}
+		}
+		.team-right{
+			width: 480px;
+			.teamMsg{
+				padding:0;
+				padding-left: 25px;
+			}
+			.teamRate{
+				padding:0;
+			}
+		}
+	}
+}
+.detail-msg-wrap{
+	padding-top:20px;
+	.team-left{
+		height: 0;
+	}
+}
+.detail-item{
+	border:1px solid #ddd;
+	padding-bottom: 15px;
+	margin-bottom: 10px;
+}
+
+
+.wording{
+	.paybef{
+		width: 100%;
+		text-align: center;
+		height: 20px;
+		font-size: 20px;
+		line-height: 20px;
+		position: relative;
+		margin-top:20px;
+		i{
+			display: inline-block;
+			width: 252px;
+			height: 1px;
+			border-top:1px solid #ddd;
+			position: absolute;
+			top:70%;
+			left: -80px;
+			&.border-right{
+				left:385px;
+			}
+		}
+	}
+}
+
+
+p.recTitle,p.recReason{
+	
+}
+
+
+
+
+
+// 新增
+.content .fr .content .detail-content .teamMsg .vs{
+	font-weight: 700;
+}
+.content .fr .content .detail-content .teamMsg .homeTeam .homeTeam-wrap, .content .fr .content .detail-content .teamMsg .visitTeam .homeTeam-wrap, .content .fr .content .detail-content .teamMsg .homeTeam .visitTeam-wrap, .content .fr .content .detail-content .teamMsg .visitTeam .visitTeam-wrap{
+	border-radius: 0;
+}
+.content .fr .content{
+	width: 790px;
+}
+.content .fr .content .detail-header{
+	width: 775px;
+}
+.content.jcdg .detail-content .team-left p.rang{
+	line-height: 70px;
+}
+
+.content .fr .content .detail-content .wording{
+	padding:4px 20px;
+}
+.wording .paybef i{
+	left: -20px;
+}
+.wording .paybef i.border-right{
+	left: 455px;
 }

@@ -1,0 +1,1214 @@
+$(function() {
+	// 婊氬姩鏉″垵濮嬪寲
+	$(window).on("load", function() {
+		$(".table-wrap").mCustomScrollbar({
+			theme : "dark"
+		});
+	});
+
+	$(document.body).on('mouseenter', '.choose>div>span', function() {
+		$(this).addClass('active');
+	});
+	$(document.body).on('mouseleave', '.choose>div>span', function() {
+		$(this).removeClass('active');
+	});
+	$(document.body).on(
+			'click',
+			'.choose>div>span>ul>li>a',
+			function() {
+				$(this).parent().parent().parent().children('.word').text(
+						$(this).text());
+				$(this).parent().parent().parent().find('a.active')
+						.removeClass('active');
+				$(this).parent().parent().parent().removeClass('active');
+				$(this).addClass('active');
+			})
+
+	var checkGroup = 0;
+	var matchlist = {};
+	var newmatchlist = {};
+	var chooseRow = [];
+	 
+	var tjId;
+	// 鏄惁鍙互鐐瑰嚮
+	var isclick = true;
+	// 鍔犺浇姣旇禌鏁版嵁
+	$.ajax({
+		type : 'post',
+		data : {
+			league : null
+		},
+		async : false,
+		url : 'getMatchList',
+		dataType : 'json',
+
+		success : function(result) {
+			matchlist = result;
+		},
+		error : function(data, status, e) {
+			$jq.messager.alert("鎻愮ず淇℃伅", e, 'error');
+		}
+	});
+	getMatchList(0, null);
+
+	// 缁х画鍙戝竷--鐐瑰嚮鍏抽棴褰撳墠骞曞竷
+	$('.pb-left').on('click', function() {
+		$('.msgbox-pbtips').hide();
+		$("#mainmask").hide();
+
+	})
+
+	$('.tj-detail').on('click', function() {
+		window.open('/tjDetail/totjDetail?id=' + tjId);
+
+	})
+
+	
+	
+	
+		//鏂板閫氳繃鑱旇禌鍚嶆悳绱㈠姛鑳�
+	$('.search').on('click', function() {
+		
+		 var value = $(".sel").text();
+		 var selected = $(".sel>.word").text();
+		 var leagueName = $("#leagueName").val();
+		 
+         if(value == "绔炲僵鍗曞叧"){
+        	 $("#jingcaidanguan tbody").html('');
+        	 getSelect(leagueName,0);
+        	 getMatchList(0,-1);
+         }
+         switch (selected) {
+         case "浜氱洏":		
+        	    $("#yapan tbody").html('');
+        	    getSelect(leagueName,1);
+				getMatchList(1,-1);
+				break;
+			case "鍗婂満浜氱洏":				
+				$("#yapan tbody").html('');
+				getSelect(leagueName,3);
+				getMatchList(3,-1);
+				break;
+			case "澶у皬鐞�":
+				$("#size tbody").html('');
+				 getSelect(leagueName,2);
+				getMatchList(2,-1);
+				break;
+			case "鍗婂満澶у皬鐞�":
+				$("#size tbody").html('');
+				getSelect(leagueName,4);
+				getMatchList(4,-1);
+				break;
+         }
+         
+         function getSelect(leagueName,type){
+        	 $.ajax({
+ 				type : 'post',
+ 				data: {league : leagueName, type:type},
+ 				async : false,
+ 				url : 'getMatchList',
+ 				dataType : 'json',
+ 				success : function(result) {
+ 					newmatchlist = result;
+ 				},
+ 				error : function(data, status, e) {
+ 					$jq.messager.alert("鎻愮ず淇℃伅", e, 'error');
+ 				}
+ 			});
+         }
+	});
+	
+	
+/*	// 绔炲僵鍗曞叧閫夋嫨浜嬩欢
+		//绔炲僵鍗曞叧閫夋嫨浜嬩欢
+	$('.jc').on('click','.tbody td.choose',function() {
+		if($(this).hasClass('active')){
+			$(this).removeClass('active');
+			return;
+		}
+		if($('.jc td.choose.active').parent().children('.active').length===2){
+			return;
+		}
+		else{
+			if($(this).parent().parent().parent().parent().parent().siblings().find('.choose.active').length !=0 || $(this).parent().siblings().children('.choose.active').length!=0){
+				return;
+				
+			}else{
+				$(this).addClass('active');
+			}
+			
+		}
+	})
+*/
+	// 绔炲僵鍗曞叧閫夋嫨浜嬩欢
+	$('.jc')
+			.on(
+					'click',
+					'.tbody td.choose',
+					function() {
+						if ($(this).hasClass('active')) {
+							$(this).removeClass('active');
+							return;
+						}
+
+						else {
+							var index=$(this).parent('tr').index();
+							//涓€鍦烘瘮璧涗笉鑳介€変袱涓洏鍙�
+							 if(index%2==0){
+							    	
+							    	if($(this).parent('tr').next().children('td.choose.active').size()>0){
+							    		
+							    		return;
+							    	}
+							    }
+							    else{
+							    	
+							    	if($(this).parent('tr').prev().children('td.choose.active').size()>0){
+							    		
+							    		return;
+							    	}
+							    }
+							 
+							 
+							
+								var checkedTd = $('.jc td.choose.active');
+								var checkRow=[];
+								//鏄惁宸茬粡鏈夊弻閫夌殑琛�
+								var hasTwo=false;
+								$.each(checkedTd,
+										function() {
+											if (checkRow.indexOf($(this).parent(
+													'tr').index()) < 0) {
+												checkRow.push($(this).parent('tr')
+														.index());
+												//涓€琛岄€夋嫨涓嶈兘瓒呰繃涓や釜
+												if($(this).parent("tr").children('td.choose.active').size()>=2){
+
+													hasTwo=true;
+												}
+											}
+										})
+										
+										
+							if(!hasTwo&&$(this).parent("tr").children('td.choose.active').size()>=2){
+								return;
+							}	
+							if(hasTwo&&$(this).parent("tr").children('td.choose.active').size()>=1){
+								return;
+							}	
+					        //涓嶈兘閫夋嫨瓒呰繃涓夎
+							if (checkRow.length >= 3
+									&& checkRow.indexOf($(this).parent('tr')
+											.index()) < 0) {
+
+								return;
+
+							} 
+							
+
+							$(this).addClass('active');
+						   
+						   
+							
+				
+								
+							
+
+						}
+					})
+	
+	// 浜氱洏閫夋嫨浜嬩欢
+	$('.ffjc').on('click', '.tbody td.choose', function() {
+		if ($(this).hasClass('active')) {
+			$(this).removeClass('active');
+			return;
+		} else {
+			$('#yapan tbody>tr>td.active').removeClass('active');
+			$(this).addClass('active');
+
+		}
+	})
+
+	// 澶у皬鐞冮€夋嫨浜嬩欢
+	$('.fjc').on('click', '.tbody td.choose', function() {
+		if ($(this).hasClass('active')) {
+			$(this).removeClass('active');
+			return;
+		} else {
+			$('#size tbody>tr>td.active').removeClass('active');
+			$(this).addClass('active');
+		}
+	})
+
+	// tab鍒囨崲 绔炲僵鍗曞叧銆佸ぇ灏忕悆銆佷簹鐩樺垏鎹�
+	$(document.body).on(
+			'click',
+			'.choose .fl>span',
+			function() {
+				// 鎶婃暟鎹叏閮ㄦ竻绌�
+				$('#jingcaidanguan').html('  <tbody></tbody> ');
+				$('#yapan').html('  <tbody></tbody> ');
+				$('#size').html('  <tbody></tbody> ');
+
+				$(this).addClass('sel').parent().siblings().find('.sel')
+						.removeClass('sel');
+
+				if ($(".sel").text() == '绔炲僵鍗曞叧') {
+
+					getMatchList(0, null);
+
+					if (!$('.jc').hasClass('active')) {
+						$('.jc').addClass('active');
+
+					}
+					$('.fjc').removeClass('active');
+					$('.ffjc').removeClass('active');
+				} else if ($(".sel>.word").text() == '浜氱洏'
+						|| $(".sel>.word").text() == '鍗婂満浜氱洏') {
+					if ($(".sel>.word").text() == '浜氱洏') {
+						getMatchList(1, null);
+					} else {
+						getMatchList(3, null);
+					}
+					if (!$('.ffjc').hasClass('active')) {
+						$('.ffjc').addClass('active');
+
+					}
+					$('.jc').removeClass('active');
+					$('.fjc').removeClass('active');
+				} else {
+					if ($(".sel>.word").text() == '澶у皬鐞�') {
+						getMatchList(2, null);
+					} else {
+						getMatchList(4, null);
+					}
+					if (!$('.fjc').hasClass('active')) {
+						$('.fjc').addClass('active');
+
+					}
+					$('.jc').removeClass('active');
+					$('.ffjc').removeClass('active');
+				}
+
+			})
+
+	$(document.body).on(
+			'click',
+			'.choose .fl ul>li>a',
+			function() {
+				$(this).parent().parent().siblings().find('span').addClass(
+						'sel').parent().parent().parent().siblings().find(
+						'.sel').removeClass('sel');
+			})
+	// 寮圭獥鍏抽棴
+	$(".close1").on("click", function() {
+		$(".msgbox-tips").hide();
+		$("#mainmask").hide();
+
+	})
+
+	// 濉啓鎺ㄤ粙鍏抽棴
+	$(".close2").on("click", function() {
+		$(".msgbox-publish").hide();
+		$("#mainmask").hide();
+
+	})
+	
+		// 濉啓鎺ㄤ粙鍏抽棴
+	$(".close3").on("click", function() {
+		$(".msgbox-pbtips").hide();
+		$("#mainmask").hide();
+
+	})
+
+	// typeBtn涓�-1鍗虫槸鐐瑰嚮鎼滅储鎸夐挳绫诲瀷,涓簄ull鍒欎负榛樿瑙﹀彂绫诲瀷
+	function getMatchList(type, typeBtn) {
+
+		if (matchlist.code == 200) {
+			var dataObj;
+			if (typeBtn == -1) {
+				dataObj = newmatchlist.data;
+			} else {
+				dataObj = matchlist.data;
+			}
+			$
+					.each(
+							dataObj,
+							function(index, value) {
+
+								if (value.oddsType == 0
+										&& value.oddsType == type) {
+									if ($("#jingcaidanguan tbody tr").text() == '') {
+										$
+												.each(
+														value.matchList,
+														function(i, matchInfo) {
+															$(
+																	"#jingcaidanguan tbody")
+																	.append(
+																			"<tr class='oushu'><td style='display: none;'></td>"
+																					+ "<td style='display: none;'>"
+																					+ "'matchid':"
+																					+ matchInfo.matchId
+																					+ ",'leagueid':"
+																					+ matchInfo.leagueId
+																					+ ",'type':"
+																					+ value.oddsType
+																					+ "</td>"
+																					+ "<td style='display: none;'>"
+																					+ matchInfo.leagueId
+																					+ "</td>"
+																					+ "<td style='display: none;'>"
+																					+ value.oddsType
+																					+ "</td>"
+																					+ "<td class='tbth5' width='107px'  rowspan='2'>"
+																					+ matchInfo.screenings
+																					+ "</td>"
+																					+ "<td class='tbth5' width='108px' rowspan='2'>"
+																					+ matchInfo.league
+																					+ "</td>"
+																					+ "<td class='tbth5' width='208px' rowspan='2'>"
+																					+ matchInfo.homeTeam
+																					+ " VS "
+																					+ matchInfo.guestTeam
+																					+ "</td>"
+																					+ "<td class='tbth5' width='138px' rowspan='2'>"
+																					+ (matchInfo.time
+																							+ "</td>"
+																							+ "<td class='tbth5' width='100px'></td>"
+																							+ "<td class='choose' width='100px' ><span class='win'></span><i></i></td>"
+																							+ "<td class='choose' width='100px' ><span class='ping'></span><i></i></td>"
+																							+ "<td class='choose' width='100px' ><span class='fail'></span><i></i></td></tr><tr class='jishu'>" + "<td style='display: none;'><td></td><td class='choose' width='100px' ><span class='win'></span><i></i></td><td width='100px' class='choose' ><span class='ping'></span><i></i></td><td width='100px' class='choose'><span class='fail'></span><i></i></td></tr>"));
+
+															if (i % 2 == 1) {
+																$(
+																		'#jingcaidanguan tbody tr:eq('
+																				+ (2 * i)
+																				+ ') ')
+																		.addClass(
+																				'show4N2');
+																$(
+																		'#jingcaidanguan tbody tr:eq('
+																				+ (2 * i+1)
+																				+ ') ')
+																		.addClass(
+																				'show4N2');
+														
+
+															}
+															$
+																	.each(
+																			matchInfo.oddsList,
+																			function(
+																					j,
+																					odds) {
+																				if (j == 0) {
+																					$(
+																							"#jingcaidanguan tbody tr:eq("
+																									+ 2
+																									* i
+																									+ ") td:eq(0)")
+																							.html(
+																									odds.oddsId);
+																					$(
+																							"#jingcaidanguan tbody tr:eq("
+																									+ 2
+																									* i
+																									+ ") td:eq(8)")
+																							.html(
+																									odds.handicap);
+																					$(
+																							"#jingcaidanguan tbody tr:eq("
+																									+ 2
+																									* i
+																									+ ") td:eq(9) span:eq(0)")
+																							.html(
+																									odds.leftOdds);
+																					$(
+																							"#jingcaidanguan tbody tr:eq("
+																									+ 2
+																									* i
+																									+ ") td:eq(10) span:eq(0)")
+																							.html(
+																									odds.rightOdds);
+																					$(
+																							"#jingcaidanguan tbody tr:eq("
+																									+ 2
+																									* i
+																									+ ") td:eq(11) span:eq(0)")
+																							.html(
+																									odds.midOdds);
+																				} else {
+																					$(
+																							"#jingcaidanguan tbody tr:eq("
+																									+ (2 * i + 1)
+																									+ ") td:eq(0)")
+																							.html(
+																									odds.oddsId);
+																					$(
+																							"#jingcaidanguan tbody tr:eq("
+																									+ (2 * i + 1)
+																									+ ") td:eq(1)")
+																							.html(
+																									odds.handicap);
+																					$(
+																							"#jingcaidanguan tbody tr:eq("
+																									+ (2 * i + 1)
+																									+ ") td:eq(2) span:eq(0)")
+																							.html(
+																									odds.leftOdds);
+																					$(
+																							"#jingcaidanguan tbody tr:eq("
+																									+ (2 * i + 1)
+																									+ ") td:eq(3) span:eq(0)")
+																							.html(
+																									odds.rightOdds);
+																					$(
+																							"#jingcaidanguan tbody tr:eq("
+																									+ (2 * i + 1)
+																									+ ") td:eq(4) span:eq(0) ")
+																							.html(
+																									odds.midOdds);
+																				}
+																			});
+
+														});
+										$("#jingcaidanguan tbody").append(
+												"<tr class='last-btr'></tr>")
+									}
+
+								} else if (value.oddsType == 1
+										&& value.oddsType == type) {
+
+									if ($("#yapan tbody tr").text() == '') {
+										$
+												.each(
+														value.matchList,
+														function(i, matchInfo) {
+															$("#yapan tbody")
+																	.append(
+																			"<tr><td style='display: none;'>"
+
+																					+ "</td>"
+																					+ "<td style='display: none;'>"
+																					+ matchInfo.matchId
+																					+ "</td>"
+																					+ "<td style='display: none;'>"
+																					+ matchInfo.leagueId
+																					+ "</td>"
+																					+ "<td style='display: none;'>"
+																					+ value.oddsType
+																					+ "</td>"
+																					+ "<td width='140px'>"
+																					+ matchInfo.league
+																					+ "</td><td  width='240px'>"
+																					+ matchInfo.homeTeam
+																					+ " VS "
+																					+ matchInfo.guestTeam
+																					+ "</td><td width='185px'>"
+																					+ matchInfo.time
+																					+ "</td>"
+																					+ "<td class='choose' width='132px'><span class='win'></span><i></i></td>"
+																					+ "<td width='133px'></td><td class='choose' width='132px'><span class='fail'></span><i></i></td></td></tr>"
+
+																	);
+															if (i % 2 == 1) {
+																$(
+																		'#yapan tr:eq('
+																				+ (i + 1)
+																				+ ')')
+																		.addClass(
+																				'trn22');
+															}
+
+															$
+																	.each(
+																			matchInfo.oddsList,
+																			function(
+																					j,
+																					odds) {
+																				if (j == 0) {
+																					$(
+																							"#yapan tbody tr:eq("
+																									+ i
+																									+ ") td:eq(0)")
+																							.html(
+																									"'matchid':"
+																											+ matchInfo.matchId
+																											+ ",'leagueid':"
+																											+ matchInfo.leagueId
+																											+ ",'type':"
+																											+ value.oddsType
+																											+ ",'oddsid':"
+																											+ odds.oddsId);
+																					$(
+																							"#yapan tbody tr:eq("
+																									+ i
+																									+ ") td:eq(8)")
+																							.html(
+																									odds.handicap);
+																					$(
+																							"#yapan tbody tr:eq("
+																									+ i
+																									+ ") td:eq(7) span:eq(0)")
+																							.html(
+																									odds.leftOdds);
+																					$(
+																							"#yapan tbody tr:eq("
+																									+ i
+																									+ ") td:eq(9) span:eq(0) ")
+																							.html(
+																									odds.midOdds);
+																				}
+
+																			});
+
+														})
+										$("#yapan tbody").append(
+												"<tr class='last-btr'></tr>")
+												// 闅旇鎹㈣壊
+											
+												$('.table-wrap tr:nth-of-type(odd)').addClass('odd');
+									}
+								} else if (value.oddsType == 2
+										&& value.oddsType == type) {
+									if ($("#size tbody tr").text() == '') {
+										$
+												.each(
+														value.matchList,
+														function(i, matchInfo) {
+															$("#size tbody")
+																	.append(
+																			"<tr><td style='display: none;'>"
+
+																					+ "</td>"
+																					+ "<td style='display: none;'>"
+																					+ matchInfo.matchId
+																					+ "</td>"
+																					+ "<td style='display: none;'>"
+																					+ matchInfo.leagueId
+																					+ "</td>"
+																					+ "<td style='display: none;'>"
+																					+ value.oddsType
+																					+ "</td>"
+																					+ "<td width='140px'>"
+																					+ matchInfo.league
+																					+ "</td><td width='240px'>"
+																					+ matchInfo.homeTeam
+																					+ " VS "
+																					+ matchInfo.guestTeam
+																					+ "</td><td width='185px'>"
+																					+ matchInfo.time
+																					+ "</td>"
+																					+ "<td class='choose' width='132px'><span class='win'></span><i></i></td>"
+																					+ "<td width='133px'></td><td class='choose' width='132px'><span class='fail'></span><i></i></td></tr>");
+															if (i % 2 == 1) {
+																$(
+																		'#size tr:eq('
+																				+ (i + 2)
+																				+ ')')
+																		.addClass(
+																				'trn22');
+															}
+															$
+																	.each(
+																			matchInfo.oddsList,
+																			function(
+																					j,
+																					odds) {
+																				if (j == 0) {
+																					$(
+																							"#size tbody tr:eq("
+																									+ i
+																									+ ") td:eq(0)")
+																							.html(
+																									"'matchid':"
+																											+ matchInfo.matchId
+																											+ ",'leagueid':"
+																											+ matchInfo.leagueId
+																											+ ",'type':"
+																											+ value.oddsType
+																											+ ",'oddsid':"
+																											+ odds.oddsId);
+																					$(
+																							"#size tbody tr:eq("
+																									+ i
+																									+ ") td:eq(8)")
+																							.html(
+																									odds.handicap);
+																					$(
+																							"#size tbody tr:eq("
+																									+ i
+																									+ ") td:eq(7) span:eq(0)")
+																							.html(
+																									odds.leftOdds);
+																					$(
+																							"#size tbody tr:eq("
+																									+ i
+																									+ ") td:eq(9) span:eq(0)")
+																							.html(
+																									odds.midOdds);
+																				}
+
+																			});
+
+														})
+										$("#size tbody").append(
+												"<tr class='last-btr'></tr>")
+												// 闅旇鎹㈣壊
+											
+												$('.table-wrap tr:nth-of-type(odd)').addClass('odd');
+									}
+								} else if (value.oddsType == 3
+										&& value.oddsType == type) {
+
+									$
+											.each(
+													value.matchList,
+													function(i, matchInfo) {
+														$("#yapan tbody")
+																.append(
+																		"<tr><td style='display: none;'>"
+
+																				+ "</td>"
+																				+ "<td style='display: none;'>"
+																				+ matchInfo.matchId
+																				+ "</td>"
+																				+ "<td style='display: none;'>"
+																				+ matchInfo.leagueId
+																				+ "</td>"
+																				+ "<td style='display: none;'>"
+																				+ value.oddsType
+																				+ "</td>"
+																				+ "<td width='140px'>"
+																				+ matchInfo.league
+																				+ "</td><td width='240px' >"
+																				+ matchInfo.homeTeam
+																				+ " VS "
+																				+ matchInfo.guestTeam
+																				+ "</td><td width='185px'>"
+																				+ matchInfo.time
+																				+ "</td>"
+																				+ "<td class='choose' width='132px'><span class='win'></span><i></i></td>"
+																				+ "<td width='133px'></td><td class='choose' width='132px'><span class='fail'></span><i></i></td></td></tr>"
+
+																);
+														if (i % 2 == 1) {
+															$(
+																	'#yapan tr:eq('
+																			+ (i + 1)
+																			+ ')')
+																	.addClass(
+																			'trn22');
+														}
+
+														$
+																.each(
+																		matchInfo.oddsList,
+																		function(
+																				j,
+																				odds) {
+																			if (j == 0) {
+																				$(
+																						"#yapan tbody tr:eq("
+																								+ i
+																								+ ") td:eq(0)")
+																						.html(
+																								"'matchid':"
+																										+ matchInfo.matchId
+																										+ ",'leagueid':"
+																										+ matchInfo.leagueId
+																										+ ",'type':"
+																										+ value.oddsType
+																										+ ",'oddsid':"
+																										+ odds.oddsId);
+																				$(
+																						"#yapan tbody tr:eq("
+																								+ i
+																								+ ") td:eq(8)")
+																						.html(
+																								odds.handicap);
+																				$(
+																						"#yapan tbody tr:eq("
+																								+ i
+																								+ ") td:eq(7) span:eq(0)")
+																						.html(
+																								odds.leftOdds);
+																				$(
+																						"#yapan tbody tr:eq("
+																								+ i
+																								+ ") td:eq(9) span:eq(0) ")
+																						.html(
+																								odds.midOdds);
+																			}
+
+																		});
+
+													})
+									$("#yapan tbody").append(
+											"<tr class='last-btr'></tr>")
+											// 闅旇鎹㈣壊
+										
+											$('.table-wrap tr:nth-of-type(odd)').addClass('odd');
+
+								} else if (value.oddsType == 4
+										&& value.oddsType == type) {
+
+									$
+											.each(
+													value.matchList,
+													function(i, matchInfo) {
+														$("#size tbody")
+																.append(
+																		"<tr><td style='display: none;'>"
+
+																				+ "</td>"
+																				+ "<td style='display: none;'>"
+																				+ matchInfo.matchId
+																				+ "</td>"
+																				+ "<td style='display: none;'>"
+																				+ matchInfo.leagueId
+																				+ "</td>"
+																				+ "<td style='display: none;'>"
+																				+ value.oddsType
+																				+ "</td>"
+																				+ "<td width='140px'>"
+																				+ matchInfo.league
+																				+ "</td><td width='240px'>"
+																				+ matchInfo.homeTeam
+																				+ " VS "
+																				+ matchInfo.guestTeam
+																				+ "</td><td width='185px'>"
+																				+ matchInfo.time
+																				+ "</td>"
+																				+ "<td class='choose' width='132px'><span class='win '></span><i></i></td>"
+																				+ "<td width='133px'></td><td class='choose' width='132px'><span class='fail'></span><i></i></td></tr>");
+														if (i % 2 == 1) {
+															$(
+																	'#size tr:eq('
+																			+ (i + 2)
+																			+ ')')
+																	.addClass(
+																			'trn22');
+														}
+														$
+																.each(
+																		matchInfo.oddsList,
+																		function(
+																				j,
+																				odds) {
+																			if (j == 0) {
+																				$(
+																						"#size tbody tr:eq("
+																								+ i
+																								+ ") td:eq(0)")
+																						.html(
+																								"'matchid':"
+																										+ matchInfo.matchId
+																										+ ",'leagueid':"
+																										+ matchInfo.leagueId
+																										+ ",'type':"
+																										+ value.oddsType
+																										+ ",'oddsid':"
+																										+ odds.oddsId);
+																				$(
+																						"#size tbody tr:eq("
+																								+ i
+																								+ ") td:eq(8)")
+																						.html(
+																								odds.handicap);
+																				$(
+																						"#size tbody tr:eq("
+																								+ i
+																								+ ") td:eq(7) span:eq(0)")
+																						.html(
+																								odds.leftOdds);
+																				$(
+																						"#size tbody tr:eq("
+																								+ i
+																								+ ") td:eq(9) span:eq(0)")
+																						.html(
+																								odds.midOdds);
+																			}
+
+																		});
+
+													})
+									$("#size tbody").append(
+											"<tr class='last-btr'></tr>")
+											// 闅旇鎹㈣壊
+										
+											$('.table-wrap tr:nth-of-type(odd)').addClass('odd');
+								}
+
+							});
+			
+		} else {
+			alert(matchlist.msg);
+		}
+
+	}
+
+	// 寮瑰嚭濉啓鎺ㄤ粙鐨勭晫闈�
+	outer: $(".commit")
+			.on(
+					"click",
+					function() {
+						var checkedTd = $('.jc td.choose.active');
+						var checkRow=[];
+						$.each(checkedTd,
+								function() {
+									if (checkRow.indexOf($(this).parent(
+											'tr').index()) < 0) {
+										checkRow.push($(this).parent('tr')
+												.index());
+									}
+								})
+								
+						$("#mainmask").show();
+						// 绔炲僵鍗曞叧鐨勬儏鍐�
+						if ($(".sel").text() == '绔炲僵鍗曞叧') {
+							if ($("#jingcaidanguan td.active").size() == 0) {
+								
+								$(".msgbox-tips").show();
+								$(".count").html("璇烽€夋嫨涓€鍦烘瘮璧�!");
+								return;
+							}
+							var tjInfo='';
+							if(checkRow.length==1){
+								if ($("#jingcaidanguan td.active").size() == 1) {
+									if($("#jingcaidanguan td.active:eq(0)").text()<1.5){
+										$(".msgbox-tips").show();
+										$(".count").html("鍗曢€夎禂鐜囦笉鑳戒綆浜�1.5!");
+										return;
+									}
+	
+								}
+								if ($("#jingcaidanguan td.active").size() == 2) {
+									if($("#jingcaidanguan td.active:eq(0)").text()<2||$("#jingcaidanguan td.active:eq(1)").text()<2){
+										$(".msgbox-tips").show();
+										$(".count").html("鍙岄€夎禂鐜囦笉鑳戒綆浜�2!");
+										return;
+									}
+	
+								}
+							}
+							// 鍒ゆ柇鏈夊嚑琛岄€変腑
+							$
+									.each(
+											$("#jingcaidanguan td.active"),
+											function(i, value) {
+											if (chooseRow.indexOf($(this)
+														.parents("tr").index()) < 0) {
+													chooseRow.push($(this)
+															.parents("tr")
+															.index());
+                                                    
+													if ($(this).parents("tr")
+															.index() % 2 == 0) {
+														tjInfo = tjInfo+"{"
+																+ $(this)
+																		.parents(
+																				"tr")
+																		.children(
+																				"td")
+																		.eq(1)
+																		.html();
+
+													} else {
+														tjInfo = tjInfo+"{"
+																+ $(this)
+																		.parents(
+																				"tr")
+																		.prev()
+																		.children(
+																				"td")
+																		.eq(1)
+																		.html();
+
+													}
+													tjInfo = tjInfo
+															+ ",'oddsid':"
+															+ $(this)
+																	.parents(
+																			"tr")
+																	.children(
+																			"td")
+																	.eq(0)
+																	.html();
+
+													if ($(this)
+															.children("span")
+															.hasClass('win')) {
+														tjInfo = tjInfo
+																+ ",'choose':1";
+													}
+													if ($(this)
+															.children("span")
+															.hasClass('ping')) {
+														tjInfo = tjInfo
+																+ ",'choose':0";
+													}
+													if ($(this)
+															.children("span")
+															.hasClass('fail')) {
+														tjInfo = tjInfo
+																+ ",'choose':-1";
+													}
+
+														if ($(this)
+																.parents("tr")
+																.children(
+																		"td.active:eq(1)").children('span')
+																.hasClass('win')) {
+															tjInfo = tjInfo
+																	+ ",choose1:1";
+														}
+														if ($(this)
+																.parents("tr")
+																.children(
+																		"td.active:eq(1)").children('span')
+																.hasClass(
+																		'ping')) {
+															tjInfo = tjInfo
+																	+ ",choose1:0";
+														}
+														if ($(this)
+																.parents("tr")
+																.children(
+																		"td.active:eq(1)").children('span')
+																.hasClass(
+																		'fail')) {
+															tjInfo = tjInfo
+																	+ ",choose1:-1";
+														}
+														tjInfo =  tjInfo
+														+ "},";
+											
+													}
+												
+
+												
+												
+
+											});
+							tjInfo = tjInfo.substring(0, tjInfo.length - 1);
+
+		
+						}
+
+						// 绔炲僵鍗曞叧浠ュ鐨勬儏鍐�
+						else {
+							if ($(".sel>.word").text() == '浜氱洏'
+									|| $(".sel>.word").text() == '鍗婂満浜氱洏') {
+								if ($("#yapan td.active").size() == 0) {
+									
+									$(".msgbox-tips").show();
+									$(".count").html("璇烽€夋嫨涓€鍦烘瘮璧�!");
+									return;
+								}
+								if ($("#yapan td.active").text() < 0.5) {
+									
+									$(".msgbox-tips").show();
+									$(".count").html("璧旂巼涓嶅緱灏忎簬0.5!");
+									return;
+								}
+
+								tjInfo = $("#yapan td.active").parents("tr")
+										.children("td").eq(0).html();
+								if ($("#yapan td.active:eq(0) span").hasClass(
+										'win')) {
+									tjInfo = tjInfo + ",choose:1";
+								}
+								if ($("#yapan td.active:eq(0) span").hasClass(
+										'ping')) {
+									tjInfo = tjInfo + ",choose:0";
+								}
+								if ($("#yapan td.active:eq(0) span").hasClass(
+										'fail')) {
+									tjInfo = tjInfo + ",choose:-1";
+								}
+								tjInfo = "{" + tjInfo + "}";
+							} else {
+								if ($("#size td.active").size() == 0) {
+									$(".msgbox-tips").show();
+									$(".count").html("璇烽€夋嫨涓€鍦烘瘮璧�!");
+									return;
+								}
+								if ($("#size td.active:eq(0)").text() < 0.5) {
+									$(".msgbox-tips").show();
+									$(".count").html("璧旂巼涓嶅緱灏忎簬0.5!");
+									return;
+								}
+								tjInfo = $("#size td.active").parents("tr")
+										.children("td").eq(0).html();
+								if ($("#size td.active:eq(0) span").hasClass(
+										'win')) {
+									tjInfo = tjInfo + ",choose:1";
+								}
+								if ($("#size td.active:eq(0) span").hasClass(
+										'ping')) {
+									tjInfo = tjInfo + ",choose:0";
+								}
+								if ($("#size td.active:eq(0) span").hasClass(
+										'fail')) {
+									tjInfo = tjInfo + ",choose:-1";
+								}
+								tjInfo = "{" + tjInfo + "}";
+							}
+						}
+
+						tjInfo = "[" + tjInfo + "]";
+						if ($(this).text() == null || $(this).text() == '') {
+							alert('璧旂巼涓嶅彲涓虹┖锛�');
+							return;
+						}
+						$("#tjInfo").val(tjInfo);
+						$("#userId").val(getCookie('uid'));
+						$('.msgbox-publish').show();
+						$('.msgbox-pbtips').hide();
+
+						// 鍙戝竷鍚庯紝閲嶇疆琛屾暟鎬绘暟
+						chooseRow = [];
+
+					})
+
+
+
+					
+	// 鎺ㄤ粙鍙戝竷
+	$(document.body)
+			.on(
+					"click",".pbsubmit input[type=button]",
+
+					function() {
+						
+						if (isclick) {
+                            if(($("#pbprice").val().toString()).indexOf(".")<0){
+								
+								$("#matchInt").css('color','#323232')
+									
+								}
+							if ($(".checkradio.active").size()==0) {
+								$("#hideContent").val(0);
+							} 
+							if ($(".checkradio.active").size()==1) {
+								if($(".checkradio.active").children().hasClass('playmsg')){
+									$("#hideContent").val(1);
+								}
+								else{
+									$("#hideContent").val(2);
+								}
+							} 
+							if ($(".checkradio.active").size()==2) {
+								$("#hideContent").val(3)
+							} 
+	
+							var $form = $("#tjDetail");
+							if ($.trim($('#pbtitle').val()) == '') {
+								$("#tishi").html('鏍囬涓嶈兘涓虹┖!');
+							} 
+							else if ($("#pbcontent").val().length > 500) {
+								$("#tishi").html('鏂规鍒嗘瀽涓嶈兘瓒呰繃500涓瓧!');
+							} else if (isNaN($("#pbprice").val())
+									|| $("#pbprice").val() == ''
+									|| $("#pbprice").val() > 68
+									|| $("#pbprice").val() < 0) {
+								$("#tishi").html('浠锋牸闇€瑕佸湪0-68涔嬮棿!');
+							} 
+							else if(($("#pbprice").val().toString()).indexOf(".")>0){
+								
+							$("#matchInt").css('color','#ff0000')
+								
+							}
+							 
+					
+							else {
+								isclick = false;
+								$
+										.ajax({
+											type : "post",
+											url : "/tjDetail/addTj",
+											dataType : 'json',
+											data : serializeObject($form),
+											success : function(result) {
+												$("#pbtitle").val('');
+												$("#pbcontent").val('');
+												$("#pbprice").val('');
+												$(".checkradio").removeClass('active');
+											   $('.refund>.inputradio').removeClass('active');
+											   if(!$('.norefund>.inputradio').hasClass('active')){
+												   $('.norefund>.inputradio').addClass('active');
+											   }
+												$("#tishi")
+														.html(
+																'娉細濡傛灉鎺ㄨ崘缁撴灉涓嶄腑锛屼粛鐒舵敹鍙栫敤鎴疯喘涔版柟妗堢殑閲戦');
+												if (result.code == 200) {
+													tjId = result.msg;
+													$('.counter').html(result.count);
+													$(".msgbox-pbtips").show();
+													$('#pdtitle').val('')
+													$('#pdcontext').val('')
+													$('#pdprice').val('')
+													$(".msgbox-publish").hide();
+													
+												} else if (result.code == 2) {
+													$(".msgbox-publish").hide();
+													$(".msgbox-tips").show();
+													$(".count")
+															.html(result.msg);
+													
+												} else {
+													$(".msgbox-publish").hide();
+													$(".msgbox-tips").show();
+													$(".count").html("鍙戝竷澶辫触!");
+													
+
+												}
+												isclick = true;
+
+											},
+											error : function(data, status, e) {
+												isclick = true;
+												$jq.messager.alert("鎻愮ず淇℃伅", e,
+														'error');
+											}
+										}
+
+										)
+							}
+						}
+
+					});
+
+	//label閫夋嫨
+
+
+	
+		$(document.body).on('click','.msgbox-publish .select label',function(event){
+		event.stopPropagation();
+		event.preventDefault()
+
+		if($(this).children('span').hasClass('active')&&!$(this).children('span').hasClass('inputradio')){
+			$(this).children('span').removeClass('active');
+		}else{
+			if($(this).children('span').hasClass('inputradio')&&$('.inputradio.active').size()==1){
+				
+				$('.inputradio.active').removeClass('active');
+			}
+			if($(this).children('span').hasClass('inputradio')){
+
+				if ($(this).children('span').children('#refund').val()== 0) {
+					$("#tishi").html('娉細濡傛灉鎺ㄨ崘缁撴灉涓嶄腑锛屼粛鐒舵敹鍙栫敤鎴疯喘涔版柟妗堢殑閲戦');
+					$("#releaseType").val(0);
+				} else {
+					$("#tishi").html('娉細濡傛灉鎺ㄨ崘缁撴灉涓嶄腑,鎮ㄤ笉浼氭敹鍙栫敤鎴疯喘涔版柟妗堢殑閲戦');
+					$("#releaseType").val(1);
+				}
+			}
+			$(this).children('span').addClass('active');
+		}
+		
+	})
+
+})

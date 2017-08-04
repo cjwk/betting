@@ -7,7 +7,8 @@
 	<link rel="stylesheet" href="../css/common.css">
 	<link rel="stylesheet/less" href="../css/home.less">
 	<link rel="stylesheet/less" href="../css/detail.less">
-	<!-- <link rel="stylesheet" href="css/home.css"> -->
+	<!-- <link rel="stylesheet" href="../css/home.css">
+	<link rel="stylesheet" href="../css/detail.css"> -->
 	<script src="https://cdn.bootcss.com/less.js/2.5.2/less.min.js"></script>
 </head>
 <body>
@@ -55,28 +56,34 @@
 					<div class="content">
 						<div class="msg clearfix">
 							<div class="portrait ">
-								<img src="" alt="用户头像">
+								<div class="portrait-wrap">
+									<img src="../img/co.jpg" alt="用户头像">
+								</div>
+								
 								<p class='per-name'>专家名称</p>
-								<p class='per-intr'>这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介</p>
+								<p class='per-intr'>这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这这是简介这是简介这这是简介这是简介这是简介</p>
 							</div>
 							
 						</div>
-						<div class="case-no">
-							<p>36</p>
-							<p>方案</p>
+						<div class="grid clearfix">	
+							<div class="case-no fl">
+								<p>36</p>
+								<span>方案</span>
+							</div>
+							<div class="care-no fl">
+								<p>36</p>
+								<span>粉丝</span>
+							</div>
+							<div class="rate-no fl">
+								<p>70%</p>
+								<span>近5场中3场</span>
+							</div>
+							<div class="max-no fl">
+								<p>12</p>
+								<span>最大连红数</span>
+							</div>
 						</div>
-						<div class="care-no">
-							<p>36</p>
-							<p>粉丝</p>
-						</div>
-						<div class="rate-no">
-							<p>70%</p>
-							<p>近5场中3场</p>
-						</div>
-						<div class="max-no">
-							<p>12</p>
-							<p>最大连红数</p>
-						</div>
+						
 					</div>
 				</div>
 			
@@ -115,7 +122,7 @@
 								</span>
 								<div class='fl message'>
 									<span class='position'>看球专家</span>
-									<span class='rate'>盈利率:<i>100%</i></span>
+									<span class='rate'>盈利率:<i>-1000.2%</i></span>
 								</div>
 							</a>
 						</li>
@@ -159,89 +166,139 @@
 				</div>
 			</div>
 			<div class="fr">
-				<div class="titleBar clearfix">
-					<div class='gameplay fl pr'>
-						<a href="javascript:void(0);"><span class='pth'>全部玩法</span><span class='icon-down'></span></a>
-						<ul class='pa moreGameplay'>
-							<li><a href="javascript:void(0);" class='active'><span class='methods'>全部玩法</span><span class='icon-up icon-place'></span></a></li>
-							<li><a href="javascript:void(0);"><span class='methods'>大小球</span><span class="icon-place"></span></a></li>
-							<li><a href="javascript:void(0);"><span class='methods'>亚盘</span><span class="icon-place"></span></a></li><li><a href="javascript:void(0);"><span class='methods'>亚盘大小球</span><span class="icon-place"></span></a></li>
-							
-							
-						</ul>
+				<div class="content success jcdg ">
+					<div class="detail-header">
+						方案详情
 					</div>
-					<form action="" class='mode'>
-					<label for="win">
-						<input type="radio" name="select" id="win" checked="checked">盈利
-					</label>
-					<label for="rating">
-						<input type="radio" name="select" id="rating" >命中率
-					</label>
-					<label for="last">
-						<input type="radio" name="select" id="last" >最新
-					</label>
-					<label for="price">
-						<input type="radio" name="select" id="price" >价格
-					</label>
-					</form>
-					<label for="select" class='fr refund'>
-					<input type="checkbox" name="" id="select" >只看不中就退</label>	
-				</div>
-				<div class="recItems">
-					
-					
+					<div class="detail-title">
+						<h3>巴西杯大小必杀</h3>
+					</div>
+					<div class="detail-content clearfix">
+						<div class='detail-item'>
+							<p class='detail-msg'><span class='detail-start'>未开始</span><span class='detail-type'>竞彩单关</span><span class='detail-lian'>韩K联</span> <span class='detail-teamsg'>周三007格雷米奥vs奥瓦</span><span class='detail-date'>6-28</span><span class='detail-time'>18:30</span></p>
+						<div class='clearfix detail-msg-wrap'>
+						<div class='team-left fl'>
+							<p class='rang'>让球</p>
+							<p class='rangnum'>-1</p>
+						</div>
+						<div class="team-right fl">
+							<div class="teamMsg clearfix">
+							<div class="homeTeam  fl">
+								<div class="homeTeam-wrap">
+									<img src="../img/co.jpg" alt="">
+								</div>
+								
+								<div class="teamName">球队名称</div>
+							</div>
+							<div class="vs fl"><span>vs</span><i>半场：1:2</i></div>
+							<div class="visitTeam fl">
+							<div class="visitTeam-wrap">
+								<img src="../img/co.jpg" alt="">
+							</div>
+								
+								<div class="teamName">球队名球队</div>
+							</div>
+						</div>
+						<div class="teamRate clearfix">
+							<div class="homeWin selling   fl">
+								<p>主胜</p>
+								<span>0.86</span>
+								<i class='icon-rec'></i>
+							</div>
+							<div class="teamMth fl failed">
+								 <p>盘口</p>
+								 <span>球半</span>
+								 <i class='icon-rec'></i>
+							</div>
+							<div class="visitWin fl zou">
+								<p>主胜</p>
+								<span>0.86</span>
+								<i class='icon-rec '></i>     
+							</div>
+						</div>
+						</div>
+						</div>
+						</div>
+						<div class='detail-item'>
+							<p class='detail-msg'><span class='detail-start'>未开始</span><span class='detail-type'>竞彩单关</span><span class='detail-lian'>韩K联</span> <span class='detail-teamsg'>周三007格雷米奥vs奥瓦</span><span class='detail-date'>6-28</span><span class='detail-time'>18:30</span></p>
+						<div class='clearfix detail-msg-wrap'>
+						<div class='team-left fl'>
+							<p class='rang'>让球</p>
+							<p class='rangnum'>-1</p>
+						</div>
+						<div class="team-right fl">
+							<div class="teamMsg clearfix">
+							<div class="homeTeam  fl">
+								<div class="homeTeam-wrap">
+									<img src="../img/co.jpg" alt="">
+								</div>
+								
+								<div class="teamName">球队名称</div>
+							</div>
+							<div class="vs fl">vs</div>
+							<div class="visitTeam fl">
+							<div class="visitTeam-wrap">
+								<img src="../img/co.jpg" alt="">
+							</div>
+								
+								<div class="teamName">球队名球队</div>
+							</div>
+						</div>
+						<div class="teamRate clearfix">
+							<div class="homeWin selling win  fl">
+								<p>主胜</p>
+								<span>0.86</span>
+								<i class='icon-rec'></i>
+							</div>
+							<div class="teamMth fl failed">
+								 <p>盘口</p>
+								 <span>球半</span>
+								 <i class='icon-rec'></i>
+							</div>
+							<div class="visitWin fl zou">
+								<p>主胜</p>
+								<span>0.86</span>
+								<i class='icon-rec '></i>     
+							</div>
+						</div>
+						</div>
+						</div>
+						</div>
+						<div class='wording'>
+							<p class='paybef'><i class='border-left'></i>支付后显示推荐理由<i class='border-right'></i></p>
+							<p class='recTitle'><span>标题: </span> <span>内容内容内容内容内容内容内容内容内容</span></p>
+							<p class='recReason'><span class='fistSpan'>推荐理由:</span>  <span class='lastSpan'>这是理由这是理由这是理由理由这内容内容内容内容内容内容是理由理理由这</span></p>
+							
+						</div>
+						<p class='fr purchase'>查看推介需支付: <span class='price'>55球币</span><span class='buyBtn'>购买</span><span class='purchaseNum'>已有30人购买</span></p>
+						<i class='icon-result '></i>
+						
+					</div>
+					<div class="sellMsg">
+							<div class="sellHeader">
+								<p>购买用户: <span>2</span>人购买 <span>20</span>球币</p>
+							</div>
+							<table>
+								<tr>
+									<th>购买时间</th>
+									<th>购买球币</th>
+									<th>用户名</th>
+								</tr>
+								<tr>
+									<td>2017-07-13 14:40:16</td>
+									<td>10</td>
+									<td>小兵张嘎</td>
+								</tr>
+								<tr>
+									<td>2017-07-13 14:40:16</td>
+									<td>10</td>
+									<td>小兵张嘎</td>
+								</tr>
+							</table>
+
+						</div>
 				</div>
 				
-			</div>
-		</div>
-	</div>
-
-	<div class="mask pf">
-		<div class="msgbox-tips">
-			<div class="title">温馨提示<span class="close"></span></div>
-			<div class="content">
-				<p class='count'>您将花费<span>8</span>球币购买该专家的比赛推荐</p>
-				<p class='return'><i class='tui'></i>此单支持不中就退</p>
-				<span class='confirm'>确定</span>
-				<span class='cancel'>取消</span>
-			</div>
-			
-		</div>
-		<div class="msgbox-pay">
-			<div class="title">温馨提示<span class="close"></span></div>
-			<div class="content-money">
-				<p class='count'><i class='icon-tips'></i>余额不足请<a href="">充值</a></p>
-				<p class='return'>您也可以直接扫码支付</p>
-				<span class='wx chooseBtn active'><i class='icon-wx'></i>微信支付<i class='choose '></i></span>
-				<span class='zfb chooseBtn'><i class='icon-zfb'></i>支付宝支付<i class='choose'></i></span>
-				<p class='price'>￥2.00</p>
-				<div class="code">
-					
-				</div>
-				<p class='tipsword zfb-tip '>请使用手机支付宝扫描</p>
-				<p class='tipsword wx-tip active'>请使用微信扫描</p>
-			</div>
-		</div>
-		<div class="msgbox-phno">
-			<div class="title">温馨提示<span class="close"></span></div>
-			<div class="content">
-				<p class='tips-word'>输入手机号，即可免登陆购买</p>
-				<input type="text" name="" id="" class='phno' placeholder="请输入手机号">
-				<input type="text" name="" id="" class='verifycode' placeholder="请输入验证码"><span class='verify-word'>发送验证码</span>
-				<span class='confirm'>确定</span>
-				<span class='count-login'><a href="javascript:void(0);">账号登录</a></span>
-				<span class='count-reg'><a href="javascript:void(0);">立即注册</a></span>
-			</div>
-			
-		</div>
-		<div class="msgbox-counter">
-			<div class="title">温馨提示<span class="close"></span></div>
-			<div class="content">
-				<input type="text" name="" id="" class='phno' placeholder="请输入账号">
-				<input type="text" name="" id="" class='verifycode' placeholder="请输入密码">
-				<span class='confirm'>登录</span>
-				<span class='count-login'><a href="javascript:void(0);">免登录</a></span>
-				<span class='count-reg'><a href="javascript:void(0);">立即注册</a></span>
 			</div>
 		</div>
 	</div>

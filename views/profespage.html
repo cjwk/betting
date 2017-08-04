@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>竞彩推荐</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<!-- <link rel="stylesheet/less" href="../css/home.less">
+	<link rel="stylesheet/less" href="../css/preCent.less">
+ -->	<link rel="stylesheet" href="../css/home.css">
+	<link rel="stylesheet" href="../css/preCent.css">
+	<link rel="stylesheet" href="../css/jquery.datetimepicker.css">
+
+
+	<script src="https://cdn.bootcss.com/less.js/2.5.2/less.min.js"></script>
+	
+</head>
+<body>
+	<div class="layout">
+		<div class="container">
+			<div class="header wrap clearfix">
+			</div>
+			<div class="nav">
+				<div class="wrap clearfix pr">
+					<div class="logo fl"></div>
+					<ul class='clearfix pa'>
+						<li><a href="javascript:void(0);" class='active'>今日情报</a></li>
+						<li><a href="javascript:void(0);">竞彩足球</a></li>
+						<li><a href="javascript:void(0);">竞彩篮球</a></li>
+						<li><a href="javascript:void(0);">角球比分</a></li>
+						<li><a href="javascript:void(0);">足球指数</a></li>
+						<li><a href="javascript:void(0);">完场统计</a></li>
+						<li><a href="javascript:void(0);">专家推介</a></li>
+						<li><a href="javascript:void(0);">水位统计</a></li>
+						<li><a href="javascript:void(0);">联赛资料联赛</a></li>
+						<li><a href="javascript:void(0);">联赛资料联赛</a></li>
+						<li><a href="javascript:void(0);">联赛资料</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="main wrap">
+				<div class="subnav clearfix">
+					<div class="fl">
+						<div class="recommend-title">
+							<a href="javascript:void(0);" class='active'>推荐市场</a>
+						</div><div class="billboard">
+						<a href="javascript:void(0);" >排行榜</a>
+					</div>
+				</div>
+				<div class="fr">
+					<div>
+						<input type="text" placeholder="请输入专家昵称" class='txt'><button class='search'></button>
+					</div>	
+				</div>
+			</div>
+			<div class="content">
+				
+				<div class="header-p header-professor pr">
+				<!-- 关注 -->
+					<div class="focus pa">关注</div>
+					<div class='focus-f pa'>
+						<!-- 已关注 -->
+						<div class="focus focused pa"><i class='icon-attention'></i>已关注</div>
+					<!-- 取消关注 -->
+						<div class="focus cancelf pa">取消关注</div>
+					</div>
+					
+
+
+					<div class="p-portrait">
+						<img src="../img/co.jpg" alt="">
+					</div>
+					<p class='name'>昵称昵称昵称昵称称昵称昵称称昵称昵称称昵称昵称</p>
+					<p class='intr'>这是简介简介简介简介简介简介简介简介简介简介简介这是简介简介简介简介简介简介简介简介简介简介简介这是简介简介简介简介简介简介简介简介简介简介简介这是简介简介简介简介简介简介简介简介简介简介简介这是简介简介简介简介简介简介简介简介简介简介简介这是简介简介简介简介简介简介简介简介简介简介简介这是简介简介简介简介简介简介简介简介简介简介简介这是简介简介简介简介简介介简介简介简介简介简介简介简介简介简介这是简介简介简介简介简介简介简介简介简介简介简介这是简介简介简</p>
+					<div class="p-btn">
+						<span class='recharge'>8连红</span>
+						<span class='confirm pr'>近5场中3场</span>
+					</div>
+					<div class="professor-result">
+						<ul class='clearfix'>
+							<li class='num pr'>推荐：<span>76</span>场</li>
+							<li class='pr lis'>
+							<i class='pa bor'></i>
+								<p>近七日盈利率：20% <i class='icon-down'></i></p>
+								<ul class='pa'>
+									<li> 近七日盈利率：20% <i class='icon-up'></i></li>
+									<li>近七日盈利率：20%</li>
+									<li>近七日盈利率：20%</li>
+								</ul>
+								
+							</li>
+							<li class='pr lis'>
+							<i class='pa bor'></i>
+								<p>近七日命中率：20% <i class='icon-down'></i></p>
+								<ul class='pa'>
+									<li>近七日命中率：20% <i class='icon-up'></i></li>
+									<li>近十四日命中率：100%</li>
+									<li>近七日命中率：20%</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="tab-wrap clearfix">
+					<div class="fl tab-content professor">
+						<div class="showItem  active">
+
+
+							<!-- 我的推荐 -->
+							<div class="tab-title">
+								<span class='active'>当前推荐</span>
+								<span>历史推荐</span>
+							</div>
+							<div class="tab-select">
+								<form action="">
+									<label for='all'><span class='inputradio'><input type="radio" name="tabselect" id="all"></span>全部</label>
+									<label for='yp'><span class='inputradio'><input type="radio" name="tabselect" id="yp"></span>亚盘</label>
+									<label for='dxq'><span class='inputradio'><input type="radio" name="tabselect" id="dxq"></span>大小球</label>
+									<label for='jcdg'><span class='inputradio'><input type="radio" name="tabselect" id="jcdg"></span>竞彩单关</label>
+									<label for='bcyp'><span class='inputradio'><input type="radio" name="tabselect" id="bcyp"></span>半场亚盘</label>
+									<label for='bcdxq'><span class='inputradio'><input type="radio" name="tabselect" id="bcdxq"></span>半场大小球</label>
+								</form>
+							</div>
+							<div class="tab-rec">
+							<div class="except">
+						<img src="../img/except.png" alt="">
+						<div>
+							<p>暂无推介</p>
+							
+						</div>
+					</div>
+								<ul class='active'>
+									<li>
+										<div class="itemRight fl">
+											<div class="message clearfix">
+												<div class="mgs-left fl">
+													<i class='icon_ball'>一</i>
+													<p class='titleMsg'>
+														<span class='first'>竞彩单关</span><span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦</span><span class='forth'>06-28 18:30</span>
+													</p>
+													<div class="recTit ">巴西杯大小球必杀</div>
+													<div class="tui clearfix">
+														<div class="refund fl"><i></i>不中就退</div>
+														<span class='releasstime fl'>发布于两小时前</span>
+														<div class="price fl">55球币</div>
+													</div>
+												</div>
+												<div class="msg-right fr">
+													<div class="buyBtn purchased">
+														<button>购买</button>
+														<div class="count">已有30人购买</div>
+													</div>
+												</div>
+												<div class="result pa ">
+
+												</div>
+
+
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="itemRight fl">
+											<div class="message clearfix">
+												<div class="mgs-left fl">
+													<i class='icon_ball'>一</i>
+													<p class='titleMsg'>
+														<span class='first'>竞彩单关</span><span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦</span><span class='forth'>06-28 18:30</span>
+													</p>
+													<div class="recTit ">巴西杯大小球必杀</div>
+													<div class="tui clearfix">
+														<div class="refund fl"><i></i>不中就退</div>
+														<span class='releasstime fl'>发布于两小时前</span>
+														<div class="price fl">55球币</div>
+													</div>
+												</div>
+												<div class="msg-right fr">
+													<div class="buyBtn purchased">
+														<button>购买</button>
+														<div class="count">已有30人购买</div>
+													</div>
+												</div>
+												<div class="result pa ">
+
+												</div>
+
+
+											</div>
+										</div>
+									</li>
+
+
+								</ul>
+								<ul class=''>
+									<li>
+										<div class="itemRight pr">
+											<div class="message clearfix">
+												<div class="mgs-left fl">
+													<i class='icon_ball'>一</i>
+													<p class='titleMsg'>
+														<span class='first'>竞彩单关</span><span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦</span><span class='forth'>06-28 18:30</span>
+													</p>
+													<div class="recTit ">巴西杯大小球必杀</div>
+													<div class="tui clearfix">
+														<div class="refund fl"><i></i>不中就退</div>
+														<span class='releasstime fl'>发布于两小时前</span>
+														<div class="price fl">55球币</div>
+													</div>
+												</div>
+												<div class="msg-right fr">
+													<div class="buyBtn purchased">
+														<button class='detail'>查看详情</button>
+														<div class="count">已有30人购买</div>
+													</div>
+												</div>
+												<div class="result pa zhong">
+
+												</div>
+
+
+
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+
+
+
+						
+
+
+					
+
+
+						
+
+					</div>
+
+				</div>
+
+
+			</div>
+		</div>
+
+
+	</div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+<script src="../js/jquery.datetimepicker.full.js"></script>
+
+<script src="../js/common.js"></script>
+<script src='../js/homepage.js'></script>
+<script src='../js/per-pre.js'></script>
+
+</body>
+</html>

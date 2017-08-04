@@ -28,17 +28,31 @@ $(function () {
 		if($(this).hasClass('active')){
 			textVal=$(this).text();
 			$(this).text('收起专家其余推荐');
-			console.log($(this).parent().parent().children('.item-son'));
 			$(this).parent().parent().children('.item-son').css({
 				'display':'block'
 			})
+			$(this).parent().parent().addClass('showborder').css({
+				'padding-left':'15px',
+				'padding-right':'15px'
+			})
+			$(this).parent().parent().css({
+			'padding-top':'16px'
+		});
 		}else{
 			$(this).text(textVal);
 			$(this).parent().parent().children('.item-son').css({
 				'display':'none'
 			})
+			$(this).parent().parent().removeClass('showborder').css({
+				'padding-left':'16px',
+				'padding-right':'16px'
+			})
+			$(this).parent().parent().css({
+			'padding-top':'0px'
+		});
 		}
 		$(this).toggleClass('active');
+		
 	})
 
 
@@ -145,4 +159,39 @@ $(function () {
 	$('.moreRec.item-son li:last-child').css({
 		'margin-bottom':'0'
 	});
+
+
+
+	$('.applyBtn').on('click',function () {
+		$('.tips-name').css({
+			'display':'none'
+		})
+		
+	})
+	$('.applyBtn').on('mouseenter',function(){
+		$('.tips-name').css({
+			'display':'block'
+		})
+	}).on('mouseleave',function() {
+		$('.tips-name').css({
+			'display':'none'
+		})
+	})
+
+
+
+	//自定义radio样式
+	$(document.body).on('click','.mode>label',function(event){
+		event.preventDefault();
+		event.stopPropagation();
+		$(this).hasClass('active')?$(this).removeClass('active'):$(this).addClass('active').siblings().removeClass('active');
+	})
+	// $(document.body).on('click','label.refund',function(event){
+	// 	event.preventDefault();
+	// 	event.stopPropagation();
+	// 	$(this).hasClass('active')?$(this).removeClass('active'):$(this).addClass('active');
+	// 	console.log($('#select').is(':checked'));
+	// })
+
+
 })

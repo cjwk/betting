@@ -16,7 +16,7 @@ ul,li{
 	list-style: none;
 }
 a{
-	color:#000;
+	color:#323232;
 	text-decoration: none;
 }
 .clearfix:after{
@@ -28,7 +28,9 @@ a{
 	visibility: hidden;
 }
 body{
-	font-family: tahoma,arial,'Microsoft YaHei','\5b8b\4f53',sans-serif;
+	font-family: 'Microsoft YaHei','\5b8b\4f53',sans-serif;
+	color:#323232;
+	line-height: 1;
 }
 input{
 	outline-style: none;
@@ -49,4 +51,8 @@ i{
 }
 .pf{
 	position: fixed;
+}
+input:-webkit-autofill {
+background-color: #e7edf2;
+background-image: none;
 }
