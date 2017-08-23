@@ -6,10 +6,10 @@
 	<title>竞彩推荐</title>
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/common.css">
-	<!-- <link rel="stylesheet/less" href="../css/home.less">
+	<link rel="stylesheet/less" href="../css/home.less">
 	<link rel="stylesheet/less" href="../css/preCent.less">
- -->	<link rel="stylesheet" href="../css/home.css">
-	<link rel="stylesheet" href="../css/preCent.css">
+ 	<!-- <link rel="stylesheet" href="../css/home.css"> 
+	<link rel="stylesheet" href="../css/preCent.css"> -->
 	<link rel="stylesheet" href="../css/jquery.datetimepicker.css">
 
 
@@ -67,39 +67,79 @@
 					</div>
 					
 
-
-					<div class="p-portrait">
+					
+					<div class="p-portrait fl">
 						<img src="../img/co.jpg" alt="">
 					</div>
+					<div class='intr-wrap2 fl'>
 					<p class='name'>昵称昵称昵称昵称称昵称昵称称昵称昵称称昵称昵称</p>
 					<p class='intr'>这是简介简介简介简介简介简介简介简介简介简介简介这是简介简介简介简介简介简介简介简介简介简介简介这是简介简介简介简介简介简介简介简介简介简介简介这是简介简介简介简介简介简介简介简介简介简介简介这是简介简介简介简介简介简介简介简介简介简介简介这是简介简介简介简介简介简介简介简介简介简介简介这是简介简介简介简介简介简介简介简介简介简介简介这是简介简介简介简介简介介简介简介简介简介简介简介简介简介简介这是简介简介简介简介简介简介简介简介简介简介简介这是简介简介简</p>
-					<div class="p-btn">
-						<span class='recharge'>8连红</span>
-						<span class='confirm pr'>近5场中3场</span>
 					</div>
-					<div class="professor-result">
-						<ul class='clearfix'>
-							<li class='num pr'>推荐：<span>76</span>场</li>
-							<li class='pr lis'>
-							<i class='pa bor'></i>
-								<p>近七日盈利率：20% <i class='icon-down'></i></p>
-								<ul class='pa'>
-									<li> 近七日盈利率：20% <i class='icon-up'></i></li>
-									<li>近七日盈利率：20%</li>
-									<li>近七日盈利率：20%</li>
-								</ul>
-								
-							</li>
-							<li class='pr lis'>
-							<i class='pa bor'></i>
-								<p>近七日命中率：20% <i class='icon-down'></i></p>
-								<ul class='pa'>
-									<li>近七日命中率：20% <i class='icon-up'></i></li>
-									<li>近十四日命中率：100%</li>
-									<li>近七日命中率：20%</li>
-								</ul>
-							</li>
-						</ul>
+					<div class="table-wrap fl pr">
+						
+					
+					<ul class='clearfix pr'>
+						<li >近七日</li>
+						<li  class='active'>近十四日</li>
+						<li>近三十日</li>
+					</ul>
+					<table id="myTable" class="tablesorter">
+						<tr>
+							<th>玩法</th>
+							<th class='number'>推荐数<span><i class='icon_up'></i><i class='icon_down'></i></span></th>
+							<th>盈利率<span><i class='icon_up'></i><i class='icon_down'></i></span></th>
+							<th>命中率<span><i class='icon_up'></i><i class='icon_down'></i></span></th>
+							<th>连红数<span><i class='icon_up'></i><i class='icon_down'></i></span></th>
+						</tr>
+						<tr class='one'>
+							<td class=''><p>半场大小球</p></td>
+							<td class=''><p>40</p></td>
+							<td  class='yl  ping'><p>80.00% <span class='ping'></span></p></td>
+							<td class='mz  up'><p>100.00% <span class='up'></span></p></td>
+							<td class='  lh ' value='7'><p>7连红<span class='lhs-wrap'><em class='lhs'><i class='zhong'>中</i><i class='zou'>走</i><i class='shi'>失</i><i class='zhong'>中</i><i class='zou'>走</i><i class='shi'>失</i><i class='zhong'>中</i><i class='zou'>走</i><i class='shi'>失</i><i class='zhong'>中</i></em></span></p></td>
+						</tr>
+						<tr class='two'>
+							<td><p>大小球</p></td>
+							<td><p>40</p></td>
+							<td  class='yl '><p>10.00% <span class='ping'></span></p></td>
+							<td class='mz'><p>20.00% <span class='up'></span></p></td>
+							<td class=' lh' value='5'><p>5连红<span class='lhs-wrap'><em class='lhs'><i class='zhong'>中</i><i class='zou'>走</i><i class='shi'>失</i></em></span></p></td>
+						</tr>
+						<tr class='three'>
+							<td><p>竞彩单关</p></td>
+							<td><p>100</p></td>
+							<td  class='yl '><p>50.00% <span class='ping'></span></p></td>
+							<td class='mz down'><p>40.00% <span class='down'></span></p></td>
+							<td class=' lh' '><p>4连红<span class='lhs-wrap'><em class='lhs'><i class='zhong'>中</i><i class='zou'>走</i><i class='shi'>失</i></em></span></p></td>
+						</tr>
+						<tr>
+							<td><p>压盘</p></td>
+							<td><p>10</p></td>
+							<td  class='yl '><p>60.00% <span class='ping'></span></p></td>
+							<td class='mz'><p>30.00% <span class='up'></span></p></td>
+							<td class=' lh' value='8'><p>8连红<span class='lhs-wrap'><em class='lhs'><i class='zhong'>中</i><i class='zou'>走</i><i class='shi'>失</i></em></span></p></td>
+						</tr>
+						<tr>
+							<td><p>半场亚盘</p></td>
+							<td><p>0</p></td>
+							<td  class='yl '><p>50.00% <span class='ping'></span></p></td>
+							<td class='mz'><p>50.00% <span class='up'></span></p></td>
+							<td class=' lh' value='2'><p>2连红<span class='lhs-wrap'><em class='lhs'><i class='zhong'>中</i><i class='zou'>走</i><i class='shi'>失</i></em></span></p></td>
+						</tr>
+						<tr>
+							<td><p>总计</p></td>
+							<td><p>0</p></td>
+							<td  class='yl '><p>50.00% <span class='ping'></span></p></td>
+							<td class='mz'><p>50.00% <span class='up'></span></p></td>
+							<td class=' lh' value='2'><p>2连红<span class='lhs-wrap'><em class='lhs'><i class='zhong'>中</i><i class='zou'>走</i><i class='shi'>失</i></em></span></p></td>
+						</tr>
+					</table>
+					<div id='container-wrap'>
+						<div id="container" style="width:312px;height:197px" ></div>
+						<div class='datech'><span >一周</span><span class='active'>两周</span><span>一个月</span></div>
+					</div>
+					
+					<div class="message"></div>
 					</div>
 				</div>
 				<div class="tab-wrap clearfix">
@@ -133,11 +173,99 @@
 								<ul class='active'>
 									<li>
 										<div class="itemRight fl">
-											<div class="message clearfix">
+											<div class="message clearfix pr">
 												<div class="mgs-left fl">
 													<i class='icon_ball'>一</i>
 													<p class='titleMsg'>
-														<span class='first'>竞彩单关</span><span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦</span><span class='forth'>06-28 18:30</span>
+														<span class='first fl'>竞彩三选一</span><em class='fl'><i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦奥瓦奥瓦奥瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦奥瓦</span><span class='fivth'></span><span class='forth'>06-28 18:30</span></i>
+
+																</em>
+																<em class='fr allItems pa'><i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦奥瓦奥瓦奥瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦奥瓦</span><span class='fivth'></span><span class='forth'>06-28 18:30</span></i>
+																<i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦奥瓦奥瓦奥瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦奥瓦</span><span class='fivth'></span><span class='forth'>06-28 18:30</span></i>
+																<i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦奥瓦奥瓦奥瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦奥瓦</span><span class='fivth'></span><span class='forth'>06-28 18:30</span></i>
+																</em>
+													</p>
+													<div class="recTit ">巴西杯大小球必杀</div>
+													<div class="tui clearfix">
+														<div class="refund fl"><i></i>不中就退</div>
+														<span class='releasstime fl'>发布于两小时前</span>
+														<div class="price fl">55球币</div>
+													</div>
+												</div>
+												<div class="msg-right fr">
+													<div class="buyBtn purchased">
+														<button>购买</button>
+														<div class="count">已有30人购买</div>
+													</div>
+												</div>
+												<div class="result pa ">
+
+												</div>
+
+
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="itemRight fl">
+											<div class="message clearfix pr">
+												<div class="mgs-left fl">
+													<i class='icon_ball'>一</i>
+													<p class='titleMsg'>
+														<span class='first fl'>大小球</span><em class='fl'><i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦奥瓦奥瓦奥瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦奥瓦</span><span class='fivth'></span><span class='forth'>06-28 18:30</span></i>
+
+																</em>
+																<em class='fr allItems pa'><i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦奥瓦奥瓦奥瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦奥瓦</span><span class='fivth'></span><span class='forth'>06-28 18:30</span></i>
+																<i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦奥瓦奥瓦奥瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦奥瓦</span><span class='fivth'></span><span class='forth'>06-28 18:30</span></i>
+																<i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦奥瓦奥瓦奥瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦奥瓦</span><span class='fivth'></span><span class='forth'>06-28 18:30</span></i>
+																</em>
+													</p>
+													<div class="recTit ">巴西杯大小球必杀</div>
+													<div class="tui clearfix">
+														<div class="refund fl"><i></i>不中就退</div>
+														<span class='releasstime fl'>发布于两小时前</span>
+														<div class="price fl">55球币</div>
+													</div>
+												</div>
+												<div class="msg-right fr">
+													<div class="buyBtn purchased">
+														<button>购买</button>
+														<div class="count">已有30人购买</div>
+													</div>
+												</div>
+												<div class="result pa ">
+
+												</div>
+
+
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="itemRight fl">
+											<div class="message clearfix pr">
+												<div class="mgs-left fl">
+													<i class='icon_ball'>一</i>
+													<p class='titleMsg'>
+														<span class='first fl'>竞彩单关</span><em class='fl'><i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦奥瓦奥瓦奥瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦奥瓦</span><span class='fivth'></span><span class='forth'>06-28 18:30</span></i>
+
+																</em>
+																<em class='fr allItems pa'><i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦奥瓦奥瓦奥瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦奥瓦</span><span class='fivth'></span><span class='forth'>06-28 18:30</span></i>
+																<i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦奥瓦奥瓦奥瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦奥瓦</span><span class='fivth'></span><span class='forth'>06-28 18:30</span></i>
+																<i >
+																<span class='second'>韩K联</span><span class='thrid'>周三007格雷米奥 VS 奥瓦奥瓦奥瓦奥瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦瓦奥瓦奥瓦</span><span class='fivth'></span><span class='forth'>06-28 18:30</span></i>
+																</em>
 													</p>
 													<div class="recTit ">巴西杯大小球必杀</div>
 													<div class="tui clearfix">
@@ -224,6 +352,11 @@
 										</div>
 									</li>
 								</ul>
+								<div class="clickMore" >
+		<span>浏览更多</span>
+	</div>
+
+	<div class="gotop pf"></div>
 							</div>
 
 						</div>
@@ -250,8 +383,10 @@
 	</div>
 </div>
 
-<script src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+<script src="../js/jquery.js"></script>
+<script src='../js/jquery.tablesort.js'></script>
 <script src="../js/jquery.datetimepicker.full.js"></script>
+<script src="../js/highcharts.js"></script>
 
 <script src="../js/common.js"></script>
 <script src='../js/homepage.js'></script>

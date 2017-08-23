@@ -540,3 +540,66 @@
 .wording .paybef i.border-right {
   left: 455px;
 }
+.detail-msg-wrap .icon-tj {
+  background-image: url(../img/jian.png);
+  width: 24px !important;
+  height: 27px !important;
+  background-size: 24px 27px !important;
+  top: 0;
+  left: 12px;
+  background-repeat: no-repeat;
+}
+.content .fr .content .detail-content .teamRate .homeWin.selling .icon-rec,
+.content .fr .content .detail-content .teamRate .teamMth.selling .icon-rec,
+.content .fr .content .detail-content .teamRate .visitWin.selling .icon-rec,
+.content .fr .content .detail-content .teamRate .homeWin.failed .icon-rec,
+.content .fr .content .detail-content .teamRate .teamMth.failed .icon-rec,
+.content .fr .content .detail-content .teamRate .visitWin.failed .icon-rec,
+.content .fr .content .detail-content .teamRate .homeWin.zou .icon-rec,
+.content .fr .content .detail-content .teamRate .teamMth.zou .icon-rec,
+.content .fr .content .detail-content .teamRate .visitWin.zou .icon-rec {
+  background: none;
+}
+.content .fr .content .detail-content {
+  position: relative;
+}
+.content .fr .content .detail-content .icon-result {
+  width: 88px;
+  height: 88px;
+  background-size: 88px 88px;
+  margin: 0;
+  position: absolute;
+  top: 46px;
+  right: 10px;
+  background-repeat: no-repeat;
+}
+.content .fr .content.success .detail-content .icon-result {
+  background-image: url(../img/ZHONG88.png);
+}
+.content .fr .content.failed .detail-content .icon-result {
+  background-image: url(../img/shi88.png);
+}
+.content .fr .content.zou .detail-content .icon-result {
+  background-image: url(../img/zou88.png);
+}
+.content .fr .content .detail-content .teamRate .homeWin,
+.content .fr .content .detail-content .teamRate .teamMth,
+.content .fr .content .detail-content .teamRate .visitWin {
+  border: none;
+  margin-right: 2px;
+}
+.teamRate > div.winner {
+  width: 154px !important;
+  height: 56px !important;
+  border: 2px solid #1fa0ff !important;
+  border-radius: 4px !important;
+}
+.teamRate > div.winner .icon-rec {
+  background-image: url(../img/gou38X34.png) !important;
+  bottom: 0 !important;
+  right: -1px !important;
+}
+.content .fr .content .detail-content .wording p span.lastSpan {
+  width: 600px;
+  white-space: pre-wrap;
+}

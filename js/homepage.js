@@ -184,7 +184,7 @@ $(function () {
 	$(document.body).on('click','.mode>label',function(event){
 		event.preventDefault();
 		event.stopPropagation();
-		$(this).hasClass('active')?$(this).removeClass('active'):$(this).addClass('active').siblings().removeClass('active');
+		$(this).addClass('active').siblings().removeClass('active');
 	})
 	// $(document.body).on('click','label.refund',function(event){
 	// 	event.preventDefault();
@@ -194,4 +194,94 @@ $(function () {
 	// })
 
 
+	//分页按钮样式
+
+	function pagenation (num){
+		if(num<=5){
+			for(var i=0;i<num;i++){
+				$('.pages ul').append('<li>'+(i+1)+'</li>')
+			}
+			$('.pages').width((num+2)*33);
+			$('.pages ul li:first-child').addClass('current')
+		} else{
+			for(var i=0;i<3;i++){
+				$('.pages ul').append('<li>'+(i+1)+'</li>')
+			}
+			$('.pages ul').append('<li>...</li><li>'+num+'</li>')
+			$('.pages ul li:first-child').addClass('current')
+			//点击事件
+			var pageIndex=$('.pages>ul>.current').index()+1;
+			$('.pages .arr-right').on('click',function(){
+				$('.pages .arr-left').css({
+					'background-image':'url(./img/arrow-left-1.png)'
+				})
+				if(pageIndex==2){
+					$('.pages ul li').eq(1).text('...');
+				}
+				if(pageIndex>=3 && pageIndex<num-2){;
+					$('.pages ul li').eq(2).text(++pageIndex);
+					return;
+				}
+				if(pageIndex==num-2){
+					$('.pages ul li').eq(3).text(num-1);
+					
+				}
+				if($('.pages ul li').eq(4).hasClass('current')){
+					return;
+				}else{
+					$('.pages>ul>.current').removeClass('current').next().addClass('current');
+					if($('.pages ul li').eq(4).hasClass('current')){
+					$('.pages .arr-right').css({
+					'background-image':'url(./img/arrow-right-2.png)'
+				})
+				}
+					++pageIndex;
+				}
+			})
+			//左点击事件
+
+			$('.pages .arr-left').on('click',function(){
+				$('.pages .arr-right').css({
+					'background-image':'url(./img/arrow-right-1.png)'
+				})
+				// var pageIndex=$('.pages>ul>.current').index();
+				if(pageIndex==1){
+					$(this).css({
+						'background-image':'url(./img/arrow-left-2.png)'
+					})
+				}
+				if(pageIndex==0){
+					return;
+				}else{
+					$('.pages>ul>.current').removeClass('current').prev().addClass('current')
+
+
+				}
+			})
+		}
+		
+	}
+	// pagenation(10);
+	
+	//滚动
+	$(window).on('scroll',function() {
+		var scrollTop= $(this).scrollTop();
+		if(scrollTop>0){
+			$('.gotop').css({
+				'display':'block'
+			})
+		}else{
+			$('.gotop').css({
+				'display':'none'
+			})
+		}
+	})
+	$(document.body).on('click','.gotop',function(){
+		var userAgent = navigator.userAgent.toLowerCase();
+		var moz = /Gecko\//i.test(userAgent);
+		var ie=/msie/.test( userAgent ) && !/opera/.test( userAgent )
+		var body=document[moz?'documentElement':'body'];
+		body=ie?document.documentElement:body;
+		$(body).animate({scrollTop:0},200);
+	})
 })

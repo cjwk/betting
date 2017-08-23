@@ -986,7 +986,7 @@ body {
   border-left: 1px solid #a5cde8;
 }
 .main .content > .fr > .recItems > ul > li .itemRight .message .titleMsg span.thrid {
-  max-width: 295px;
+  max-width: 300px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1584,16 +1584,10 @@ li.fcolor .itemLeft {
 li.fcolor .itemRight {
   background-color: #f1f2f1 !important;
 }
-li.fcolor .itemRight .icon_ball {
-  background-color: #f1f2f1 !important;
-}
 li.scolor .itemLeft {
   background-color: #fef6f5 !important;
 }
 li.scolor .itemRight {
-  background-color: #fef6f5 !important;
-}
-li.scolor .itemRight .icon_ball {
   background-color: #fef6f5 !important;
 }
 li.zcolor .itemLeft {
@@ -1602,14 +1596,11 @@ li.zcolor .itemLeft {
 li.zcolor .itemRight {
   background-color: #ecf6f1 !important;
 }
-li.zcolor .itemRight .icon_ball {
-  background-color: #ecf6f1 !important;
-}
 .main .content > .fr > .recItems > ul > li {
   margin-bottom: 26px;
 }
 .main .content > .fr > .recItems > ul > li .itemRight .message .titleMsg span.thrid {
-  max-width: 275px;
+  max-width: 300px;
 }
 .main .content > .fr > .recItems > ul > li .itemRight .message .msg-right .buyBtn button {
   border-radius: 2px;
@@ -1629,11 +1620,9 @@ li.zcolor .itemRight .icon_ball {
   filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
 }
 .main .content > .fr > .recItems > ul > li .itemRight .message .titleMsg em {
-  max-width: 440px;
   overflow: hidden;
 }
 .main .content > .fr > .recItems > ul > li .itemRight .message .titleMsg em i {
-  max-width: 440px;
   overflow: hidden;
 }
 .main .subnav .fr div .txt {
@@ -1666,5 +1655,195 @@ li.zcolor .itemRight .icon_ball {
   line-height: 12px;
 }
 .main .content > .fr > .recItems > ul > li .itemRight .message .titleMsg span.thrid {
-  max-width: 260px;
+  max-width: 300px;
+}
+.main .content > .fl .recommend .billboard li a .portrait .numb {
+  width: 73px;
+  background-repeat: no-repeat;
+}
+.clickMore {
+  padding-top: 24px;
+}
+.clickMore span {
+  width: 146px;
+  height: 38px;
+  font-size: 16px;
+  display: block;
+  border: 1px solid #ddd;
+  text-align: center;
+  line-height: 38px;
+  margin: 0 auto;
+  border-radius: 4px;
+  color: #323232;
+  cursor: pointer;
+}
+.clickMore span:hover {
+  background-color: #f8f8f8;
+  color: #1fa0ff;
+  border-color: #1fa0ff;
+}
+.clickMore span:active {
+  background-color: #1fa0ff;
+  color: #fff;
+}
+.pages {
+  width: 230px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+.pages > ul {
+  height: 34px;
+}
+.pages > ul > li {
+  float: left;
+  width: 32px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  font-size: 16px;
+  border-right: 1px solid #ddd;
+  cursor: pointer;
+}
+.pages > ul > li.current {
+  background-color: #1fa0ff;
+  color: #fff;
+}
+.pages .arr-right,
+.pages .arr-left {
+  width: 32px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  font-size: 16px;
+  display: inline-block;
+  border: none;
+  background-image: url(../img/arrow-right-1.png);
+  background-size: 10px 9px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.pages .arr-left {
+  background-image: url(../img/arrow-left-1.png);
+  border-right: 1px solid #ddd;
+}
+.gotop {
+  width: 50px;
+  height: 50px;
+  bottom: 96px;
+  right: 100px;
+  background-size: 50px 50px;
+  background-image: url(../img/gototop.png);
+  display: none;
+}
+@media screen and (max-width: 1300px) {
+  .gotop {
+    display: none !important;
+  }
+}
+.main .content > .fr > .recItems > ul > li .itemLeft {
+  width: 148px;
+}
+.main .content > .fr > .recItems > ul > li .itemRight {
+  width: 607px;
+}
+.main .content > .fr > .recItems > ul > li .itemRight .message .titleMsg {
+  margin-top: 10px;
+  width: 562px;
+  background-color: #f4f4f4;
+}
+.main .content > .fr > .recItems > ul > li .itemRight .message i.icon_ball {
+  top: 10px;
+  border-radius: 0;
+  background-color: #f4f4f4;
+  border: none;
+  width: 34px;
+  height: 34px;
+  padding-right: 0;
+  background-position: center;
+  left: 0;
+}
+.main .content > .fr > .recItems > ul > li .itemRight .message .titleMsg span {
+  background-color: #f4f4f4;
+  height: 34px;
+  line-height: 34px;
+  border: none;
+  vertical-align: top;
+}
+.main .content > .fr > .recItems > ul > li .itemRight .message .titleMsg span.thrid {
+  vertical-align: top;
+}
+.main .content > .fr > .recItems > ul > li .itemRight .message .titleMsg span.second {
+  border: none;
+}
+.main .content > .fr > .recItems > ul > li .itemRight .message .titleMsg span.first {
+  margin-right: 0;
+  height: 14px;
+  line-height: 14px;
+  margin-top: 10px;
+  border-color: #ddd;
+}
+.main .content > .fr > .recItems > ul > li .itemRight .message .titleMsg span.forth {
+  border: none;
+  float: right;
+  padding: 0;
+  margin-right: 14px;
+}
+.main .content > .fr > .recItems > ul > li .itemRight .message .titleMsg em i {
+  height: 34px;
+  line-height: 34px;
+  width: 490px;
+  background-color: #f4f4f4;
+}
+.main .content > .fr > .recItems > ul > li .itemRight .message .recTit {
+  padding: 20px 0 22px 15px;
+}
+.main .content > .fr > .recItems > ul > li .itemRight .message .tui {
+  padding-bottom: 16px;
+}
+.main .content > .fr > .recItems > ul > li .itemRight .message {
+  width: 607px;
+}
+.main .content > .fr > .recItems > ul > li .itemRight .message .titleMsg em {
+  width: 490px;
+  background-color: #fff;
+}
+.main .content > .fr > .recItems > ul > li .itemRight .message .titleMsg span.fivth {
+  width: 12px;
+  margin-left: 14px;
+  margin-right: 10px;
+  background-size: 12px 6px;
+  background-image: url(../img/down2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  float: right;
+  padding: 0;
+}
+.main .content > .fr > .recItems > ul > li .itemRight .message .titleMsg .allItems {
+  right: -10px;
+  top: -10px;
+  display: none;
+  z-index: 999;
+  padding-top: 10px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1), -1px 1px 20px rgba(0, 0, 0, 0.1), 1px 1px 20px rgba(0, 0, 0, 0.1), 1px 1px 20px rgba(0, 0, 0, 0.1);
+  margin-left: 10px;
+}
+.main .content > .fr > .recItems > ul > li .itemRight .message .titleMsg:hover .allItems {
+  display: block;
+  width: 490px;
+}
+.main .content > .fr > .recItems > ul > li .itemRight .message .titleMsg .allItems i {
+  width: 480px;
+  margin-bottom: 4px;
+}
+.allItems i:first-child span.fivth {
+  background-image: url(../img/up2.png) !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+.allItems span.fivth {
+  background: none !important;
 }

@@ -3,46 +3,112 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" href="../css/dcalendar.picker.css">
+	
 	<style>
-	*{
-		margin:0;
-		padding:0;
-	}
-		.footer{
-			height: 100px;
-			background-color: red;
-			margin-top:-100px;
-		}
-		html,body{
-			height: 100%;
-		
-		}
-		.layout{
-			min-height: 100%;
-		}
-		.container{
-			padding-bottom: 100px;
-		}
+        span{
+            display: inline-block;
+            width: auto;
+            height: 12px;
+            border:1px solid orange;
+        }
+        i{
+            display: inline-block;
+            width: 10px;
+            border-radius: 50%;
+            height: 10px;
+            border:1px solid #ddd;
+            margin:0 5px;
+        }
+    </style>
 
-	</style>
 </head>
 <body>
-<input id='mydatepicker' type='text'/>     
-<div class="layout">
-	<ul class='container'>
-		<li>22334</li>
-		<li>22334</li>
-	</ul>
-</div>
-	
-	<div class='footer'>fottffff</div>
-	<script src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
-	<script src="../js/dcalendar.picker.js"></script>
-	<script>
-		$('#mydatepicker').dcalendarpicker({
-			lang:'ch'
-		}); 
-	</script>
+<span><i>中</i><i>走</i><i>失</i></span>
+<div id="container" style="width:800px;height:400px"></div>
+    <script src="../js/jquery.js"></script>
+	<script src="../js/highcharts.js"></script>
+    
+    <script>
+  $(function () {
+    var time= Date.parse(new Date().toLocaleDateString())
+    var time7=[]
+    for(var i=7;i>0;i--){
+        // time7.push([time-i*24*3600*1000,0.5])
+        time7.push(time-i*24*3600*1000)
+    }
+    console.log(time7)
+    Highcharts.setOptions({
+    global: {
+        useUTC: false
+    }
+});
+    $('#container').highcharts({
+         credits:{
+     enabled:false // 禁用版权信息
+},
+        chart: {
+            type: 'spline'
+        },
+        title: {
+            text: '近七日盈利率'
+        },
+        subtitle: {
+            text: '' 
+        },
+        xAxis: {
+            type: 'datetime',  
+            dateTimeLabelFormats: {   
+                day: '%m-%d',  
+            },
+            tickmarkPlacement: 'on',
+            crosshair:{
+                color:'#1fa0ff'
+            },
+            startOnTick:false,
+
+        },
+        plotOptions: {
+            series: {
+                pointPlacement: 'on'
+            }
+        },
+        yAxis: {
+            title: {
+                text: '盈利率',
+                align:'high',
+                offset:0,
+                rotation:0,
+                y:-15
+            },
+            crosshair:{
+                color:'#1fa0ff'
+            },
+            max:1,
+            min:0,
+            tickInterval:0.1,
+            labels: {
+                formatter: function () {
+                    return this.value*100
+                },
+
+            },
+            gridLineDashStyle:'Dash'
+        },
+        tooltip: {
+            formatter: function () {   
+                            return Highcharts.dateFormat('%m-%d',this.x)+'<br/>盈利率:' + this.y.toFixed(2)*100+'%';    
+                        }    
+        },
+        
+        series: [{
+            name: '每日盈利',
+            data: [[time7[0],0.6],[time7[1],0.7],[time7[2],0.5],[time7[3],0.8],[time7[4],0.7],[time7[5],0.6]],
+            color:'rgb(249,115,91)'
+        }]
+    });
+});
+
+        
+    </script>
 </body>
 </html>

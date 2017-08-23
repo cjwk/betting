@@ -31,6 +31,7 @@ body{
 	font-family: 'Microsoft YaHei','\5b8b\4f53',sans-serif;
 	color:#323232;
 	line-height: 1;
+	overflow-x: hidden;
 }
 input{
 	outline-style: none;
